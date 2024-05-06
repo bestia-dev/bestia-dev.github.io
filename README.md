@@ -6,7 +6,7 @@
 ***version 1.0 date: 2024-05-06  author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/bestia-dev.github.io)***  
 
  ![tutorial](https://img.shields.io/badge/tutorial-yellow)
- ![tutorials_rust_wasm](https://bestia.dev/webpage_hit_counter/get_svg_image/195219041.svg)
+ ![bestia-dev.github.io](https://bestia.dev/webpage_hit_counter/get_svg_image/1058713884.svg)
 
 Hashtags: #rustlang #tutorial  
 My projects on GitHub are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
@@ -57,50 +57,6 @@ Guess what? Rust is a great language for writing web servers, especially web ser
 
 On the server side, I will use PostgreSQL in a container.
 Inside the browser, there is the Indexeddb database.
-
-## let's start
-
-Be aware that things are changing fast. It is possible that the same tutorial would be different if I write it today. But it is impossible to go back and update everything that changed. Probably in some later tutorial, I will address the change. Maybe. It is a complex ever-changing world. Use all the information having the date of writing in mind.  
-The first contact with the rust world is described in this project:  
-<https://github.com/bestia-dev/rust01_the_beginning>  
-Next:  
-<https://github.com/bestia-dev/rust02_workspace_and_testing>  
-I need to teach about this great file manager:  
-<<<<<<< HEAD
-<https://github.com/CRUSTDE-ContainerizedRustDevEnv/total_commander_best_file_manager>
-=======
-<https://github.com/bestia-dev/total_commander_best_file_manager>  
->>>>>>> refs/remotes/origin/main
-A minimal example of PWA:  
-<https://github.com/bestia-dev/rust_wasm_pwa_minimal_clock>  
-A more complex PWA:  
-<https://github.com/bestia-dev/rust_wasm_helper_for_pwa>  
-<https://github.com/bestia-dev/rust_regex_explanation_pwa>  
-Docker is nice to learn for easy publishing:  
-<https://github.com/bestia-dev/docker_rust_minimal>  
-An example of a library/crate:  
-<https://github.com/bestia-dev/reader_for_microxml>  
-CLI examples (Command Line Interface) of how to manipulate text files:  
-<https://github.com/bestia-dev/lmake_cargo_toml_to_md>  
-<https://github.com/bestia-dev/lmake_lines_of_code>  
-<https://github.com/bestia-dev/lmake_version_from_date>  
-<https://github.com/bestia-dev/lmake_semver>  
-<https://github.com/bestia-dev/lmake_md_to_doc_comments>  
-Web server:  
-<https://github.com/bestia-dev/cargo_crev_web>  
-Using rust CLI for shell scripting:  
-<https://github.com/bestia-dev/wsl_open_browser>
-  
-Finally a complex process of iterating over the programming of a simple game. Starting with a simple idea and changing it to a complex game version by version. Learning about modules, workspaces, documentation, task automation, wasm, PWA, web server, WebSocket, webRTC, tests, examples, split code into libraries,...:  
-<https://github.com/bestia-dev/mem1>  
-<https://github.com/bestia-dev/mem1_phonegap>  
-<https://github.com/bestia-dev/mem1_electron>  
-<https://github.com/bestia-dev/mem2>  
-<https://github.com/bestia-dev/mem2_server>  
-<https://github.com/bestia-dev/mem3_game>  
-<https://github.com/bestia-dev/mem4_game>  
-<https://github.com/bestia-dev/mem5_game>  
-<https://github.com/bestia-dev/mem6_game>  
 
 ## Open-source and free as a beer
 
