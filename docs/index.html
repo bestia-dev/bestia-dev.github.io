@@ -2,9 +2,292 @@
 <html>
 
 <head>
-<meta http-equiv="refresh" content="0; url=https://bestia.dev" />
+    <title>bestia.dev</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />    
+    <meta name="Description" content="Learning Rust and Wasm programming and having fun">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+    <!-- HTML Meta Tags -->
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://bestia.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="bestia.dev">
+    <meta property="og:description" content="Learning Rust and Wasm programming and having fun">
+    <meta property="og:image" content="https://bestia.dev/Luciano_img.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="bestia.dev">
+    <meta property="twitter:url" content="https://bestia.dev/">
+    <meta name="twitter:title" content="bestia.dev">
+    <meta name="twitter:description" content="Learning Rust and Wasm programming and having fun">
+    <meta name="twitter:image" content="https://bestia.dev/Luciano_img.png">
+
+    <!-- Meta Tags Generated via https://opengraph.dev -->
 </head>
-<body>
-Redirecting to //bestia.dev ...
+
+<body style="background-image: url('rust_background_2.jpg');">
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+                <span id="navbar_title">bestia.dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#web_pages" onclick="toggle_responsive_navbar()">Web</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>                
+            </div>
+        </div>
+    </div>
+    <div>
+
+	<h1 id="home"><img src="rustacean.png" style="height: 1em;width: auto;"/>Welcome to bestia.dev !<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <h2>Learning <span class="link"><a  href="https://www.rust-lang.org/" target="_blank">Rust </a>
+    </span> and <span class="link"><a href="https://developer.mozilla.org/en-US/docs/WebAssembly" target="_blank">Wasm</a>
+    </span><br/> programming and having fun</h2>
+
+    <!-- warning if javascript is not enabled -->
+    <noscript>
+		<h2 style="color:red">
+		  Wasm/Webassembly in built on top of the javascript engine.<br>
+		  If javascript is disabled, so is Wasm/Webassembly.<br>
+		</h2>
+	  </noscript>
+
+    <p><img src="Luciano_img.png" /></p>
+    <p>"I just love programming." (Bestia)</p>
+    <h2><a href="https://github.com/bestia-dev?tab=repositories" target="_blank">Repository: github.com/bestia-dev</a></h2>
+    <p style="max-width: 800px;">I worked for 30 years on commercial projects. It was hard, but fun. I am on a long vacation now and I have time to learn a new programming language. I want to share my learning path with beginners.<br/>
+        <a href="https://www.urbandictionary.com/define.php?term=Dev" target="_blank">Read some descriptions of "dev" in urbandictionary.com :-DDD</a></p>
+</div>
+    <hr />
+    <h1 id="tutorials"><img src="rustacean.png" style="height: 1em;width: auto;"/>Tutorials<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Most of my work is more like a tutorial then a finished product.</p>
+    <p>Have fun and enjoy learning what I learn. I try to make it easy as possible.</p>
+    <p>Rust, Wasm/Webassembly, Progressive Web App, web servers, CLI (command line interface), library/crates, docker containers, ...</p>
+    
+    <h3 class="link"><a href="github_readme/tutorials_rust_wasm.html" target="_blank">Tutorials rust and wasm (2020-12)</a></h3>
+    <p class="small">Watch tutorials on youtube:</p>
+    <p><a href="https://www.youtube.com/channel/UCitt3zFHK2jDetDh6ezI05A"><img src="images/youtube_banner.jpg" width="100%"></a></p>
+    <hr />
+    <h1 id="tutorials"><img src="rustacean.png" style="height: 1em;width: auto;"/>Tutorials about Rust<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+
+    <h3 class="link"><a href="github_readme/rust01_the_beginning.html" target="_blank">Rust 01 the beginning (2019-05)</a></h3>
+    <h3 class="link"><a href="github_readme/rust02_workspace_and_testing.html" target="_blank">Rust 02 workspace and testing (2019-05)</a></h3>
+    
+    <hr />
+    <h1 id="tutorials"><img src="rustacean.png" style="height: 1em;width: auto;"/>Tutorials about Rust development environment<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <h3 class="link"><a href="github_readme/total_commander_best_file_manager.html" target="_blank">Total commander - best file manager (2019-05)</a></h3>
+    <h3 class="link"><a href="github_readme/windows_reinstall.html" target="_blank">My windows_reinstall (2022-04)</a></h3>
+
+    <h3 class="link"><a href="github_readme/win10_wsl2_debian11.html" target="_blank"> 01. Tutorial to install Linux on Windows. Linux everywhere!<br/>(win10_wsl2_debian11 2022-03)</a></h3>        
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/win10_wsl2_debian11.html" target="_blank"><img src="youtube/win10_wsl2_debian11.jpg" style="height: 9em;"/></a></h3>        
+    
+    <h3 class="link"><a href="github_readme/crustde_cnt_img_pod.html" target="_blank"> 02. Tutorial for Rust development environment inside docker container.<br/>Rust: Hack Without Fear !<br/>(crustde_cnt_img_pod 2022-03)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/crustde_cnt_img_pod.html" target="_blank"><img src="youtube/crustde_cnt_img_pod.jpg" style="height: 9em;"/></a></h3>
+    
+    <h3 class="link"><a href="github_readme/rust_plantuml_client.html" target="_blank"> 03. Tutorial for coding a simple CLI application in Rust<br/>(rust_plantuml_client 2022-04)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/rust_plantuml_client.html" target="_blank"><img src="youtube/rust_plantuml_client.jpg" style="height: 9em;"/></a></h3>
+    
+	<h3 class="link"><a href="github_readme/sort_text_international_rust_wasm_pwa.html" target="_blank"> 04. Tutorial for Coding simple PWA in Rust<br/>(sort_text_international_rust_wasm_pwa 2022-07)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/sort_text_international_rust_wasm_pwa.html" target="_blank"><img src="youtube/sort_text_international_rust_wasm_pwa.jpg" style="height: 9em;"/></a></h3>
+	
+    <h3 class="link"><a href="github_readme/webpage_hit_counter.html" target="_blank"> 05. Tutorial for Coding simple Web Server with Database in Rust<br/>(webpage_hit_counter 2022-08)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/webpage_hit_counter.html" target="_blank"><img src="youtube/webpage_hit_counter.jpg" style="height: 9em;"/></a></h3>	
+
+    <h3 class="link"><a href="github_readme/deploying_rust_server_and_database.html" target="_blank"> 06. Tutorial how to deploy Rust Web Server and Database <br/>
+	(deploying_rust_server_and_database 2022-08)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/deploying_rust_server_and_database.html" target="_blank"><img src="youtube/deploying_rust_server_and_database.jpg" style="height: 9em;"/></a></h3>	
+	
+    <h3 class="link"><a href="github_readme/database_web_ui_on_server.html" target="_blank"> 07. Tutorial for Coding a database Web UI in Rust <br/>
+	(database_web_ui_on_server 2022-08)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/database_web_ui_on_server.html" target="_blank"><img src="youtube/database_web_ui_on_server.jpg" style="height: 9em;"/></a></h3>	
+
+    <h3 class="link"><a href="github_readme/refactoring_database_web_ui_server_side_rendering.html" target="_blank"> 08. Tutorial to refactor the database_web_ui_on_server <br/>
+	(refactoring_database_web_ui_server_side_rendering 2022-10)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/refactoring_database_web_ui_server_side_rendering.html" target="_blank"><img src="youtube/refactoring_database_web_ui_server_side_rendering.jpg" style="height: 9em;"/></a></h3>
+
+    <h3 class="link"><a href="github_readme/cross_compile_crustde_container.html" target="_blank"> 09. Tutorial to cross-compile in CRUSTDE<br/>Containerized Rust Development Environment<br/>
+	(cross_compile_crustde_container 2023-05)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/cross_compile_crustde_container.html" target="_blank"><img src="youtube/cross_compile_crustde_container.jpg" style="height: 9em;"/></a></h3>	
+    
+    <h3 class="link"><a href="github_readme/CRUSTDE_Containerized_Rust_DevEnv.html" target="_blank"> 10. Tutorial for CRUSTDE install<br/>Containerized Rust Development Environment<br/>
+	(CRUSTDE_install 2024-03)</a></h3>
+    <p class="small">Watch tutorial on youtube:</p>
+    <h3 class="link"><a href="https://bestia.dev/youtube/CRUSTDE_install.html" target="_blank"><img src="youtube/CRUSTDE_install.jpg" style="height: 9em;"/></a></h3>	
+    
+    <hr />
+    <h1 id="tutorials_2"><img src="rustacean.png" style="height: 1em;width: auto;"/>Tutorials about deploy in container<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <h3 class="link"><a href="github_readme/docker_rust_minimal.html" target="_blank">docker_rust_minimal (2020-08)</a></h3>
+
+    <hr />
+    <h1 id="rust_library_crates"><img src="rustacean.png" style="height: 1em;width: auto;"/>Rust library crates<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Rust is made of crates. Many crates. Let make some.</p>        
+    <h3 class="link"><a href="github_readme/reader_for_microxml.html" target="_blank">reader_for_microxml (2021-01)</a></h3>
+    <h3 class="link"><a href="github_readme/qrcode53bytes.html" target="_blank">QR code generator (2021-01) </a></h3>    
+    <h3 class="link"><a href="github_readme/QVS21.html" target="_blank">QVS21 (2021-07)</a></h3>
+    <h3 class="link"><a href="github_readme/dev_bestia_url_utf8.html" target="_blank">dev_bestia_url_utf8 (2021-10)</a></h3>
+    <h3 class="link"><a href="github_readme/dev_bestia_string_utils.html" target="_blank">dev_bestia_string_utils (2021-10)</a></h3>
+    <h3 class="link"><a href="github_readme/dev_bestia_html_templating.html" target="_blank">dev_bestia_html_templating (2021-11)</a></h3>
+    <h3 class="link"><a href="github_readme/dev_bestia_simple_server.html" target="_blank">dev_bestia_simple_server (2021-09)</a></h3>    
+    <h3 class="link"><a href="github_readme/foreground_scheduler.html" target="_blank">foreground_scheduler (2020-05)</a></h3>
+    <h3 class="link"><a href="github_readme/pretty_dbg.html" target="_blank">pretty_dbg (2024-02)</a></h3>
+    <!--
+    <hr />
+    <h1 id="rust_on windows"><img src="rustacean.png" style="height: 1em;width: auto;"/>Rust on windows<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Small utilities compiled for windows.</p>    
+    -->
+
+    <!--
+    private repositories, not public:
+    efrro_form_c_json_accommodations
+    googlecloud
+    luka_plan_pilotaz
+    -->
+
+    <hr />
+    <h1 id="webassembly"><img src="rustacean.png" style="height: 1em;width: auto;"/>Wasm/Webassembly and PWA<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Learning wasm/webassembly and PWA</p>
+    <!-- warning if Wasm is not supported-->
+    <h3 id="wasm_support"></h3>
+    <p>The browser must support Wasm/Webassembly. <br> All modern browsers do (Chrome, Edge, Firefox, Safari).<br> Avoid old and not updated browser for your own security and comfort.<br></p>
+    <script>
+        function supported() {
+            try {
+                if (typeof WebAssembly === "object" &&
+                    typeof WebAssembly.instantiate === "function") {
+                    const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00));
+                    if (module instanceof WebAssembly.Module)
+                        return new WebAssembly.Instance(module) instanceof WebAssembly.Instance;
+                }
+            } catch (e) {}
+            return false;
+        };
+        document.getElementById("wasm_support").style = (supported ? "color:green" : "color:red");
+
+        document.getElementById("wasm_support").innerText = (supported ? "Great ! Wasm/Webassembly is supported in this browser!" : "Sorry ! Wasm/Webassembly is NOT supported in this browser!");
+    </script>
+    <h3 class="link"><a href="github_readme/rust_wasm_pwa_minimal_clock.html" target="_blank">rust_wasm_pwa_minimal_clock (2021-02)</a></h3>
+    <h3 class="link"><a href="github_readme/sey_currency_converter_pwa.html" target="_blank">sey_currency_converter_pwa (2021-04)</a></h3>
+    <h3 class="link"><a href="github_readme/new_date_time_units_and_formats.html" target="_blank">new_date_time_units_and_formats (2021-02)</a></h3>
+    <h3 class="link"><a href="github_readme/varweeks_millis_clock.html" target="_blank">A big varweeks millis clock in PWA(2021-02)</a></h3>
+    <h3 class="link"><a href="github_readme/varweeks_millis.html" target="_blank">varweeks_millis crate(2021-02)</a></h3>
+    <h3 class="link"><a href="github_readme/rust_regex_explanation_pwa.html" target="_blank">PWA utility for rust regex engine testing (2020-08)</a></h3>
+    <h3 class="link"><a href="github_readme/rust_wasm_helper_for_pwa.html" target="_blank">Helper for developing PWA (2021-07)</a></h3>
+	<h3 class="link"><a href="github_readme/sort_text_international_rust_wasm_pwa.html" target="_blank">sort_text_international_rust_wasm_pwa (2022-07)</a></h3>
+    <h3 class="link"><a href="github_readme/rust_wasm_websys_utils.html" target="_blank">rust_wasm_websys_utils (2020-04)</a></h3>
+    <h3 class="link"><a href="github_readme/rust_wasm_websocket.html" target="_blank">rust_wasm_websocket (2021-01)</a></h3>
+    <h3 class="link"><a href="github_readme/markdown_to_html.html" target="_blank">markdown_to_html (2023-11)</a></h3>
+
+    <hr />
+    <h1 id="games"><img src="rustacean.png" style="height: 1em;width: auto;"/>Games<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Iterations of the game development for learning purposes.</p>
+    <p>Rust, Wasm/Webassembly, Virtual Dom, Async/Await, Progressive Web App,...</p>
+    <h3 class="link"><a href="github_readme/mem6_game.html" target="_blank">mem6_game (2020-04)</a></h3>
+    <h3 class="link"><a href="github_readme/unforgettable7_game.html" target="_blank">unForGetTable7_game (2021-01)</a></h3>
+    
+    <hr />
+    <h1 id="android">Android</h1>
+    <p>Made with Android Studio on Win10 with Java, apk, html, css, javascript,...</p>
+    <h3 class="link"><a href="github_readme/GuitaraokeLeader.html" target="_blank">GuitaraokeLeader for Android (2022-01)</a></h3>    
+    
+    <hr />
+    <h1 id="productivity"><img src="rustacean.png" style="height: 1em;width: auto;"/>Productivity<img src="rustacean.png" style="height: 1em;width: auto;"/></h1>
+    <p>Apps for productivity for programmers and friends.</p>
+    <h2>Tools for rust programming</h2>    
+    <h3 class="link"><a href="github_readme/cargo-auto.html" target="_blank">cargo-auto - automation tasks for Rust build (2021-10)</a></h3>
+    <h3 class="link"><a href="github_readme/cargo_auto_lib.html" target="_blank">cargo_auto_lib (2021-12)</a></h3>
+    <h3 class="link"><a href="github_readme/dev_bestia_cargo_completion.html" target="_blank">dev_bestia_cargo_completion (2021-12)</a></h3>
+    <h3 class="link"><a href="github_readme/github_readme_copy.html" target="_blank">github_readme_copy (2022-06)</a></h3>  
+    
+
+    <h2>Tools for Dropbox</h2>
+    <h3 class="link"><a href="github_readme/dropbox_backup_to_external_disk.html" target="_blank">dropbox_backup_to_external_disk (2021-08)</a></h3>
+     
+
+
+    <h2>cargo-crev reviews</h2>
+    <h3 class="link"><a href="github_readme/cargo_crev_web.html" target="_blank">cargo_crev_web (2020-08)</a></h3>
+    <h3 class="link"><a href="github_readme/cargo_crev_web_admin.html" target="_blank">cargo_crev_web_admin (2022-01)</a></h3>
+    <h3 class="link"><a href="github_readme/crev-proofs.html" target="_blank">crev-proofs (2022-03)</a></h3>
+
+    <hr />
+    <h1 id="web_pages">Web pages</h1>
+    <h3 class="link"><a href="https://peacefulview.si/" target="_blank">peacefulview.si in Wordpress</a></h3>
+    <h3 class="link"><a href="https://peacefulview.eu/" target="_blank">peacefulview.eu in Wordpress</a></h3>
+
+    <hr />
+    <h1 id="web_pages">Chrome extension</h1>
+    <h3 class="link"><a href="github_readme/chext_fill_form_from_json.html" target="_blank">chext_fill_form_from_json - fill a form from json (2021-12)</a></h3>
+    
+    <hr />
+    <h1 id="youtube_videos">Youtube videos</h1>
+    <h3 class="link"><a href="//youtube.com/@IzolaMjuzikFest" target="_blank">Channel //youtube.com/@IzolaMjuzikFest (2023-04)</a></h3>
+    <h3 class="link"><a href="https://www.youtube.com/watch?v=b79JTe0Jspg&list=PLvC8kBsKgz_ibQR3TXNiFKIvNX_k40PM2" target="_blank">Playlist IzolaMjuzikFest 2022</a></h3>
+    <h3 class="link"><a href="https://www.youtube.com/watch?v=ztpWWZFwLJ8&list=PLvC8kBsKgz_gRh780O8KV1E92VbDu7yjq" target="_blank">Playlist IzolaMjuzikFest 2023</a></h3>
+
+    <h3 class="link"><a href="//youtube.com/@MarketGarden97" target="_blank">Channel //youtube.com/@IzolaMjuzikFest (2023-04)</a></h3>
+    <h3 class="link"><a href="https://www.youtube.com/watch?v=TQcdtKq1oO0&list=PLXISmLIn3t0SsJym_5XVCPNdhRfUnnlIE" target="_blank">Playlist MarketGarden97Figa 2023-04-01</a></h3>
+    
+    <hr />
+    <h1 id="substack_articles">Substack articles</h1>   
+    <h3 class="link"><a href="substack_articles/web-links-for-humans.html" target="_blank">Web links for //humans (2023-05)</a></h3>
+    <h3 class="link"><a href="substack_articles/metrication-of-the-angles-fc.html" target="_blank">Metrication of the angles (fc) (2023-05)</a></h3>
+    <h3 class="link"><a href="substack_articles/containerized-development-environment.html" target="_blank">Containerized development environment for the Rust programming language (2023-05)</a></h3>
+
+    <hr />
+    <h1 id="archived_projects">Archived projects</h1>  
+    <h3 class="link"><a href="archived.html" target="_blank">Many projects are archived and not in use anymore (2023-11)</a></h3>
+
+    <hr />
+    <h1 >Open-source and free as a beer</h1>
+    <p>
+    My open-source projects are free as a beer (MIT license).<br/>
+    I just love programming.<br/>
+    But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <span class="link"><a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a></span>.
+    You know the price of a beer in your local bar ;-)<br/> 
+    So I can drink a free beer for your health :-)<br/>
+    <h3 class="link"><a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> <g-emoji class="g-emoji" alias="beers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f37b.png">🍻</g-emoji></h3>
+    </p> 
+    <hr />
+    <h3 class="link"><a href="https://bestia.dev" target="_blank">//bestia.dev</a></h3>
+    <h3 class="link"><a href="https://github.com/bestia-dev" target="_blank">//github.com/bestia-dev</a></h3>
+    <h3 class="link"><a href="https://bestiadev.substack.com" target="_blank">//bestiadev.substack.com</a></h3>
+    <h3 class="link"><a href="https://youtube.com/@bestia-dev-tutorials" target="_blank">//youtube.com/@bestia-dev-tutorials</a></h3>
+    
+    <div id="contact" class="footer">
+        <h3 class="link"><a target="blank " href="https://github.com/bestia-dev?tab=repositories">Contact me on GitHub</a> 
+            <img src="https://bestia.dev/webpage_hit_counter/get_svg_image/546994039.svg"/>
+        <p class="small">© bestia.dev 2023, MIT License</p>
+    </div>
 </body>
+
 </html>

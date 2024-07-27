@@ -1,0 +1,289 @@
+/*simplified css style based on https://www.w3schools.com/w3css/default.asp */
+
+
+/* css variables */
+
+:root {
+    /* color palette */
+    /* use of variables: var(--color_tooltip_1); */
+    /* background color */
+    --b_color_html: #111111;
+    --b_color_body: #000000;
+    --b_color_header: #444;
+    --b_color_header_hover: #333;
+    --b_color_button: #8BC24A;
+    --b_color_button_disabled: #555;
+    --b_color_button_hover: #333;
+    /* front color */
+    --f_color_body: #eaec41;
+    --f_color_header: #fff;
+    --f_color_button: #fff;
+    --f_color_link: #FF8C00;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+@font-face {
+    font-family: "Roboto";
+    /* fonts are inside the css folder */
+    src: url("Roboto-Medium.woff2") format("woff2")
+}
+
+html {
+    background-color: var(--b_color_html);
+    color: var(--f_color_body);
+    font-family: 'Roboto';
+    font-size: 20px;
+    overflow-x: hidden;
+    /*margin auto means centered horizontally*/
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    border: 0;
+}
+
+body {
+    background-color: var(--b_color_body);
+    color: var(--f_color_body);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    overscroll-behavior-y: none;
+    line-height: 1.8;
+    word-wrap: break-word;
+}
+
+
+/* no special color for links, but special class for links */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--b_color_button_hover);
+}
+
+.link {
+    color: var(--f_color_link);
+    ;
+}
+
+button {
+    background-color: var(--b_color_button);
+    color: var(--f_color_button);
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+button:disabled {
+    background-color: var(--b_color_button_disabled);
+    opacity: 0.5;
+}
+
+h1,
+h2,
+h3,
+p {
+    text-align: center;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+
+/* region: fixed header */
+
+.fixed_header {
+    background-color: var(--b_color_header);
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    padding: 0px 0px;
+    width: 100%;
+    height: 35px;
+}
+
+
+/* navbar Segments starts with h1, it needs 10px because of the fixed header */
+
+h1 {
+    padding-top: 35px;
+}
+
+
+/* endregion: fixed header */
+
+
+/* region: navigation bar*/
+
+
+/* here is the basic style for displays over 600px wide. All in one row.*/
+
+
+/* Add a dark background color to the navigation bar */
+
+#navbar {
+    background-color: var(--b_color_header);
+    overflow: hidden;
+    text-align: center;
+    top: 0px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* Style the links of navigation bar */
+
+#navbar>#navbar_topics {
+    background-color: var(--b_color_header);
+}
+
+#navbar>#navbar_topics>a {
+    background-color: var(--b_color_header);
+    display: inline;
+    color: var(--f_color_header);
+    text-align: center;
+    padding: 2px 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+#navbar>#navbar_topics>a:hover {
+    background-color: var(--b_color_header_hover);
+}
+
+
+/* brand logo and title*/
+
+#navbar>#navbar_brand {
+    text-decoration: none;
+}
+
+#navbar>#navbar_brand>img {
+    padding-top: 1px;
+    max-height: 32px;
+    padding-bottom: 2px;
+}
+
+#navbar>#navbar_brand>#navbar_title {
+    display: none;
+    color: var(--f_color_header);
+    text-align: center;
+    padding: 2px 10px;
+}
+
+
+/* Hide the hamburger */
+
+#navbar>#navbar_hamburger {
+    color: var(--f_color_header);
+    display: none;
+    text-align: center;
+    padding: 2px 10px;
+    text-decoration: none;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, 
+Show only the brand and hamburger. 
+*/
+
+@media screen and (max-width: 600px) {
+    .fixed_header {
+        height: 45px;
+    }
+    h1 {
+        padding-top: 45px;
+    }
+    #navbar {
+        justify-content: space-between;
+        display: inline;
+        font-size: 30px;
+        line-height: 1.4;
+    }
+    #navbar>#navbar_topics>a {
+        display: none;
+    }
+    #navbar>#navbar_brand {
+        float: left;
+        display: inline;
+        padding-left: 5px;
+        padding-top: 0px;
+        padding-bottom: 5px;
+    }
+    #navbar>#navbar_brand>#navbar_title {
+        float: none;
+        display: inline;
+        padding-right: 20px;
+        padding-top: 0px;
+    }
+    #navbar>#navbar_hamburger {
+        float: right;
+        display: inline;
+        padding-top: 0px;
+    }
+    /*
+The "responsive" class is added to the navbar with JavaScript when the user clicks on the hamburger. 
+This class makes the navbar look good on small screens (display the links vertically instead of horizontally)
+*/
+    #navbar.responsive>#navbar_topics {
+        position: fixed;
+        top: 47px;
+        padding-left: 44px;
+    }
+    #navbar.responsive>#navbar_topics>a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding-right: 60px;
+    }
+}
+
+
+/* endregion: navigation bar*/
+
+.footer {
+    background-color: var(--b_color_header);
+}
+
+.small {
+    font-size: smaller;
+}

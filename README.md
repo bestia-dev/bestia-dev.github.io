@@ -17,7 +17,7 @@ Visit my web page: [bestia.dev](https://bestia.dev)
 
 It is easy to make a personal website on GitHub.  
 Just use the magic repository name: `github_username.github.io`.  
-For me it is: <https://bestia-dev.github.io>
+For me, it is: [bestia-dev.github.io](https://bestia-dev.github.io)
 
 Then make a GitHub action to create `GitHub pages` from your `docs` folders.  
 Done!
@@ -25,7 +25,8 @@ Done!
 Now you can put `index.html` and all other HTML, CSS and javascript magic.  
 But no server dynamic coding. It is a static page.
 
-I already have a personal webpage. I will use this repository just to redirect to my true website.  
+I already have a personal webpage on [bestia.dev](bestia.dev). Here I will duplicate the static pages.  
+The dynamic pages that need server code will be redirected to my web site [bestia.dev](bestia.dev).  
 
 ## Open-source and free as a beer
 
