@@ -25,8 +25,8 @@ Done!
 Now you can put `index.html` and all other HTML, CSS and javascript magic.  
 But no server dynamic coding. It is a static page.
 
-I already have a personal webpage on [bestia.dev](bestia.dev). Here I will duplicate the static pages.  
-The dynamic pages that need server code will be redirected to my web site [bestia.dev](bestia.dev).  
+I already have a personal webpage on [bestia.dev](https://bestia.dev). Here I will duplicate the static pages.  
+The dynamic pages that need server code will be redirected to my web site [bestia.dev](https://bestia.dev).  
 
 ## Open-source and free as a beer
 
