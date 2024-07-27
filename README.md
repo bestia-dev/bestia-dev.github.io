@@ -11,7 +11,7 @@
 Hashtags: #rustlang #tutorial  
 My projects on GitHub are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
 
-Visit my web page: [bestia.dev](https://bestia.dev)
+Visit my web page: [//bestia.dev](https://bestia.dev)
 
 ## GitHub personal website
 
@@ -25,8 +25,8 @@ Done!
 Now you can put `index.html` and all other HTML, CSS and javascript magic.  
 But no server dynamic coding. It is a static page.
 
-I already have a personal webpage on [bestia.dev](https://bestia.dev). Here I will duplicate the static pages.  
-The dynamic pages that need server code will be redirected to my web site [bestia.dev](https://bestia.dev).  
+I already have a personal webpage on [//bestia.dev](https://bestia.dev). Here I will duplicate the static pages.  
+The dynamic pages that need server code will be redirected to my web site [//bestia.dev](https://bestia.dev).  
 
 ## Open-source and free as a beer
 
