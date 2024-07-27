@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!-- classic header for a web page -->
+      <title>new_date_time_units_and_formats</title>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <meta name="Description" content="tutorial for a minimal example of rust wasm PWA">
+      <meta name="author" content="https://github.com/bestia-dev/new_date_time_units_and_formats">
+      <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
+      <link rel="stylesheet" href="css/new_date_time_units_and_formats.css">
+
+      <!-- region: A lot of metadata just for PWA -->
+      <link rel="manifest" href="manifest.json">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="theme-color" content="#000000">
+      <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+      <link rel="apple-touch-icon" href="icons/icons-192.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+      <link rel="icon" type="image/png" href="icons/icons-512.png" sizes="512x512">
+      <meta name="msapplication-TileColor" content="#000000">
+      <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+      <!-- endregion: A lot of metadata just for PWA -->
+      
+</head>
+
+<body >
+      <!-- a standard service worker is a must for PWA -->
+      <script src="start_service_worker.js"></script>
+      <!-- warning if javascript iis not enabled -->
+      <noscript>
+            <h2>
+                  !!!???!!!<br>
+                  This web app <br>
+                  cannot work <br>
+                  without javascript<br>
+                  enabled<br>
+                  !!!???!!!</h2>
+      </noscript>
+      <!--This content elements will change from the wasm code.-->
+      <div id="div_for_content" >
+            <div id="div_main_grid" >
+                  <div id="div_title"><span>varweeks or millidays converter</span>
+                        <span id="span_hamburger_button" >☰</span></div>
+                  <div id="div_input" ></div>
+                  <div id="div_toolbar">yyyy-mm-dd ---> v</div>
+                  <div id="div_output"></div>
+
+                  <div id="div_numeric_pad_grid" >
+                        <div id="div_7" class="div_cell" >7</div>
+                        <div id="div_8" class="div_cell" >8</div>
+                        <div id="div_9" class="div_cell" >9</div>
+                        <div id="div_backspace" class="div_cell cell_commands" >⌫</div>
+                        <div id="div_clear" class="div_cell cell_commands" >C</div>
+
+                        <div id="div_4" class="div_cell" >4</div>
+                        <div id="div_5" class="div_cell" >5</div>
+                        <div id="div_6" class="div_cell" >6</div>
+                        <div id="div_now" class="div_cell" >N</div>
+                        <div id="div_hyphen" class="div_cell" >-</div>
+
+                        <div id="div_1" class="div_cell" >1</div>
+                        <div id="div_2" class="div_cell" >2</div>
+                        <div id="div_3" class="div_cell" >3</div>
+                        <div id="div_colon" class="div_cell" >:</div>
+                        <div id="div_slash" class="div_cell" >/</div>
+
+                        <div id="div_0" class="div_cell" >0</div>
+                        <div id="div_dot" class="div_cell" >.</div>
+                        <div id="div_common_era" class="div_cell" >c</div>
+                        <div id="div_varweek" class="div_cell" >v</div>
+                        <div id="div_day" class="div_cell cell_commands" >d</div>
+
+                  </div>
+            </div>
+      </div>
+            
+      <div id="modal_01" class="w3-modal">
+            <div class="w3-modal-content">
+                  <div class="w3-container">
+                        <h2>choose date or time conversion</h2>
+                        <p>to or from varweeks or millidays</p>
+                        <hr/>
+                        <p><span id="cnv_yf" class="span_button" >yyyy-mm-dd ---> v</span> || <span id="cnv_fy" class="span_button">v ---> yyyy-mm-dd</span></p>
+                        <p><span id="cnv_df" class="span_button">dd.mm.yyyy ---> v</span> || <span id="cnv_fd" class="span_button">v ---> dd.mm.yyyy</span></p> 
+                        <p><span id="cnv_mf" class="span_button">mm/dd/yyyy ---> v</span> || <span id="cnv_fm" class="span_button">v ---> mm/dd/yyyy</span></p>
+                        <hr/>
+                        <p><span id="cnv_24m" class="span_button">HH:MM 24 ---> md</span> || <span id="cnv_m24" class="span_button">md ---> HH:MM 24</span></p>
+                        <p><span id="cnv_12m" class="span_button">HH:MM 12 ---> md</span> || <span id="cnv_m12" class="span_button">md ---> HH:MM 12</span></p>
+                        <hr/>
+                        <p><span id="cnv_sm" class="span_button">seconds ---> μd</span> || <span id="cnv_ms" class="span_button">μd ---> seconds</span></p>
+                  </div>
+            </div>
+      </div>
+      <div id="modal_02" class="w3-modal">
+            <div class="w3-modal-content">
+                  <div class="w3-container">
+                        <h2>About</h2>
+                        <p>Explanation of new units "varweeks" and "millidays" on github:</p>
+                        <p><a href="https://github.com/bestia-dev/new_date_time_units_and_formats" target="_blank" >new_date_time_units_and_formats</a></p>
+                        <p>This PWA app is made for mobile browsers. In desktop use F12 developer mode and choose a mobile format.</p>
+                        <p></p>
+                        <p>OpenSource MIT license</p>
+                        <p>© 2021 bestia.dev <span id="span_version">1</span></p>
+                        <p><span class="span_button" id="modal_02_close">Close</span></p>
+                  </div>
+            </div>
+      </div>
+      <!-- import and init the wasm code -->
+      <script type="module">
+            import init from "./pkg/new_date_time_units_and_formats.js";
+            init("./pkg/new_date_time_units_and_formats_bg.wasm");
+      </script>
+</body>
+
+</html>

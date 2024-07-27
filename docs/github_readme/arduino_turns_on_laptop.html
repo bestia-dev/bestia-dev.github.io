@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>arduino_turns_on_laptop</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Arduino and servo motor to press the On button on a laptop when the TV is turned on">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/arduino_turns_on_laptop">https://github.com/bestia-dev/arduino_turns_on_laptop</a>.</div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-arduino_turns_on_laptop" class="anchor" aria-hidden="true" href="#arduino_turns_on_laptop"></a>arduino_turns_on_laptop</h1>
+<p dir="auto"><strong>Arduino and servo motor to press the On button on a laptop when the TV is turned on</strong><br>
+<em><strong>version: 1.0  date: 2020-10-01 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/arduino_turns_on_laptop">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5ef498ebe9e6c33bce869e90b56961b76095f257185f6ff8330d3449263d883c/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3232353136363838392e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/225166889.svg" alt="Hits" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-problem-description" class="anchor" aria-hidden="true" href="#problem-description"></a>Problem description</h2>
+<p dir="auto">My TV setup is like this:</p>
+<ol dir="auto">
+<li>TV Panasonic</li>
+<li>Mixer Yamaha</li>
+<li>Active Speakers Samson</li>
+<li>Old Lenovo ThinkPad</li>
+</ol>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/LucianoBestia/arduino_turns_on_laptop/raw/main/images/TV_setup.jpg"><img src="https://github.com/LucianoBestia/arduino_turns_on_laptop/raw/main/images/TV_setup.jpg" alt="TV_setup" style="max-width: 100%;"></a><br>
+My wife likes to press only one button to make things work. She does not want to press the "On" button on 5 devices. Neither do I. I can understand that.<br>
+Incredibly enough the first 3 devices can be turned on and off just with the power socket.
+I have a "smart" power socket with remote control over 433MHz similar to <a href="https://www.amazon.it/deleyCON-prese-radio-Bianco-230-00V/dp/B074VV3T91/ref=pd_day0_79_1/258-7752702-2003723?_encoding=UTF8&amp;pd_rd_i=B074VV3T91&amp;pd_rd_r=bfca3e6c-c195-4fac-bd37-163603320a3d&amp;pd_rd_w=jjQo3&amp;pd_rd_wg=xFWr9&amp;pf_rd_p=7d5a19b1-29b8-4833-bb91-8b454e183d9f&amp;pf_rd_r=HN8XDY11J2Y5AQQVX8ZQ&amp;psc=1&amp;refRID=HN8XDY11J2Y5AQQVX8ZQ" rel="nofollow">this</a>.</p>
+<p dir="auto">ok. I am hoarding them. Don't judge.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/LucianoBestia/arduino_turns_on_laptop/raw/main/images/remote_433MHz.jpg"><img src="https://github.com/LucianoBestia/arduino_turns_on_laptop/raw/main/images/remote_433MHz.jpg" alt="remote_433MHz" style="max-width: 100%;"></a></p>
+<p dir="auto">Great! I can use the remote with only one button on/off.<br>
+But the laptop is the exception. I need to press the "On" button manually. Some laptop have the option in BIOS to "turn on when plugged", but not this model.<br>
+That was too much for my wife. Two buttons. No go...</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-arduino" class="anchor" aria-hidden="true" href="#arduino"></a>Arduino</h2>
+<p dir="auto">I am not very good in electronics, I am a programmer. I will not work with transistors, relays, resistors and capacitors. I prefer a microcontroller like Arduino or a mini PC like RaspberryPi. I feel lucky it is all very affordable.<br>
+There are cheaper clones of Arduino and I bought the Smraza kit for 30€ with the microcontroller, servo motor and a bunch of other components. Great.<br>
+I connected the arduino uno clone to my TV USB port. So when the TV starts the port starts the microcontroller. A small program controls the servo motor to press the "On" button of the laptop. Easy.
+Everything together is connected the "balkan way" with a lot of duct tape, wires hanging around and a lead weight to achieve the force of pressure needed. Balkan people will understand.<br>
+Watch it in action on youtube: <a href="https://www.youtube.com/watch?v=VJjaTkirXVo" rel="nofollow">LF2020-10-02 Arduino turns on laptop</a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-why-oh-why" class="anchor" aria-hidden="true" href="#why-oh-why"></a>Why oh why</h2>
+<p dir="auto">It all sounds so perfect in my fantasy. But oh reality is a mess. The servo motor involuntary moves when it is attached (turned on) before any voluntary commands of mine are sent to him. You can see that first movement clearly in the youtube video. Try and error to achieve a not-so-perfect solution that looks completely unreliable and it could break at any time. I didn't find a solution yet. But I found a lot of people fighting the same problem. Why is that so hard to achieve? Just don't move until I command you so. What part is not understandable here?</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-and-thats-it" class="anchor" aria-hidden="true" href="#and-thats-it"></a>And that's it</h2>
+<p dir="auto">One button on the remote control to turn on 5 devices. The sound of the servo id funny, but not too much noisy.<br>
+The near button on the remote to turn everything off.<br>
+Unfortunately sometimes the Win 10 does not like to be unplugged so unpolitely and the next time it asks to check the disk or other recovery methods. But it is an SSD disk, so I don't expect any real problems. I just choose "restart the PC". And it all works. It happens very rare thought.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-development" class="anchor" aria-hidden="true" href="#development"></a>Development</h2>
+<p dir="auto">Install the arduino IDE 1.8.13 (Win,Mac,Linux): <a href="https://www.arduino.cc/en/Main/Software" rel="nofollow">arduino software</a>.<br>
+In <code>Tools-Board</code> I choose the "Arduino Uno".<br>
+There are a great collection of simple examples to start learning with ease.<br>
+The word "sketch" is used for arduino programmes. It uses a C like language with libraries for interaction with components. The microcontroller is usually programmed in an infinite loop. The 2 classic sections of any "sketch" is the setup() and the loop() functions. The sketch file extension is ".ino".<br>
+My sketch is executed only once, after that I put the microcontroller to sleep. That is pretty unusual, though.
+The servo motor needs time to rotate and the sketch needs to use delay() to wait for the movement in the real world.<br>
+Use the "Upload" button to compile and transfer the sketch to the microcontroller. It starts the execution immediately. It will store the sketch and start it every time the microcontroller is plugged in. Or it will restart the sketch after pressing the "Reset" button on the Arduino board.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-rust" class="anchor" aria-hidden="true" href="#rust"></a>Rust</h2>
+<p dir="auto">I plan to do the same programme in Rust. Some knowledge is here: <a href="https://dev.to/creativcoder/how-to-run-rust-on-arduino-uno-40c0" rel="nofollow">https://dev.to/creativcoder/how-to-run-rust-on-arduino-uno-40c0</a><br>
+I don't want to change my existing programming environment for Rust. I will try to use a docker image exclusively for Arduino programming.<br>
+<a href="https://github.com/Rahix/avr-hal">https://github.com/Rahix/avr-hal</a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-hidden="true" href="#open-source-and-free-as-a-beer"></a>Open-source and free as a beer</h2>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> <g-emoji class="g-emoji" alias="beers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f37b.png">🍻</g-emoji></p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

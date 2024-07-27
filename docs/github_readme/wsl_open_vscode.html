@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>wsl_open_vscode</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Open folder in VSCode from WSL2 simply with $ code .">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/wsl_open_vscode">https://github.com/bestia-dev/wsl_open_vscode</a>.</div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-wsl_open_vscode" class="anchor" aria-hidden="true" href="#wsl_open_vscode"></a>wsl_open_vscode</h1>
+<p dir="auto"><strong>Open folder in VSCode from WSL2 simply with $ code .</strong><br>
+<em><strong>version: 2021.815.1030  date: 2021-08-15 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/wsl_open_vscode">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ef476b7066c51115fb3c82beabb8f79829253cff5ed6e360c1ea8a6dfefef4d1/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3436313930313134382e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/461901148.svg" alt="Hits" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial<br>
+My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<p dir="auto">Inside WSL2 I want to open a folder in VSCode. But VSCode is in Win10.<br>
+This is useful when navigating in the WSL2 Debian file system.<br>
+It used to work in WSL1 like this:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="code ."><pre>code <span class="pl-c1">.</span></pre></div>
+<p dir="auto">but it does not work anymore in WSL2.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-symbolic-link" class="anchor" aria-hidden="true" href="#symbolic-link"></a>Symbolic link</h2>
+<p dir="auto">I will prepare a symbolic link to the <code>VSCode_Path\bin\code</code> file in windows.
+This is a shebang file for Linux prepared for VSCode.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo ln -sf &quot;/mnt/c/Users/Luciano/AppData/Local/Programs/Microsoft VS Code/bin/code&quot; /usr/bin/code"><pre>sudo ln -sf <span class="pl-s"><span class="pl-pds">"</span>/mnt/c/Users/Luciano/AppData/Local/Programs/Microsoft VS Code/bin/code<span class="pl-pds">"</span></span> /usr/bin/code</pre></div>
+<p dir="auto">Now I can open a folder like this:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cd ~/rustprojects/qvs20
+code ."><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>/rustprojects/qvs20
+code <span class="pl-c1">.</span></pre></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-from-windows" class="anchor" aria-hidden="true" href="#from-windows"></a>from windows</h2>
+<p dir="auto">I use the TotalCommander file manager in windows.<br>
+When I am inside a Linux folder, I can open it in the terminal with</p>
+<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="wsl"><pre>wsl</pre></div>
+<p dir="auto">Then in the Linux terminal I run:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="code ."><pre>code <span class="pl-c1">.</span></pre></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-hidden="true" href="#open-source-and-free-as-a-beer"></a>Open-source and free as a beer</h2>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> <g-emoji class="g-emoji" alias="beers" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f37b.png">🍻</g-emoji></p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>markdown_to_html</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="markdown_to_html repository of bestia.dev">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/markdown_to_html">https://github.com/bestia-dev/markdown_to_html</a>.</div>
+
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-markdown_to_html" class="anchor" aria-hidden="true" tabindex="-1" href="#markdown_to_html"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>markdown_to_html</h1>
+        <p dir="auto"><strong>Render markdown to html client-side in the browser with WASM.</strong><br>
+        <em><strong>version: 2023 date: 2023-11-17 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/markdown_to_html">GitHub</a></strong></em></p>
+        <p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f35838b3d4f6a795e4ec129d8ea1167f2f0254454a67046e2113654993e6f766/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d79656c6c6f77"><img src="https://camo.githubusercontent.com/f35838b3d4f6a795e4ec129d8ea1167f2f0254454a67046e2113654993e6f766/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d79656c6c6f77" alt="status" data-canonical-src="https://img.shields.io/badge/tutorial-yellow" style="max-width: 100%;"></a>
+        <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5b7830b4c6aa84c076fb9ebbe3c1929b0cc087312e8f8123f915924681100dfe/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3634313735383339392e737667"><img src="https://camo.githubusercontent.com/5b7830b4c6aa84c076fb9ebbe3c1929b0cc087312e8f8123f915924681100dfe/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3634313735383339392e737667" alt="Hits" data-canonical-src="https://bestia.dev/webpage_hit_counter/get_svg_image/641758399.svg" style="max-width: 100%;"></a></p>
+        <p dir="auto">Hashtags: #tutorial #markdown #wasm<br>
+        My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+        <h2 tabindex="-1" dir="auto"><a id="user-content-try-it" class="anchor" aria-hidden="true" tabindex="-1" href="#try-it"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>Try it</h2>
+        <p dir="auto"><a href="https://bestia.dev/markdown_to_html_example" rel="nofollow">https://bestia.dev/markdown_to_html_example</a></p>
+        <h2 tabindex="-1" dir="auto"><a id="user-content-markdown" class="anchor" aria-hidden="true" tabindex="-1" href="#markdown"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>Markdown</h2>
+        <p dir="auto">Markdown is great! It is as easy as plain text but renders in a beautiful style that I could never achieve on my own in some Rich text or HTML.<br>
+        The syntax is super easy and it is human readable in both plain text and HTML format. <a href="https://www.markdownguide.org/basic-syntax/" rel="nofollow">https://www.markdownguide.org/basic-syntax/</a><br>
+        In VSCode and many other editors, I can write Markdown files, and insert images and links. Then there is a Preview panel to watch how it renders.</p>
+        <p dir="auto">Usually, the markdown syntax is rendered to HTML. Many libraries do that.<br>
+        I chose <a href="https://github.com/rsms/markdown-wasm">https://github.com/rsms/markdown-wasm</a> because it can be used inside a browser on the client side.</p>
+        <h2 tabindex="-1" dir="auto"><a id="user-content-publish-to-web" class="anchor" aria-hidden="true" tabindex="-1" href="#publish-to-web"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>Publish to Web</h2>
+        <p dir="auto">Now I want to publish these markdown files to the Web. I have a small web server. I copy all the files there.<br>
+        No luck! Web browsers don't recognize and render markdown, just HTML.</p>
+        <p dir="auto">I could use a server-side filter for Nginx or write my own Rust web app, but that is overkill.<br>
+        I find it attractive to use Wasm in the browser to render the .md files on the fly.<br>
+        I found this library: <a href="https://github.com/rsms/markdown-wasm">https://github.com/rsms/markdown-wasm</a> written in Rust and compiled to wasm.<br>
+        With some glue files and JavaScript, it is easy to make it work.</p>
+        <h2 tabindex="-1" dir="auto"><a id="user-content-files-on-the-web-server" class="anchor" aria-hidden="true" tabindex="-1" href="#files-on-the-web-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>Files on the Web server</h2>
+        <p dir="auto">For this to work I need a simple Web server that returns files, nothing more. No dynamic web app or anything exotic.<br>
+        It will not work without a Web server on the local disk, because <code>wasm</code> files must be fetched from a Web server because of security.<br>
+        Let's start with <code>index.html</code>. It will just redirect to the HTML file with JavaScript, adding the first_page.md file as a parameter.</p>
+        <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-kos">&lt;</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+        <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">location</span><span class="pl-kos">.</span><span class="pl-en">replace</span><span class="pl-kos">(</span><span class="pl-s">"mdtohtml.html?first_page.md"</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+        <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+            <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<script>
+        window.location.replace(&quot;mdtohtml.html?first_page.md&quot;);
+        </script>" tabindex="0" role="button">
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+            <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+        </svg>
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+            <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+        </svg>
+            </clipboard-copy>
+          </div></div>
+        <p dir="auto">The javascript program is all in the <code>mdtohtml.html</code>. There is some simple code to accept a URL parameter.<br>
+        I also regex replaced the links inside the markdown to work with the new indirection.<br>
+        For simplicity I don't bother with subfolders. All .md files must be in the same folder.<br>
+        And then we call the <code>markdown.parse()</code> method from the wasm module.<br>
+        <a href="https://github.com/rsms/markdown-wasm">https://github.com/rsms/markdown-wasm</a><br>
+        Sure we have to add some beautiful CSS that is similar to GitHub markdown.<br>
+        <a href="https://github.com/sindresorhus/github-markdown-css">https://github.com/sindresorhus/github-markdown-css</a></p>
+        <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c1">&lt;!doctype html<span class="pl-kos">&gt;</span></span>
+        <span class="pl-kos">&lt;</span><span class="pl-ent">html</span> <span class="pl-c1">lang</span>="<span class="pl-s">en-US</span>"<span class="pl-kos">&gt;</span>
+        <span class="pl-kos">&lt;</span><span class="pl-ent">head</span><span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">meta</span> <span class="pl-c1">http-equiv</span>="<span class="pl-s">Content-Type</span>" <span class="pl-c1">content</span>="<span class="pl-s">text/html; charset=utf-8</span>"<span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">meta</span> <span class="pl-c1">name</span>="<span class="pl-s">viewport</span>" <span class="pl-c1">content</span>="<span class="pl-s">width=device-width, initial-scale=1</span>"<span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">link</span> <span class="pl-c1">rel</span>="<span class="pl-s">stylesheet</span>" <span class="pl-c1">href</span>="<span class="pl-s">github-markdown.css</span>"<span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">src</span>="<span class="pl-s">markdown.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+                <span class="pl-k">async</span> <span class="pl-k">function</span> <span class="pl-en">fetch_md_convert_to_html</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+                    <span class="pl-k">let</span> <span class="pl-s1">params</span> <span class="pl-c1">=</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">location</span><span class="pl-kos">.</span><span class="pl-c1">search</span><span class="pl-kos">;</span>
+                    <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">params</span><span class="pl-c1">==</span><span class="pl-s">''</span><span class="pl-kos">)</span><span class="pl-kos">{</span>
+                        <span class="pl-s1">params</span> <span class="pl-c1">=</span> <span class="pl-s">"?first_page.md"</span><span class="pl-kos">;</span>
+                        <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">location</span><span class="pl-kos">.</span><span class="pl-c1">search</span><span class="pl-c1">=</span><span class="pl-s1">params</span><span class="pl-kos">;</span>
+                    <span class="pl-kos">}</span>
+                    <span class="pl-k">let</span> <span class="pl-s1">mdFile</span> <span class="pl-c1">=</span> <span class="pl-s1">params</span><span class="pl-kos">.</span><span class="pl-en">substring</span><span class="pl-kos">(</span><span class="pl-c1">1</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                    <span class="pl-k">const</span> <span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-en">fetch</span><span class="pl-kos">(</span><span class="pl-s1">mdFile</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                    <span class="pl-k">let</span> <span class="pl-s1">mdText</span> <span class="pl-c1">=</span> <span class="pl-k">await</span> <span class="pl-s1">response</span><span class="pl-kos">.</span><span class="pl-en">text</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                    <span class="pl-s1">mdText</span> <span class="pl-c1">=</span> <span class="pl-s1">mdText</span><span class="pl-kos">.</span><span class="pl-en">replaceAll</span><span class="pl-kos">(</span><span class="pl-pds"><span class="pl-c1">/</span><span class="pl-kos">(</span><span class="pl-cce">\[</span>.<span class="pl-c1">*</span><span class="pl-cce">\]</span><span class="pl-cce">\(</span><span class="pl-kos">)</span><span class="pl-kos">(</span>.<span class="pl-c1">*</span><span class="pl-cce">\.</span>md<span class="pl-cce">\)</span><span class="pl-kos">)</span><span class="pl-c1">/</span>g</span><span class="pl-kos">,</span> <span class="pl-s">'$1mdtohtml.html?$2'</span><span class="pl-kos">)</span><span class="pl-kos">;</span> 
+                    <span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-c1">innerHTML</span><span class="pl-c1">=</span><span class="pl-s1">markdown</span><span class="pl-kos">.</span><span class="pl-en">parse</span><span class="pl-kos">(</span><span class="pl-s1">mdText</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+                <span class="pl-kos">}</span>
+            <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">style</span><span class="pl-kos">&gt;</span>
+                .<span class="pl-c1">markdown-body</span> {
+                    <span class="pl-c1">box-sizing</span><span class="pl-kos">:</span> border-box;
+                    <span class="pl-c1">min-width</span><span class="pl-kos">:</span> <span class="pl-c1">200<span class="pl-smi">px</span></span>;
+                    <span class="pl-c1">max-width</span><span class="pl-kos">:</span> <span class="pl-c1">980<span class="pl-smi">px</span></span>;
+                    <span class="pl-c1">margin</span><span class="pl-kos">:</span> <span class="pl-c1">0</span> auto;
+                    <span class="pl-c1">padding</span><span class="pl-kos">:</span> <span class="pl-c1">45<span class="pl-smi">px</span></span>;
+                }
+                <span class="pl-k">@media</span> (<span class="pl-c1">max-width</span><span class="pl-kos">:</span> <span class="pl-c1">767<span class="pl-smi">px</span></span>) {
+                    .<span class="pl-c1">markdown-body</span> {
+                        <span class="pl-c1">padding</span><span class="pl-kos">:</span> <span class="pl-c1">15<span class="pl-smi">px</span></span>;
+                    }
+                }
+            <span class="pl-kos">&lt;/</span><span class="pl-ent">style</span><span class="pl-kos">&gt;</span>
+        <span class="pl-kos">&lt;/</span><span class="pl-ent">head</span><span class="pl-kos">&gt;</span>
+        <span class="pl-kos">&lt;</span><span class="pl-ent">body</span> <span class="pl-c1">class</span>="<span class="pl-s">markdown-body</span>"<span class="pl-kos">&gt;</span>
+            <span class="pl-kos">&lt;</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+                <span class="pl-en">fetch_md_convert_to_html</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+            <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
+        <span class="pl-kos">&lt;/</span><span class="pl-ent">body</span><span class="pl-kos">&gt;</span>
+        <span class="pl-kos">&lt;/</span><span class="pl-ent">html</span><span class="pl-kos">&gt;</span> </pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+            <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="<!doctype html>
+        <html lang=&quot;en-US&quot;>
+        <head>
+            <meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;>
+            <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+            <link rel=&quot;stylesheet&quot; href=&quot;github-markdown.css&quot;>
+            <script src=&quot;markdown.js&quot;></script>
+            <script>
+                async function fetch_md_convert_to_html() {
+                    let params = window.location.search;
+                    if (params==''){
+                        params = &quot;?first_page.md&quot;;
+                        window.location.search=params;
+                    }
+                    let mdFile = params.substring(1);
+                    const response = await fetch(mdFile);
+                    let mdText = await response.text();
+                    mdText = mdText.replaceAll(/(\[.*\]\()(.*\.md\))/g, '$1mdtohtml.html?$2'); 
+                    document.body.innerHTML=markdown.parse(mdText);
+                }
+            </script>
+            <style>
+                .markdown-body {
+                    box-sizing: border-box;
+                    min-width: 200px;
+                    max-width: 980px;
+                    margin: 0 auto;
+                    padding: 45px;
+                }
+                @media (max-width: 767px) {
+                    .markdown-body {
+                        padding: 15px;
+                    }
+                }
+            </style>
+        </head>
+        <body class=&quot;markdown-body&quot;>
+            <script>
+                fetch_md_convert_to_html();
+            </script>
+        </body>
+        </html> " tabindex="0" role="button">
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+            <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+        </svg>
+              <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+            <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+        </svg>
+            </clipboard-copy>
+          </div></div>
+        <p dir="auto">We need to add the magic ingredients to the folder: <code>markdown.js</code>, <code>markdown.wasm</code>, <code>github-markdown.css</code></p>
+        <p dir="auto">and voila! It works.</p>
+        <h2 tabindex="-1" dir="auto"><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-hidden="true" tabindex="-1" href="#open-source-and-free-as-a-beer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>open-source and free as a beer</h2>
+        <p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+        I just love programming.<br>
+        But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+        You know the price of a beer in your local bar ;-)<br>
+        So I can drink a free beer for your health :-)<br>
+        <a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+        <p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+        <a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+        <a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+        <a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+        </article>
+</body>
+
+</html>

@@ -2,16 +2,14 @@
 
 # bestia-dev.github.io
 
-**Learning Rust and Wasm programming and having fun. I just love programming!**  
-***version 1.0 date: 2024-05-06  author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/bestia-dev.github.io)***  
+**Files for website bestia.dev**  
+***version 2.0 date: 2024-07-27  author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/bestia-dev.github.io)***  
 
  ![tutorial](https://img.shields.io/badge/tutorial-yellow)
  ![bestia-dev.github.io](https://bestia.dev/webpage_hit_counter/get_svg_image/1058713884.svg)
 
 Hashtags: #rustlang #tutorial  
 My projects on GitHub are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
-
-Visit my web page: [//bestia.dev](https://bestia.dev)
 
 ## GitHub personal website
 
@@ -20,13 +18,15 @@ Just use the magic repository name: `github_username.github.io`.
 For me, it is: [//bestia-dev.github.io](https://bestia-dev.github.io)
 
 Then make a GitHub action to create `GitHub pages` from your `docs` folders.  
-Done!
+Done! No need to buy a domain name and pay monthly for website hosting.
 
 Now you can put `index.html` and all other HTML, CSS and javascript magic.  
 But no server dynamic coding. It is a static page.
 
-I already have a personal webpage on [//bestia.dev](https://bestia.dev). Here I will duplicate the static pages.  
-The dynamic pages that need server code will be redirected to my web site [//bestia.dev](https://bestia.dev).  
+## Proper website with domain name
+
+I already have a proper personal webpage with the domain name [//bestia.dev](https://bestia.dev). This will be a development project for the website. This way I can easily develop and then publish/copy to my proper website.
+I will mostly use images and links from/to my proper website, not local links or images. So to boost the links and use them on my proper website.  
 
 ## Open-source and free as a beer
 

@@ -1,0 +1,4 @@
+The project sey_currency_converter_pwa is uploaded from the Rust project automation task.
+
+I need to download the modified files from the webserver to here, for backup.
+
