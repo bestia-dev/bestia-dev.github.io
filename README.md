@@ -17,7 +17,7 @@ Visit my web page: [//bestia.dev](https://bestia.dev)
 
 It is easy to make a personal website on GitHub.  
 Just use the magic repository name: `github_username.github.io`.  
-For me, it is: [bestia-dev.github.io](https://bestia-dev.github.io)
+For me, it is: [//bestia-dev.github.io](https://bestia-dev.github.io)
 
 Then make a GitHub action to create `GitHub pages` from your `docs` folders.  
 Done!
