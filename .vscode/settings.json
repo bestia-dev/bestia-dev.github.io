@@ -18,20 +18,21 @@
     },
     "rust-analyzer.showUnlinkedFileNotification": false,
     "cSpell.words": [
-        "zcvf",
-        "thiserror",
-        "struct",
-        "endregion",
-        "CRUSTDE",
         "Alla",
         "bestia",
         "bestiadev",
+        "chext",
+        "CRUSTDE",
+        "endregion",
         "Indexeddb",
         "Nazdravlje",
         "Prost",
         "rustlang",
+        "struct",
         "substack",
+        "thiserror",
         "webassembly",
+        "zcvf",
         "zdravje"
     ]
 }
