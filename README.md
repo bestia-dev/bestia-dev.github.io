@@ -5,6 +5,8 @@
 **Files for website bestia.dev**  
 ***version 2.0 date: 2024-07-27  author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/bestia-dev.github.io)***  
 
+ ![maintained](https://img.shields.io/badge/maintained-green)
+ ![ready_for_use](https://img.shields.io/badge/ready_for_use-green)
  ![tutorial](https://img.shields.io/badge/tutorial-yellow)
  ![bestia-dev.github.io](https://bestia.dev/webpage_hit_counter/get_svg_image/1058713884.svg)
 
