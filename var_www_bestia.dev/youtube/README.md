@@ -3,6 +3,8 @@
 
 # Youtube videos
 
+ ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 Youtube does not allow to upload a new version of the same video.  
 I frequently make updates to the videos and I want to upload them.  
 Sadly I have to upload the video as a new video, and manually copy the title, description and subtitles.  

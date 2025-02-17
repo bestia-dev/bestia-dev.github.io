@@ -3,6 +3,8 @@
 
 # bestia.dev/github_readme
 
+ ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 It looks like that google search is really bad for GitHub readme.  
 Maybe it will work better as HTML files on my own domain.  
 For now it looks that SEO is better on non-platform domains.  
