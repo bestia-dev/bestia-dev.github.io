@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>nixos_my_voyage_to_rust_on_nixos</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="OBSOLETE: Tutorial how to start using NixOS on Windows with WSL">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/nixos_my_voyage_to_rust_on_nixos">https://github.com/bestia-dev/nixos_my_voyage_to_rust_on_nixos</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">nixos_my_voyage_to_rust_on_nixos</h1><a id="user-content-nixos_my_voyage_to_rust_on_nixos" class="anchor" aria-label="Permalink: nixos_my_voyage_to_rust_on_nixos" href="#nixos_my_voyage_to_rust_on_nixos"></a></div>
+<p dir="auto"><strong>OBSOLETE: Tutorial how to start using NixOS on Windows with WSL</strong><br>
+<em><strong>version: 1.0.0 date: 2024-09-15 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/nixos_my_voyage_to_nixos">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3cd93794c5945575f0ec11b7350f577451a7e856724331e0699d49aa8629fe97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f62736f6c6574652d726564"><img src="https://img.shields.io/badge/obsolete-red" alt="obsolete" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">OBSOLETE</h2><a id="user-content-obsolete" class="anchor" aria-label="Permalink: OBSOLETE" href="#obsolete"></a></div>
+<p dir="auto">It is too complicated and I don't want to learn yet another obscure language. I will still use bash scripts, podman and buildah to create Debian container images for Linux instead.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Motivation</h2><a id="user-content-motivation" class="anchor" aria-label="Permalink: Motivation" href="#motivation"></a></div>
+<p dir="auto">It sounds like NixOS is an interesting Linux OS for easy declarative management to recreate the same OS many times. The main point is reproducibility.<br>
+Then the Nix package manager is very interesting for ephemeral installations of programs that are easily removed. Good for experimenting and testing.</p>
+<p dir="auto">Let's try it out!</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install NixOS on Windows11 inside WSL</h2><a id="user-content-install-nixos-on-windows11-inside-wsl" class="anchor" aria-label="Permalink: Install NixOS on Windows11 inside WSL" href="#install-nixos-on-windows11-inside-wsl"></a></div>
+<p dir="auto"><a href="https://nix-community.github.io/NixOS-WSL/install.html" rel="nofollow">https://nix-community.github.io/NixOS-WSL/install.html</a></p>
+<ul dir="auto">
+<li>download the 0,5GB tar</li>
+</ul>
+<p dir="auto">Run in git-bash on windows:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="wsl --import NixOS --version 2 $USERPROFILE/NixOS/ nixos-wsl.tar.gz
+# enter NixOS shell: 
+wsl -d NixOS"><pre>wsl --import NixOS --version 2 <span class="pl-smi">$USERPROFILE</span>/NixOS/ nixos-wsl.tar.gz
+<span class="pl-c"><span class="pl-c">#</span> enter NixOS shell: </span>
+wsl -d NixOS</pre></div>
+<p dir="auto">Run in NixOS shell:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# update Nix channel:
+sudo nix-channel --update
+# after a declarative change rebuild the OS: 
+sudo nixos-rebuild switch
+#check version: 
+nixos-version"><pre><span class="pl-c"><span class="pl-c">#</span> update Nix channel:</span>
+sudo nix-channel --update
+<span class="pl-c"><span class="pl-c">#</span> after a declarative change rebuild the OS: </span>
+sudo nixos-rebuild switch
+<span class="pl-c"><span class="pl-c">#</span>check version: </span>
+nixos-version</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Config the WSL</h2><a id="user-content-config-the-wsl" class="anchor" aria-label="Permalink: Config the WSL" href="#config-the-wsl"></a></div>
+<p dir="auto">I don't want NixOS (guest) to see the filesystem on windows (host).<br>
+I need to make changes to NixOS <code>/etc/wsl.conf</code>, but this file is readonly. I have to tinker with <code>/etc/nixos/configuration.nix</code> and then rebuild the system. This is the NixOS way of doing things. Makes sense.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo nano /etc/nixos/configuration.nix"><pre>sudo nano /etc/nixos/configuration.nix</pre></div>
+<p dir="auto">Here I added these lines:</p>
+<div class="highlight highlight-source-ini notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="  wsl.enable = true;
+  wsl.defaultUser = &quot;nixos&quot;;
+
+  # disable auto-mounting of win drives
+  wsl.wslConf.automount.enabled = false;
+  # process fstab entries to allow some folders to be mounted
+  wsl.wslConf.automount.mountFsTab = true;
+  # disable launching windows exe files
+  wsl.wslConf.interop.enabled = false;
+  # disable appending thw windows path
+  wsl.wslConf.interop.appendWindowsPath = false;"><pre>  <span class="pl-k">wsl.enable</span> = true<span class="pl-c"><span class="pl-c">;</span></span>
+  <span class="pl-k">wsl.defaultUser</span> = <span class="pl-s"><span class="pl-pds">"</span>nixos<span class="pl-pds">"</span></span><span class="pl-c"><span class="pl-c">;</span></span>
+
+  <span class="pl-c"><span class="pl-c">#</span> disable auto-mounting of win drives</span>
+  <span class="pl-k">wsl.wslConf.automount.enabled</span> = false<span class="pl-c"><span class="pl-c">;</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> process fstab entries to allow some folders to be mounted</span>
+  <span class="pl-k">wsl.wslConf.automount.mountFsTab</span> = true<span class="pl-c"><span class="pl-c">;</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> disable launching windows exe files</span>
+  <span class="pl-k">wsl.wslConf.interop.enabled</span> = false<span class="pl-c"><span class="pl-c">;</span></span>
+  <span class="pl-c"><span class="pl-c">#</span> disable appending thw windows path</span>
+  <span class="pl-k">wsl.wslConf.interop.appendWindowsPath</span> = false<span class="pl-c"><span class="pl-c">;</span></span></pre></div>
+<p dir="auto">Finally rebuild the system and switch:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo nixos-rebuild switch
+# now the wsl.conf is changed, but not yet used
+# exit from WSL
+exit"><pre>sudo nixos-rebuild switch
+<span class="pl-c"><span class="pl-c">#</span> now the wsl.conf is changed, but not yet used</span>
+<span class="pl-c"><span class="pl-c">#</span> exit from WSL</span>
+<span class="pl-c1">exit</span></pre></div>
+<p dir="auto">Shutdown wsl from git-bash in windows and reopen WSL for the change to be used:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="wsl --shutdown
+wsl -d nixos"><pre>wsl --shutdown
+wsl -d nixos</pre></div>
+<p dir="auto">TODO: maybe these changes can be added to the image before creating the WSL distro.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Container for Rust development with systemd-nspawn</h2><a id="user-content-container-for-rust-development-with-systemd-nspawn" class="anchor" aria-label="Permalink: Container for Rust development with systemd-nspawn" href="#container-for-rust-development-with-systemd-nspawn"></a></div>
+<p dir="auto">It is preferable to run NixOS containers with systemd-nspawn instead of Docker or Podman.</p>
+<p dir="auto"><a href="https://nixcademy.com/posts/nixos-nspawn/" rel="nofollow">https://nixcademy.com/posts/nixos-nspawn/</a><br>
+Container image: <a href="https://github.com/tfc/nspawn-nixos">https://github.com/tfc/nspawn-nixos</a></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="machinectl pull-tar https://github.com/tfc/nspawn-nixos/releases/download/v1.0/nixos-system-x86_64-linux.tar.xz nixos --verify=no"><pre>machinectl pull-tar https://github.com/tfc/nspawn-nixos/releases/download/v1.0/nixos-system-x86_64-linux.tar.xz nixos --verify=no</pre></div>
+<p dir="auto">I get the error: Access denied.<br>
+Probably Github wants some access control?<br>
+OK, I download the 139 MB with the browser in Windows and then copy it to WSL/NixOS:<br>
+<code>\\wsl.localhost\nixos\home\nixos\</code><br>
+The default user of this WSL image is called <code>nixos</code>.<br>
+The <code>pull-tar</code> command does just one thing: it copies the files into<br>
+<code>/var/lib/machines/{container_name}</code>.</p>
+<p dir="auto">I can do that manually here in the NixOS shell.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cd ~
+# [nixos@nixos:~]$
+sudo mkdir /var/lib/machines/nixos
+sudo tar -xvf nixos-system-x86_64-linux.tar.xz -C /var/lib/machines/nixos/
+sudo ls -la /var/lib/machines/nixos
+# run it in the background
+sudo machinectl start nixos"><pre><span class="pl-c1">cd</span> <span class="pl-k">~</span>
+<span class="pl-c"><span class="pl-c">#</span> [nixos@nixos:~]$</span>
+sudo mkdir /var/lib/machines/nixos
+sudo tar -xvf nixos-system-x86_64-linux.tar.xz -C /var/lib/machines/nixos/
+sudo ls -la /var/lib/machines/nixos
+<span class="pl-c"><span class="pl-c">#</span> run it in the background</span>
+sudo machinectl start nixos</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Set root password</h2><a id="user-content-set-root-password" class="anchor" aria-label="Permalink: Set root password" href="#set-root-password"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo machinectl shell nixos /usr/bin/env passwd"><pre>sudo machinectl shell nixos /usr/bin/env passwd</pre></div>
+<p dir="auto">TODO: How to create a new user? The default is <code>nixos</code> and that is defined in the <code>/etc/nixos/configuration.nix</code> file.</p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">check status of the machine that runs in the background</h1><a id="user-content-check-status-of-the-machine-that-runs-in-the-background" class="anchor" aria-label="Permalink: check status of the machine that runs in the background" href="#check-status-of-the-machine-that-runs-in-the-background"></a></div>
+<p dir="auto">machinectl status nixos</p>
+<p dir="auto">machinectl login nixos</p>
+<ul dir="auto">
+<li>Press ^] three times within 1s to exit session
+On my keyboard layout I have to use Ctrl+5 three times in one second.
+nixos login: root
+password : ***</li>
+</ul>
+<p dir="auto">nixos-version
+23.11.20230826.5237477 (Tapir)</p>
+<p dir="auto">A simple <code>exit</code> command in the container calls <code>logout</code> and then continues to ask
+nixos login:</p>
+<p dir="auto">Use three times Ctrl+5 to really exit the container.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Network access</h2><a id="user-content-network-access" class="anchor" aria-label="Permalink: Network access" href="#network-access"></a></div>
+<p dir="auto">enable internet access is to share the host’s network
+On the host:
+create /etc/systemd/nspawn/nixos.nspawn
+with content
+[Network]
+VirtualEthernet=no</p>
+<p dir="auto">After changing the file, reboot the container:
+machinectl reboot nixos</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">NixOS Configuration</h2><a id="user-content-nixos-configuration" class="anchor" aria-label="Permalink: NixOS Configuration" href="#nixos-configuration"></a></div>
+<p dir="auto">Now, we can edit the NixOS configuration file
+/etc/nixos/configuration.nix
+in the container’s file system. We can do that either from inside the container or from the host, as the container paths are all below
+/var/lib/machines/.
+For the configuration file, the full host path is
+/var/lib/machines/nixos/etc/nixos/configuration.nix.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="nixos-rebuild switch"><pre>nixos-rebuild switch</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>varweeks_millis</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="2023 new date time units and formats: varweeks and millis">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/varweeks_millis">https://github.com/bestia-dev/varweeks_millis</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">varweeks_millis</h1><a id="user-content-varweeks_millis" class="anchor" aria-label="Permalink: varweeks_millis" href="#varweeks_millis"></a></div>
+<p dir="auto"><strong>2023 new date time units and formats: varweeks and millis</strong><br>
+<em><strong>version: 1.0.19 date: 2023-05-26 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/varweeks_millis">Github</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://img.shields.io/badge/Lines_in_Rust-181-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-236-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://img.shields.io/badge/Lines_in_comments-29-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://img.shields.io/badge/Lines_in_tests-100-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://crates.io/crates/varweeks_millis" rel="nofollow"><img src="https://img.shields.io/crates/v/varweeks_millis.svg" alt="crates.io" style="max-width: 100%;"></a>
+<a href="https://docs.rs/varweeks_millis/" rel="nofollow"><img src="https://docs.rs/varweeks_millis/badge.svg" alt="Documentation" style="max-width: 100%;"></a>
+<a href="https://web.crev.dev/rust-reviews/crate/varweeks_millis/" rel="nofollow"><img src="https://web.crev.dev/rust-reviews/badge/crev_count/varweeks_millis.svg" alt="crev reviews" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/"><img src="https://github.com/bestia-dev/varweeks_millis/workflows/rust/badge.svg" alt="rust_fmt_auto_build_tests" style="max-width: 100%;"></a>
+<a href="https://bestia-dev.github.io/varweeks_millis/varweeks_millis/index.html" rel="nofollow"><img src="https://img.shields.io/badge/latest_docs-GitHub-orange.svg" alt="latest doc" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/86dd0f3574ad92ac5fe668bb05796afb86c166250a2c85ddfb9e04e48647e691/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3736333935303737372e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/763950777.svg" alt="varweeks_millis" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial #datetime<br>
+My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Proposal for a new date and time units and formats</h2><a id="user-content-proposal-for-a-new-date-and-time-units-and-formats" class="anchor" aria-label="Permalink: Proposal for a new date and time units and formats" href="#proposal-for-a-new-date-and-time-units-and-formats"></a></div>
+<p dir="auto">Varweeks and millis are my suggestion for new date-time units and formats.<br>
+Here is a long read TL;DR about the date-time reform proposal:<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/">https://github.com/bestia-dev/new_date_time_units_and_formats/</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Varweeks</h2><a id="user-content-varweeks" class="anchor" aria-label="Permalink: Varweeks" href="#varweeks"></a></div>
+<p dir="auto">A super short explanation:<br>
+Years (beginning and end) remain the same as in the CE - common era calendar.<br>
+Months are obsolete and they are not used at all in the new format.<br>
+Varweek is similar to week. This is the main fragment of the year (not months any more). It is a "variable week" because one year has 52 full varweeks with 7 days. The exception is the last 53rd varweek that has only 1 celebration day. For leap years there are 2 celebration days.<br>
+The new year always starts with <code>01v 1d</code> - short pronunciation one-vee one-dee. Basically every year starts with a monday (one-dee).<br>
+Varweek-days are similar to week-days, but without names. They use just numbers and the <code>d</code> unit.<br>
+<code>1d</code> (one-dee) is the new name for Monday,<br>
+<code>2d</code> (two-dee) is the new name for Tuesday,<br>
+<code>3d</code> (three-dee) is the new name for Wednesday,<br>
+<code>4d</code> (four-dee) is the new name for Thursday,<br>
+<code>5d</code> (five-dee) is the new name for Friday,<br>
+<code>6d</code> (six-dee) is the new name for Saturday, and<br>
+<code>7d</code> (seven-dee) is the new name for Sunday.<br>
+Actually the new names are somehow similar to the old names.<br>
+The varweek_date format is global for every language and looks exactly like this:<br>
+<code>2023c 52v 2d</code><br>
+The year must have 4 digits from 1000c to 9999c. The unit <code>c</code> stands for CE - common era. Space.<br>
+The varweek must have 2 digits from 01v to 53v. The unit <code>v</code> stands for varweek. Space.<br>
+The day must have 1 digit from 1d to 7d. The unit <code>d</code> stands for day. End.<br>
+This is the usual syntax of the International System of Units. First goes the quantity, then the unit of measure.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Millis</h2><a id="user-content-millis" class="anchor" aria-label="Permalink: Millis" href="#millis"></a></div>
+<p dir="auto">Hours, minutes and seconds are sll obsolete.<br>
+One day is divided into 1000md (milliday).<br>
+Millis is the short name for milliday. The unit is <code>md</code>.<br>
+For shorter time intervals there is microdays or micros, unit <code>μd</code>. <code>1md</code> has <code>1000μd</code>.</p>
+<p dir="auto">This crate contains functions to use with the new units varweeks and millis.<br>
+It is dependent on the crate <code>chrono</code> for <code>NaiveDate</code> and <code>NaiveTime</code>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Used in projects</h2><a id="user-content-used-in-projects" class="anchor" aria-label="Permalink: Used in projects" href="#used-in-projects"></a></div>
+<p dir="auto">PWA wasm converter and lengthy explanation:<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/">https://github.com/bestia-dev/new_date_time_units_and_formats/</a><br>
+PWA wasm clock:<br>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock">https://github.com/bestia-dev/varweeks_millis_clock</a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png"><img src="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png" alt="screenshot" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

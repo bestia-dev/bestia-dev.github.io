@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>counter_iced</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="counter GUI with iced">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/counter_iced">https://github.com/bestia-dev/counter_iced</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">counter_iced</h1><a id="user-content-counter_iced" class="anchor" aria-label="Permalink: counter_iced" href="#counter_iced"></a></div>
+<p dir="auto"><strong>counter GUI with iced</strong><br>
+<em><strong>version: 2024.1129.1444 date: 2024-11-29 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/counter_iced">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0b77e90cabb00ba69158dfe4b5595a26880baffc97b34d0328db7d53202d9711/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d6f72616e6765"><img src="https://img.shields.io/badge/tutorial-orange" alt="tutorial" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83de9e94e2189acff1df66789a6d735cdfb180a5a61b65b3bd645e1ec5aafe0e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696365642d6f72616e6765"><img src="https://img.shields.io/badge/iced-orange" alt="iced" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/593a9f40d5eabd4ee4fa14383030c300c3eabb3dba8ca227ed470c328a850e6a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573742d6f72616e6765"><img src="https://img.shields.io/badge/rust-orange" alt="rust" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/4e927735066e351caad28abd149103520ab0f8779551bd2649f4a91ad9fa94dc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6775692d6f72616e6765"><img src="https://img.shields.io/badge/gui-orange" alt="gui" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5abd3219e0cf3ea7c4b9b4a31e7563eb189d5295a607edfda15d6e7a83e96e3b/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3734383233363230362e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/748236206.svg" alt="counter_iced" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #tutorial #iced #rust #gui<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">GUI for windows</h2><a id="user-content-gui-for-windows" class="anchor" aria-label="Permalink: GUI for windows" href="#gui-for-windows"></a></div>
+<p dir="auto">A simple test program that creates a simple GUI for Windows with the crate <code>iced</code>.</p>
+<p dir="auto">This is an "retained mode" GUI and I will use that in my future works.
+The resulting exe is heavier than with egui "immediate mode", but the exe looks like a proper GUI program. "Iced" is used to create the Cosmic Desktop of System76 and it looks nice.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Cross compile to windows</h2><a id="user-content-cross-compile-to-windows" class="anchor" aria-label="Permalink: Cross compile to windows" href="#cross-compile-to-windows"></a></div>
+<p dir="auto">On my machine I have Windows11 with WSL/Debian. I will cross compile to Windows, copy the exe file with <code>scp</code> and run it on Windows.</p>
+<p dir="auto">I use <code>cargo-auto</code> for automation of the build process and to commit to GitHub. Just run <code>cargo auto</code> and follow the instructions. To work with GitHub it will need the Personal Access Token from <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>.</p>
+<p dir="auto">Copy the exe file from the container 'crustde' to win folder. Run in windows git-bash:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="scp rustdevuser@crustde:/home/rustdevuser/rustprojects/counter_iced/target/x86_64-pc-windows-gnu/release/counter_iced.exe /c/Users/Luciano/rustprojects/counter_iced/
+
+# then run in git-bash
+cd ~/rustprojects/counter_iced
+./counter_iced.exe"><pre>scp rustdevuser@crustde:/home/rustdevuser/rustprojects/counter_iced/target/x86_64-pc-windows-gnu/release/counter_iced.exe /c/Users/Luciano/rustprojects/counter_iced/
+
+<span class="pl-c"><span class="pl-c">#</span> then run in git-bash</span>
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/rustprojects/counter_iced
+./counter_iced.exe</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

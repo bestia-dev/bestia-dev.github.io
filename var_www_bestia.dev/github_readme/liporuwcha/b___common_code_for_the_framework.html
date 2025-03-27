@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>b___common_code_for_the_framework</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="liporuwcha namespace b___ common code for the framework">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/liporuwcha/b___common_code_for_the_framework">https://github.com/liporuwcha/b___common_code_for_the_framework</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">b___common_code_for_the_framework</h1><a id="user-content-b___common_code_for_the_framework" class="anchor" aria-label="Permalink: b___common_code_for_the_framework" href="#b___common_code_for_the_framework"></a></div>
+<p dir="auto"><em><strong>liporuwcha namespace b___ common code for the framework</strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ed04c398eacfa6db03184d92a4980c9e5618bf6994b483ab49ab3d7e1969ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776f726b5f696e5f70726f67726573732d79656c6c6f77"><img src="https://img.shields.io/badge/work_in_progress-yellow" alt="work-in-progress" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/317f2d5fe0382294802e10b5756052854fb4d1361b7ca809f0d814acfb481410/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706f7374677265732d6f72616e6765"><img src="https://img.shields.io/badge/postgres-orange" alt="postgres" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/596a491358de5d7e36f7b5579712aa7fe93bb042b6c68d607d6f7b5ba663e04d/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3233383037343438322e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/238074482.svg" alt="b_common_code_for_the_framework" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Framework project</h2><a id="user-content-framework-project" class="anchor" aria-label="Permalink: Framework project" href="#framework-project"></a></div>
+<p dir="auto">Sometimes I will abbreviate the project name <code>liporuwcha</code> to just <code>lip</code> for sake of brevity.<br>
+With the namespace "b" I will have a working framework that works with database, server and client.
+But without any content. It is the basis for later content.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">bd__ database core (common code)</h2><a id="user-content-bd__-database-core-common-code" class="anchor" aria-label="Permalink: bd__ database core (common code)" href="#bd__-database-core-common-code"></a></div>
+<p dir="auto">Here is the code for starting and configuring the Postgres server.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bda_ database servers and clients</h3><a id="user-content-bda_-database-servers-and-clients" class="anchor" aria-label="Permalink: bda_ database servers and clients" href="#bda_-database-servers-and-clients"></a></div>
+<p dir="auto">I will use Postgres all the way. The database is the most important part of the project. I can be productive only if I limit myself to one specific database. There is a lot to learn about a database administration.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bda_development environment inside a Linux container</h4><a id="user-content-bda_development-environment-inside-a-linux-container" class="anchor" aria-label="Permalink: bda_development environment inside a Linux container" href="#bda_development-environment-inside-a-linux-container"></a></div>
+<p dir="auto">For development I will have Postgres in a Linux container. I will add this container to the <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod">Podman pod for development CRUSTDE</a>. I will use the prepared script in <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod/tree/main/crustde_install/pod_with_rust_pg_vscode">crustde_install/pod_with_rust_pg_vscode</a>.<br>
+This postgres server listens to localhost port 5432. The administrator user is called "postgres" and the default password is well known.</p>
+<p dir="auto">Inside the container CRUSTDE I can use the client <code>psql</code> to work with the Postgres server. For that I need the bash terminal of the CRUSTDE container. I work with VSCode remote-SSH extension to connect to the container. I invoke it like this from git-bash:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="MSYS_NO_PATHCONV=1 code --remote ssh-remote+crustde /home/rustdevuser/rustprojects"><pre>MSYS_NO_PATHCONV=1 code --remote ssh-remote+crustde /home/rustdevuser/rustprojects</pre></div>
+<p dir="auto">VSCode have an integrated terminal where I can work inside the CRUSTDE container easily. this is where I can use <code>psql</code>.</p>
+<p dir="auto">To forward the port 5432 to make it accessible from the parent Debian and Windows OS, I can open <a href="https://builtin.com/software-engineering-perspectives/ssh-port-forwarding" rel="nofollow">secure SSH tunneling</a> from Windows git-bash:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sshadd crustde
+ssh rustdevuser@localhost -p 2201 -L 5432:localhost:5432"><pre>sshadd crustde
+ssh rustdevuser@localhost -p 2201 -L 5432:localhost:5432</pre></div>
+<p dir="auto">Then, I can use the localhost port 5432 from Windows. I can use <code>VSCode extension SQLTools</code> to send SQL statements to the Postgres server.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bda_testing environment</h4><a id="user-content-bda_testing-environment" class="anchor" aria-label="Permalink: bda_testing environment" href="#bda_testing-environment"></a></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bda_production environment on Debian in VM</h4><a id="user-content-bda_production-environment-on-debian-in-vm" class="anchor" aria-label="Permalink: bda_production environment on Debian in VM" href="#bda_production-environment-on-debian-in-vm"></a></div>
+<p dir="auto">On google cloud virtual machine my hobby server is so small, that I avoided using the Postgres container. Instead I installed Postgres directly on Debian.<br>
+Run from Windows git-bash :</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sshadd server_url
+ssh username@server_url
+sudo apt install postgresql postgresql-client"><pre>sshadd server_url
+ssh username@server_url
+sudo apt install postgresql postgresql-client</pre></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bda_psql the postgres client</h4><a id="user-content-bda_psql-the-postgres-client" class="anchor" aria-label="Permalink: bda_psql the postgres client" href="#bda_psql-the-postgres-client"></a></div>
+<p dir="auto"><a href="https://www.postgresql.org/docs/current/app-psql.html" rel="nofollow">psql</a> is the command line utility for managing postgres.<br>
+It is very effective.
+Auto-completion works, but not for fields in a table.
+History works. Every sql statement must end with semicolon.
+If the result is long, use PgUp, PgDn, End, Home keys to scroll, then exit scroll with "\q".</p>
+<p dir="auto">There exist some administrative shortcuts, but I will avoid them and use proper SQL instead. I don't like upper case style of SQL, so I will force everything lower case.</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="\l     List database
+\c     Current database
+\c dbname   Switch connection to a new database
+\dt    List tables
+\dv    List views
+\df    List functions
+\q     Exit psql shell
+
+-- every sql statement must end with semicolon:
+select * from webpage;
+select * from hit_counter h;"><pre lang="psql" class="notranslate"><code>\l     List database
+\c     Current database
+\c dbname   Switch connection to a new database
+\dt    List tables
+\dv    List views
+\df    List functions
+\q     Exit psql shell
+
+-- every sql statement must end with semicolon:
+select * from webpage;
+select * from hit_counter h;
+</code></pre></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bda_VSCodeDatabaseClient</h4><a id="user-content-bda_vscodedatabaseclient" class="anchor" aria-label="Permalink: bda_VSCodeDatabaseClient" href="#bda_vscodedatabaseclient"></a></div>
+<p dir="auto">I need to easily change data in a grid. I found this VSCode extension <a href="https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2" rel="nofollow">DatabaseClient from Weijan Chen</a> that does it well. I will remove the extension SQLTools.</p>
+<p dir="auto">The extension creates a connection over tcp to the Postgres server. If needed, I use SSH tunneling when I use containers.</p>
+<p dir="auto">Because of the problem of parsing Postgres $$ string delimiters I avoid parsing in the VSCode Database Client extension.<br>
+For all my needs in Postgres, I use now the command <code>mysql.runSQLWithoutParse</code> instead of the default <code>mysql.runSQL</code>. I can select all or select a part of my sql code, and press <code>ctrl+enter</code>.<br>
+In VSCode-Preferences-Keyboard shortcut from the <code>command</code>: <code>mysql.runSQL</code> remove the keybinding <code>key</code>: <code>ctrl+enter</code>.<br>
+Then on <code>command</code>: <code>mysql.runSQLWithoutParse</code> add the same keybinding <code>key</code>: <code>ctrl+enter</code>,<br>
+and the When expression copied from the original shortcut:   <code>when</code>: <code>config.database-client.executeCursorSQLByShortcut &amp;&amp; editorLangId =~ /sql|cql|postgres/ || config.database-client.executeCursorSQLByShortcut &amp;&amp; resourceFilename =~ /.dbclient-js$/ || editorHasSelection &amp;&amp; editorLangId =~ /sql|cql|postgres/ || editorHasSelection &amp;&amp; resourceFilename =~ /.dbclient-js$/</code>.</p>
+<p dir="auto">I often want to close the sql <code>Result pane</code>. Usually the Result pane is in <code>Editor Group 2</code>. I press <code>ctrl+2</code> and <code>ctrl+w</code> to close it.</p>
+<p dir="auto">To open and close the terminal in VSCode I use my keybinding <code>ctrl+č</code> to <code>workbench.action.terminal.toggleTerminal</code>.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_ postgres databases</h3><a id="user-content-bdb_-postgres-databases" class="anchor" aria-label="Permalink: bdb_ postgres databases" href="#bdb_-postgres-databases"></a></div>
+<p dir="auto">One Postgres server can have many Postgres databases.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_schema</h3><a id="user-content-bdb_schema" class="anchor" aria-label="Permalink: bdb_schema" href="#bdb_schema"></a></div>
+<p dir="auto">Postgres automatically creates the schema <code>public</code> for new database. I will create a new specific schema <code>lip</code> instead as the default schema.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_users and bdb_role</h3><a id="user-content-bdb_users-and-bdb_role" class="anchor" aria-label="Permalink: bdb_users and bdb_role" href="#bdb_users-and-bdb_role"></a></div>
+<p dir="auto">PostgreSQL uses the <a href="https://neon.tech/postgresql/postgresql-administration/postgresql-roles" rel="nofollow">concept of roles</a> to represent users (with login privileges) and groups.<br>
+Roles are valid across the entire PostgreSQL server, so they don’t need to be recreated for each database.<br>
+We need a <code>lip_migration_user</code> that can create database objects. In postgres they name this concept <code>superuser</code>.<br>
+Than we will make a role named <code>lip_app_user</code> that can work with the data, but cannot administer the database.
+An one more role <code>lip_ro_user</code> that can read the data, but cannot change it.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">dbd_owner</h3><a id="user-content-dbd_owner" class="anchor" aria-label="Permalink: dbd_owner" href="#dbd_owner"></a></div>
+<p dir="auto">It is very important in PostgreSQL who is the owner of the object. Only the owner or superuser can alter the object. All objects in the <code>lip</code> database will have the owner <code>lip_migration_user</code>.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_migration</h3><a id="user-content-bdb_migration" class="anchor" aria-label="Permalink: bdb_migration" href="#bdb_migration"></a></div>
+<p dir="auto">The sql language or postgres don't have anything useful for database migration. Migration is the term used when we need to update the schema, add tables or columns, views or functions. This is not just an option, the migration is unavoidable when we iteratively develop a database application. Third party solutions are just terrible.
+So the first thing I did, is to create a small set of views and functions that can be called a "basic migration mechanism". It is super simplistic, made entirely inside the postgres database, but good enough for this tutorial.<br>
+Can you imagine that postgres does not store the original code for views and functions? It is or distorted or just partial. Unusable. So the first thing I need is a table to store the exact installed source code <code>bdc_source_code</code>. That way I can check if the "new" source code is already installed and not install unchanged code. This is not perfect because I cannot (easily) forbid to install things manually and not store it in <code>bdc_source_code</code>, but that is "bad practice" and I hope all developers understand the importance of discipline when working with a delicate system like a database.
+After I update database objects in development, I need to be able to repeat this changes as a migration in the production database.<br>
+I will use backup/restore to revert the developer database to the same situation as the production database and test the migration many times. The migrate command is a bash script. It is omnipotent. I just run that script and it must do the right thing in any situation.<br>
+There are different objects that need different approaches.<br>
+A table is made of columns/fields. The first column is usually the primary key of the table. I start creating the new table only with the first column. It is a new empty table, it takes no time at all. It is very difficult later to change this first column, so I will not upgrade this automatically.<br>
+The rest of the columns are installed one by one. Why? Because if one column changes later, we have a place to change it independently from other columns. There are limits what and how we can change it when it contains data, but that is the job of the developer: to understand the data and the mechanisms how to upgrade. It is not easy and cannot be automated.  Usually it is made in many steps, not just in one step. Complicated.<br>
+When writing code always be prepared that a column can be added anytime. This must not disrupt the old code. Deleting or changing a column is much more complicated and needs change to all dependent code.
+Unique keys and foreign keys MUST be single-column for our sanity. Technically is very simple to do a multi-column key, but maintaining that code in a huge database is terrible. Sooner or later also your database will become huge. That is just how evolution works. Unstoppable.<br>
+One table can have foreign keys to another table. The later must be installed first. The order of installing objects is important.<br>
+All modification of data must be done with sql functions. Never call update/insert/delete directly from outside of the database. Slowly but surely, a different module in another language on another server will need the same functionality and the only way to have it in common is to have it on the database level.
+I write my sql code in VSCode. Every object is a separate file. This makes it easy to use Git as version control. Every file is prepared for the migration mechanism and can be called from psql or within VSCode with the extensions SQLTools.<br>
+Then I write bash scripts that call psql to run this sql files in the correct order. That is my super-simple "migration mechanism". Good enough.</p>
+<p dir="auto">Postgres sometimes adds type notation to my code for default and check constraint on a table field. That makes it hard to compare my definition with what is installed in the database. It does not ass it for varchar, integer, but for text and name,... It adds also some round brackets. For now I must type in my definition exactly how postgres stores it. Examples: <code>check ((length((table_name)::text) &gt; 2))</code>  or  <code>default ''::name</code></p>
+<p dir="auto">After some initial coding with sql files in VSCode, the definitions and code of all objects will stay inside the database. Then sql functions will provide installation and migration utilities. This is good for maintainability and open-source.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdb_database_lip_init</h4><a id="user-content-bdb_database_lip_init" class="anchor" aria-label="Permalink: bdb_database_lip_init" href="#bdb_database_lip_init"></a></div>
+<p dir="auto">My first development database will be <code>lip_01</code>.
+Database creation and initialization is split into 4 scripts.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">first we need to create the database:<br>
+run under user <code>postgres</code> on database <code>postgres</code><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd_database_core/bdb_database_lip_init_1.sql">bdb_database_lip_init_1.sql</a></p>
+</li>
+<li>
+<p dir="auto">second create the new default schema and users:<br>
+run under user <code>postgres</code> on database <code>lip_01</code><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd_database_core/bdb_database_lip_init_2.sql">bdb_database_lip_init_2.sql</a></p>
+</li>
+<li>
+<p dir="auto">third grant permissions to roles:<br>
+run under user <code>lip_migration_user</code> on database <code>lip_01</code><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd_database_core/bdb_database_lip_init_3.sql">bdb_database_lip_init_3.sql</a></p>
+</li>
+<li>
+<p dir="auto">forth seed lip database for migration<br>
+run under user <code>lip_migration_user</code> on database <code>lip_01</code><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd_database_core/bdb_database_lip_init_4.sql">bdb_database_lip_init_4.sql</a><br>
+Then we need to initialize the database. In this code there will be the SQL statement to prepare a <code>seed lip database</code> that can be then upgraded and work with. This initialization uses knowledge from other parts of the project, so it will be repeated in some way.</p>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdb_postgres_container</h4><a id="user-content-bdb_postgres_container" class="anchor" aria-label="Permalink: bdb_postgres_container" href="#bdb_postgres_container"></a></div>
+<p dir="auto">To work inside the postgres container open the bash shell with podman exec:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="podman exec -it crustde_postgres_cnt /bin/bash"><pre>podman <span class="pl-c1">exec</span> -it crustde_postgres_cnt /bin/bash</pre></div>
+<p dir="auto">Then I can use pg commands to work with the postgres server:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# we login as root@crustde_pod:/#
+# if needed install nano
+apt update &amp;&amp; apt upgrade
+apt install nano
+# change interactive user to superuser `postgres`
+su postgres
+# postgres@crustde_pod:/$
+# server version
+pg_config --version
+# PostgreSQL 15.10 (Debian 15.10-1.pgdg120+1)
+# client version
+psql --version"><pre><span class="pl-c"><span class="pl-c">#</span> we login as root@crustde_pod:/#</span>
+<span class="pl-c"><span class="pl-c">#</span> if needed install nano</span>
+apt update <span class="pl-k">&amp;&amp;</span> apt upgrade
+apt install nano
+<span class="pl-c"><span class="pl-c">#</span> change interactive user to superuser `postgres`</span>
+su postgres
+<span class="pl-c"><span class="pl-c">#</span> postgres@crustde_pod:/$</span>
+<span class="pl-c"><span class="pl-c">#</span> server version</span>
+pg_config --version
+<span class="pl-c"><span class="pl-c">#</span> PostgreSQL 15.10 (Debian 15.10-1.pgdg120+1)</span>
+<span class="pl-c"><span class="pl-c">#</span> client version</span>
+psql --version</pre></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdb_postgres_database_cluster</h4><a id="user-content-bdb_postgres_database_cluster" class="anchor" aria-label="Permalink: bdb_postgres_database_cluster" href="#bdb_postgres_database_cluster"></a></div>
+<p dir="auto">Postgres likes to have databases separated in "database clusters" on the same server. Because backups and <code>PITR</code> <code>point in time recovery</code> work on the whole cluster thing and not on a database level.<br>
+Confusing nomenclature: "Database cluster" or "instance" or "data directory" or "data area".
+Old original cluster is in <code>/var/lib/postgresql/data</code>, but it was not created with <code>pg_createcluster</code>. Bad.</p>
+<p dir="auto">Remove this cluster as soon as possible, before it has any data inside.
+This cluster is created even after <code>apt upgrade</code>.
+First check with psql:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# connect on default port 5432
+su postgres
+psql
+# if this cluster exists, stop it and remove it
+\q
+pg_ctl stop -D /var/lib/postgresql/data"><pre><span class="pl-c"><span class="pl-c">#</span> connect on default port 5432</span>
+su postgres
+psql
+<span class="pl-c"><span class="pl-c">#</span> if this cluster exists, stop it and remove it</span>
+<span class="pl-cce">\q</span>
+pg_ctl stop -D /var/lib/postgresql/data</pre></div>
+<p dir="auto">Debian has some wrapper commands for better work with database clusters.
+My instance_name will be <code>lip_dev_01</code>.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pg_createcluster --port=6000 15 lip_dev_01 
+# created the folder /var/lib/postgresql/15/lip_dev_01 on port 6000
+# we can write the cluster name inside postgresql.conf
+pg_ctlcluster 15 lip_dev_01 start 
+# list the database clusters that were created with pg_createcluster
+pg_lsclusters 
+#Ver Cluster     Port Status Owner    Data directory                    Log file
+#15  lip_dev_01  5433 online postgres /var/lib/postgresql/15/lip_dev_01 /var/log/postgresql/postgresql-15-lip_dev_01.log
+#15  lip_dev_02  5434 online postgres /var/lib/postgresql/15/lip_dev_02 /var/log/postgresql/postgresql-15-lip_dev_02.log"><pre>pg_createcluster --port=6000 15 lip_dev_01 
+<span class="pl-c"><span class="pl-c">#</span> created the folder /var/lib/postgresql/15/lip_dev_01 on port 6000</span>
+<span class="pl-c"><span class="pl-c">#</span> we can write the cluster name inside postgresql.conf</span>
+pg_ctlcluster 15 lip_dev_01 start 
+<span class="pl-c"><span class="pl-c">#</span> list the database clusters that were created with pg_createcluster</span>
+pg_lsclusters 
+<span class="pl-c"><span class="pl-c">#</span>Ver Cluster     Port Status Owner    Data directory                    Log file</span>
+<span class="pl-c"><span class="pl-c">#</span>15  lip_dev_01  5433 online postgres /var/lib/postgresql/15/lip_dev_01 /var/log/postgresql/postgresql-15-lip_dev_01.log</span>
+<span class="pl-c"><span class="pl-c">#</span>15  lip_dev_02  5434 online postgres /var/lib/postgresql/15/lip_dev_02 /var/log/postgresql/postgresql-15-lip_dev_02.log</span></pre></div>
+<p dir="auto">The <code>postgresql.conf</code> in Debian is in the folder <code>/etc/postgresql/15/dev_01</code>.</p>
+<p dir="auto">Every cluster gets its own port, so we can connect to them separately.
+The local user <code>postgres</code> can connect over local Unix domain socket connections.
+Create a password for user <code>postgres</code> in psql:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# change interactive user to superuser `postgres`
+su postgres
+psql -U postgres -p 5433
+#psql (15.10 (Debian 15.10-1.pgdg120+1))
+\password postgres
+#Enter new password for user &quot;postgres&quot;: ***
+#Enter it again: ***
+
+# check the cluster name
+SHOW cluster_name;
+# cluster_name = '15/dev_01'
+\q"><pre><span class="pl-c"><span class="pl-c">#</span> change interactive user to superuser `postgres`</span>
+su postgres
+psql -U postgres -p 5433
+<span class="pl-c"><span class="pl-c">#</span>psql (15.10 (Debian 15.10-1.pgdg120+1))</span>
+<span class="pl-cce">\p</span>assword postgres
+<span class="pl-c"><span class="pl-c">#</span>Enter new password for user "postgres": ***</span>
+<span class="pl-c"><span class="pl-c">#</span>Enter it again: ***</span>
+
+<span class="pl-c"><span class="pl-c">#</span> check the cluster name</span>
+SHOW cluster_name<span class="pl-k">;</span>
+<span class="pl-c"><span class="pl-c">#</span> cluster_name = '15/dev_01'</span>
+<span class="pl-cce">\q</span></pre></div>
+<p dir="auto">I will not use the default <code>cluster</code> on port 5432, because it makes it confusing what cluster are we connected.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">clusters for dev, test and prod instances</h4><a id="user-content-clusters-for-dev-test-and-prod-instances" class="anchor" aria-label="Permalink: clusters for dev, test and prod instances" href="#clusters-for-dev-test-and-prod-instances"></a></div>
+<p dir="auto">The name of the cluster and the folder of the cluster is created the same by the <code>pg_createcluster</code> command.<br>
+For development I will use a dev suffix like: <code>lip_dev_01</code>, <code>lip_dev_02</code>, <code>lip_test_01</code>, <code>lip_prod_01</code>,...</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">backup or dump</h4><a id="user-content-backup-or-dump" class="anchor" aria-label="Permalink: backup or dump" href="#backup-or-dump"></a></div>
+<p dir="auto">Postgres has 2 different methods for backups.<br>
+The word <code>dump</code> is used to create sql code that can recreate the database. This is called also "logical backup".<br>
+The dump can be created for a single database.</p>
+<p dir="auto"><code>Backup</code> or <code>base_backup</code> is "physical backup" and it makes copies of the files for database and for transactions.
+The backup can be done only for the whole "cluster". This can be used for "point in time recovery" PITR.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdb_dump</h4><a id="user-content-bdb_dump" class="anchor" aria-label="Permalink: bdb_dump" href="#bdb_dump"></a></div>
+<p dir="auto">For this dump or "logitech backup" run this in bash terminal inside the container.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="mkdir db_backup
+pg_dump -F t -U postgres -h localhost -p 5433 lip_01 &gt; db_backup/lip_01_2025_01_21.tar
+ls db_backup"><pre>mkdir db_backup
+pg_dump -F t -U postgres -h localhost -p 5433 lip_01 <span class="pl-k">&gt;</span> db_backup/lip_01_2025_01_21.tar
+ls db_backup</pre></div>
+<p dir="auto">Run in the parent OS to download from the container over ssh:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# download backup over ssh for development and testing
+scp rustdevuser@crustde:/home/rustdevuser/db_backup/lip_01_2024_12_24.tar db_backup/lip_01_2024_12_24.tar"><pre><span class="pl-c"><span class="pl-c">#</span> download backup over ssh for development and testing</span>
+scp rustdevuser@crustde:/home/rustdevuser/db_backup/lip_01_2024_12_24.tar db_backup/lip_01_2024_12_24.tar</pre></div>
+<p dir="auto">The dump file is just gz compressed plain text of sql code. It is easily searchable with a standard text editor. Nice for my search-all-and replace approach!</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdb_restore from dump</h4><a id="user-content-bdb_restore-from-dump" class="anchor" aria-label="Permalink: bdb_restore from dump" href="#bdb_restore-from-dump"></a></div>
+<p dir="auto">For restore run this from the VSCode terminal inside the project folder when connected to CRUSTDE.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# first create the roles, users and database manually 
+# run the sql script from bd__database_core/bdb_database_lip_init_1.sql
+# run the sql script from bd__database_core/bdb_database_lip_init_2.sql
+pg_restore -c -U postgres -h localhost -p 5433 -d lip_01 db_backup/lip_01_2025_01_20.tar"><pre><span class="pl-c"><span class="pl-c">#</span> first create the roles, users and database manually </span>
+<span class="pl-c"><span class="pl-c">#</span> run the sql script from bd__database_core/bdb_database_lip_init_1.sql</span>
+<span class="pl-c"><span class="pl-c">#</span> run the sql script from bd__database_core/bdb_database_lip_init_2.sql</span>
+pg_restore -c -U postgres -h localhost -p 5433 -d lip_01 db_backup/lip_01_2025_01_20.tar</pre></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_basebackup</h3><a id="user-content-bdb_basebackup" class="anchor" aria-label="Permalink: bdb_basebackup" href="#bdb_basebackup"></a></div>
+<p dir="auto">The "physical backup" in Postgres is called <code>pg_basebackup</code>.<br>
+It can make the backup only of the whole "database cluster". Cannot do the backup of a single database.<br>
+This kind of backup allows to make PITR "point in time recovery".</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdb_Point_In_Time_Recovery PITR</h3><a id="user-content-bdb_point_in_time_recovery-pitr" class="anchor" aria-label="Permalink: bdb_Point_In_Time_Recovery PITR" href="#bdb_point_in_time_recovery-pitr"></a></div>
+<p dir="auto"><a href="https://pgdash.io/blog/postgres-incremental-backup-recovery.html" rel="nofollow">https://pgdash.io/blog/postgres-incremental-backup-recovery.html</a><br>
+<a href="https://www.scalingpostgres.com/tutorials/postgresql-backup-point-in-time-recovery/" rel="nofollow">https://www.scalingpostgres.com/tutorials/postgresql-backup-point-in-time-recovery/</a></p>
+<p dir="auto">The ability to use PITR "point in time recovery" is not enabled by default.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# open the bash inside the postgres container as root
+podman exec -it crustde_postgres_cnt /bin/bash"><pre><span class="pl-c"><span class="pl-c">#</span> open the bash inside the postgres container as root</span>
+podman <span class="pl-c1">exec</span> -it crustde_postgres_cnt /bin/bash</pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# make folder as postgres@crustde_pod:/$
+su postgres
+mkdir -p /var/lib/postgresql/15_archive_wal/dev_01
+nano /etc/postgresql/15/dev_01/postgresql.conf"><pre><span class="pl-c"><span class="pl-c">#</span> make folder as postgres@crustde_pod:/$</span>
+su postgres
+mkdir -p /var/lib/postgresql/15_archive_wal/dev_01
+nano /etc/postgresql/15/dev_01/postgresql.conf</pre></div>
+<p dir="auto">Find and modify these 3 lines:</p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="  wal_level = replica
+  archive_mode = on # (change requires restart)
+  archive_command = 'test ! -f /var/lib/postgresql/15_archive_wal/dev_01/%f &amp;&amp; cp %p /var/lib/postgresql/15_archive_wal/dev_01/%f'"><pre lang="plaintext" class="notranslate"><code>  wal_level = replica
+  archive_mode = on # (change requires restart)
+  archive_command = 'test ! -f /var/lib/postgresql/15_archive_wal/dev_01/%f &amp;&amp; cp %p /var/lib/postgresql/15_archive_wal/dev_01/%f'
+</code></pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="exit
+# return to root@crustde_pod:/#
+pg_ctlcluster 15 dev_01 start "><pre><span class="pl-c1">exit</span>
+<span class="pl-c"><span class="pl-c">#</span> return to root@crustde_pod:/#</span>
+pg_ctlcluster 15 dev_01 start </pre></div>
+<ol dir="auto">
+<li>Close the WAL of the database cluster</li>
+</ol>
+<p dir="auto"><code>pg_ctl stop</code> closed the whole container???</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdc_ database lowest components</h3><a id="user-content-bdc_-database-lowest-components" class="anchor" aria-label="Permalink: bdc_ database lowest components" href="#bdc_-database-lowest-components"></a></div>
+<p dir="auto">A translation layer between <code>lip</code> code and the postgres low code and objects.
+I want to isolate the postgres low code and objects in this module. They use strange names.
+In <code>lip</code> I will never use directly postgres components, but always this translation layer.</p>
+<p dir="auto"><a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_role_list.sql">bdc_role_list.sql</a></p>
+<p dir="auto"><a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_view_list.sql">bdc_view_list.sql</a><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_view_migrate.sql">bdc_view_migrate.sql</a></p>
+<p dir="auto"><a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_function.list.sql">bdc_function.list.sql</a><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_function_migrate.sql">bdc_function_migrate.sql</a><br>
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdc_function_drop.sql">bdc_function_drop.sql</a></p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdc_source_code table(object_name, source_code)</h4><a id="user-content-bdc_source_code-tableobject_name-source_code" class="anchor" aria-label="Permalink: bdc_source_code table(object_name, source_code)" href="#bdc_source_code-tableobject_name-source_code"></a></div>
+<p dir="auto">Postgres server does not store the exact source code as I install views and functions.
+I want to be able to check if the source code has changed to know if it needs to be installed.
+Therefore I must store my source code in a table, where I can control what is going on.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">bdd_ definitions for <code>lip</code> database objects</h3><a id="user-content-bdd_-definitions-for-lip-database-objects" class="anchor" aria-label="Permalink: bdd_ definitions for lip database objects" href="#bdd_-definitions-for-lip-database-objects"></a></div>
+<p dir="auto">A <code>lip</code> project contains definitions of tables, fields, relations, views, functions, methods, user interface,...
+This definitions are stored in the same database for performance and migration.<br>
+More than one team can work simultaneously on a <code>lip project</code>, therefore I cannot use sequence for this table primary keys. The ids must have ranges per project. Every range will have a million numbers. That would be enough. It means I can have 2000 projects with 1 million numbers each.
+The framework range is the first million numbers.</p>
+<p dir="auto">I like to use <code>dot</code> in function names, that is a nice standard. Postgres names with dots must be delimited with double quotes. Maybe it isn't</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdd_unit</h4><a id="user-content-bdd_unit" class="anchor" aria-label="Permalink: bdd_unit" href="#bdd_unit"></a></div>
+<p dir="auto">A <code>lip</code> unit is the container of definitions of lip objects.
+They are ordered in a tree structure.</p>
+<p dir="auto"><code>id_unit</code> int
+name
+parent_id_unit
+notes</p>
+<p dir="auto">Every object will have a reference, relation, join to bdd_unit with the field <code>jid_unit</code>.
+Different projects will have a defined range od <code>id_unit</code> so that more teams can develop simultaneously.
+The basic framework project will have the range from 1-999999.</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdd_domain user-defined data type</h4><a id="user-content-bdd_domain-user-defined-data-type" class="anchor" aria-label="Permalink: bdd_domain user-defined data type" href="#bdd_domain-user-defined-data-type"></a></div>
+<p dir="auto">In postgres <code>domain</code> is a user-defined data type. It can have constraints that restrict its valid values.</p>
+<div class="highlight highlight-source-sql notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="CREATE DOMAIN dm_positive_integer AS integer CHECK (VALUE &gt; 0);
+CREATE DOMAIN dm_system_name AS varchar(100) not null integer check (length(value) &gt; 0);
+CREATE DOMAIN dm_notes AS text not null default '';"><pre><span class="pl-k">CREATE</span> <span class="pl-k">DOMAIN</span> <span class="pl-en">dm_positive_integer</span> <span class="pl-k">AS</span> <span class="pl-k">integer</span> <span class="pl-k">CHECK</span> (VALUE <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>);
+<span class="pl-k">CREATE</span> <span class="pl-k">DOMAIN</span> <span class="pl-en">dm_system_name</span> <span class="pl-k">AS</span> <span class="pl-k">varchar</span>(<span class="pl-c1">100</span>) <span class="pl-k">not null</span> <span class="pl-k">integer</span> <span class="pl-k">check</span> (length(value) <span class="pl-k">&gt;</span> <span class="pl-c1">0</span>);
+<span class="pl-k">CREATE</span> <span class="pl-k">DOMAIN</span> <span class="pl-en">dm_notes</span> <span class="pl-k">AS</span> <span class="pl-k">text</span> <span class="pl-k">not null</span> default <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>;</pre></div>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdd_table</h4><a id="user-content-bdd_table" class="anchor" aria-label="Permalink: bdd_table" href="#bdd_table"></a></div>
+<p dir="auto">Definition of a table.
+<a href="/liporuwcha/b___common_code_for_the_framework/blob/main/bd__database_core/bdd_table_create.sql">bdd_table_create.sql</a></p>
+<p dir="auto">function:
+bdd_table.insert
+bdd_table.migrate</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdd_field_table</h4><a id="user-content-bdd_field_table" class="anchor" aria-label="Permalink: bdd_field_table" href="#bdd_field_table"></a></div>
+<p dir="auto">Definition of a field in the table.
+I hope I will use auto-complete when writing sql code. For that purpose I will use some naming rules:
+The <code>id</code> field of a table starts with <code>id_</code> and continues with the full table name like <code>id_bdd_table</code>.
+The relation/reference/join field will add the prefix <code>j</code> like <code>jid_bdd_table</code>.</p>
+<p dir="auto">id_field_table
+jid_bdd_table
+name
+field_type</p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto">bdd_data_type</h4><a id="user-content-bdd_data_type" class="anchor" aria-label="Permalink: bdd_data_type" href="#bdd_data_type"></a></div>
+<p dir="auto">Postgres has many data_types. I will try to limit this types for <code>lip</code> projects.</p>
+<ul dir="auto">
+<li><code>integer</code>, also known as INT, is one of the most commonly used data types in PostgreSQL. It stores whole numbers (i.e., numbers without decimal points) and requires 4 bytes of storage. The range of values it can store is between -2,147,483,648 to 2,147,483,647.</li>
+<li><code>name</code> is a 63 byte (varchar) type used for storing system identifiers.</li>
+<li><code>varchar(n)</code> is variable-length character type to store strings with the defined length. Max length is 8000.</li>
+<li><code>text</code> is variable-length character type with no specific length limit.</li>
+<li><code>boolean</code> Stores true, false, and null values.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">bj__ server core (common code)</h2><a id="user-content-bj__-server-core-common-code" class="anchor" aria-label="Permalink: bj__ server core (common code)" href="#bj__-server-core-common-code"></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">bs__ client core (common code)</h2><a id="user-content-bs__-client-core-common-code" class="anchor" aria-label="Permalink: bs__ client core (common code)" href="#bs__-client-core-common-code"></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

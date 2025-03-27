@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>new_date_time_units_and_formats</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="my proposal for a new date time units and formats">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/new_date_time_units_and_formats">https://github.com/bestia-dev/new_date_time_units_and_formats</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">new_date_time_units_and_formats</h1><a id="user-content-new_date_time_units_and_formats" class="anchor" aria-label="Permalink: new_date_time_units_and_formats" href="#new_date_time_units_and_formats"></a></div>
+<p dir="auto"><strong>my proposal for a new date time units and formats</strong><br>
+<em><strong>version: 2021.205.1219  date: 2021-02-05 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/new_date_time_units_and_formats">GitHub</a></strong></em></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://img.shields.io/badge/Lines_in_Rust-454-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://img.shields.io/badge/Lines_in_comments-18-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://img.shields.io/badge/Lines_in_tests-0-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/12fe0e11d904236ecea04a4357fa15d3f35a22e920e2c272c6f93fd7b266697b/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f36303437353834312e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/60475841.svg" alt="new_date_time_units_and_formats" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #pwa #wasm #webassembly #tutorial<br>
+My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Try it</h2><a id="user-content-try-it" class="anchor" aria-label="Permalink: Try it" href="#try-it"></a></div>
+<p dir="auto"><a href="https://bestia.dev/new_date_time_units_and_formats/" rel="nofollow">https://bestia.dev/new_date_time_units_and_formats/</a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png" alt="icon" style="max-width: 100%;"></a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_01s1.png"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_01s1.png" alt="screenshot_01" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_02s1.png"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_02s1.png" alt="screenshot_02" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_03s1.png"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_03s1.png" alt="screenshot_03" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_04s1.png"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_04s1.png" alt="screenshot_04" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Proposal for a new date and time units and formats</h2><a id="user-content-proposal-for-a-new-date-and-time-units-and-formats" class="anchor" aria-label="Permalink: Proposal for a new date and time units and formats" href="#proposal-for-a-new-date-and-time-units-and-formats"></a></div>
+<p dir="auto">Let's be innovative !<br>
+I think everybody can agree that the date and time units and formats are an archaic mess.<br>
+It is super difficult to change it in the real world because people learn most of the things in a very early age.<br>
+Later on it is more and more difficult to learn and change.<br>
+And because we live in a multi-generational society this "old" traditions are really tough to change.<br>
+There is always somebody who is unable to learn the new stuff. This is our biology. We are only humans.<br>
+And then there is always some tribal feelings that one group wants to be different from another group. Prehistoric baggage.<br>
+But it has already happened many times in history that people changed their units of measurement and formats. So there is a glimpse of hope. I hope without a bloody French revolution and piles of deads, but who knows?<br>
+I know there are already a lot of different proposals out there and I am sure some of them are identical or very similar to mine. Basically with a some thinking, and in the moderne age of knowledge, everybody will get to similar conclusions and solutions.<br>
+<a href="https://www.youtube.com/watch?v=kUIYI34CdkE" rel="nofollow">https://www.youtube.com/watch?v=kUIYI34CdkE</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">hours and minutes into millidays</h2><a id="user-content-hours-and-minutes-into-millidays" class="anchor" aria-label="Permalink: hours and minutes into millidays" href="#hours-and-minutes-into-millidays"></a></div>
+<p dir="auto">One day is approximately the time planet Earth needs to revolve around it's axis.<br>
+If you ask an astronomer there is a lot more to that, but for practical use we all agreed how long is one day.<br>
+A day is divided into 24 hours. One hour has 60 minutes and one minute has 60 seconds. This is terrible.<br>
+We all like the metric system. Let's try to change this archaic way of time measurement.<br>
+It is easy and consistent: one day is divided into 1000 millidays.<br>
+The "day" is already an "Acceptable non-SI unit" in the "International System of Units - SI".<br>
+A milliday is similar to a minute. One day has 1440 minutes or 1000 millidays.<br>
+This means that 1 milliday = 1.44 minutes and 1 minute = 0.69444 millidays.<br>
+We could approximate it for easy mental calculations 1 milliday approx. 1.5 minute and 1 minute approx. 0.66 millidays.
+We don't really need hours. They are redundant and relics from the past. We could use millidays instead of hours in any scenario: 1 hour = 41.66 millidays.<br>
+In the distant past humans were not accustomed to bigger numbers than 12. You can still here people avoiding big numbers: half past ten AM instead of 10:30, a quarter to eight PM instead of 19:45,...
+But today we use bigger numbers in everyday life. At least for money counting. Who doesn't know how to count to 1000 dollars?<br>
+For most practical scenarios it is enough to define time with precisions rounded to 1 minute or 1 milliday.<br>
+This is the formula: millidays = 1000/24*hours + 1000/(24*60)*minutes<br>
+People will probably shorten <code>millidays</code> to simply <code>millis</code>.</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th align="left">old hour:minute</th>
+<th align="left">new milliday</th>
+<th align="left">pronunciation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">00:00</td>
+<td align="left">000 md</td>
+<td align="left">zero millis (midnight)</td>
+</tr>
+<tr>
+<td align="left">06:00</td>
+<td align="left">250 md</td>
+<td align="left">two fifty millis</td>
+</tr>
+<tr>
+<td align="left">12:00</td>
+<td align="left">500 md</td>
+<td align="left">five hundred millis (midday)</td>
+</tr>
+<tr>
+<td align="left">18:00</td>
+<td align="left">750 md</td>
+<td align="left">seven fifty millis</td>
+</tr>
+<tr>
+<td align="left">23:59</td>
+<td align="left">999 md</td>
+<td align="left">nine ninety nine millis</td>
+</tr>
+<tr>
+<td align="left">09:00 - 17:00</td>
+<td align="left">375 - 700 md</td>
+<td align="left">three seventy five to seven hundred</td>
+</tr>
+<tr>
+<td align="left">12:00 - 13:00</td>
+<td align="left">500 - 542 md</td>
+<td align="left">five hundred to five forty two</td>
+</tr>
+<tr>
+<td align="left">20:00 - 22:00</td>
+<td align="left">830 - 917 md</td>
+<td align="left">eight thirty to nine seventeen</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">It is just the same for time intervals. Today a lot of events are rounded to hours, because this is what we have, but in the future they will be rounded to millidays. I call this a cultural shift to the new unit of measure.<br>
+We could say:</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th align="left">old hour:minute</th>
+<th align="left">new milliday</th>
+<th align="left">after a cultural shift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">"I work 8 hours"</td>
+<td align="left">"I work 333 millis"</td>
+<td align="left">"I work 300 millis"</td>
+</tr>
+<tr>
+<td align="left">"Wait 5 minutes"</td>
+<td align="left">"Wait 4 millis"</td>
+<td align="left">"Wait 5 millis"</td>
+</tr>
+<tr>
+<td align="left">"Wait 15 minutes"</td>
+<td align="left">"Wait 10 millis"</td>
+<td align="left">"Wait 10 millis"</td>
+</tr>
+<tr>
+<td align="left">"Drive 1 hour"</td>
+<td align="left">"Drive 42 millis"</td>
+<td align="left">"Drive 40 millis"</td>
+</tr>
+<tr>
+<td align="left">"Movie length 1:30"</td>
+<td align="left">"Movie length 62 millis"</td>
+<td align="left">"Movie length 60 millis"</td>
+</tr>
+<tr>
+<td align="left">"Cook 2 hours"</td>
+<td align="left">"Cook 83 millis"</td>
+<td align="left">"Cook 80 millis"</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">Today we are biased with the old units, and to us the new units look strange.
+But for a new generation it will be just logical and simple. Just one single unit. Nothing to think a lot about it.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">seconds into microdays</h2><a id="user-content-seconds-into-microdays" class="anchor" aria-label="Permalink: seconds into microdays" href="#seconds-into-microdays"></a></div>
+<p dir="auto">For very precise measurements today we use seconds and decimals of a second.<br>
+With millidays we can just use decimals of a milliday or use smaller units like microdays, nanodays, picodays,... just follow the SI rules and use what is convenient.<br>
+This is the formula: millidays = 1000/(24*60*60)*seconds
+Probably people will shorten <code>microdays</code> to <code>micros</code>.</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th align="right">old seconds</th>
+<th align="right">new milliday</th>
+<th align="right">new microdays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1 s</td>
+<td align="right">0.012 md</td>
+<td align="right">12 μd</td>
+</tr>
+<tr>
+<td align="right">10 s</td>
+<td align="right">0.116 md</td>
+<td align="right">116 μd</td>
+</tr>
+<tr>
+<td align="right">9.58 s</td>
+<td align="right">0.11088 md</td>
+<td align="right">110.880 μd</td>
+</tr>
+<tr>
+<td align="right">30 s</td>
+<td align="right">0.347 md</td>
+<td align="right">347 μd</td>
+</tr>
+<tr>
+<td align="right">60 s</td>
+<td align="right">0.694 md</td>
+<td align="right">694 μd</td>
+</tr>
+<tr>
+<td align="right">86.4 s</td>
+<td align="right">1 md</td>
+<td align="right">1000 μd</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">The "second" is the base unit of time in the International System of Units (SI). This is unfortunate. It will probably never change.<br>
+The "second" is defined by taking the fixed numerical value of the caesium frequency ∆νCs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to be 9192631770 when expressed in the unit Hz.<br>
+From this definition we can see that it is arbitrary and we can define a milliday the same way:<br>
+1 milliday = 9192631770 * 86.4 = 794243384928 ∆νCs</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">months and days into varweeks and varweekdays</h2><a id="user-content-months-and-days-into-varweeks-and-varweekdays" class="anchor" aria-label="Permalink: months and days into varweeks and varweekdays" href="#months-and-days-into-varweeks-and-varweekdays"></a></div>
+<p dir="auto">One year has approximately 365 days that are divided into 12 months. A group of 7 days is called a week.<br>
+Because Earths revolution around the Sun is not exact, we have to add one day every 4 years, except every 100 years, except again every 400 years.<br>
+Confusing? Yes it is.<br>
+The universe doesn't play nice with our human perceptions and simplifications. If you ask an astronomer it is even more complicated than that. We just made some super simple rules. Out of ignorance in the archaic old times. We know better now.<br>
+It is impossible to use the metric system and divide a year into 100 days. We need to follow the natural revolution of our planet. That makes sense.</p>
+<p dir="auto">Months are a historic mess because humans gained more knowledge over time. From the humble starts when the divine ideal of 360 days was divided into 12 months we came finally to this mess: we have months with 30 and 31 days and one exceptional february with 28 or 29 days. Confusing and not necessary.<br>
+The date format is so different between cultures that it is sometimes dangerous to misinterpret the numbers: <a href="https://en.wikipedia.org/wiki/Date_format_by_country" rel="nofollow">Date format by country</a>.<br>
+Every month starts with a different weekday and we need a new calendar every year. That is just comical.<br>
+In the old times months were important for the farmers (95% of the population) to work in the fields. They followed the moon phases, because they didn't have any other way to measure time, but even that is not compatible with the calendar months. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is standard in the big industry to plan, work and communicate in "weeks". And this is smart.</p>
+<p dir="auto">The classic week contains 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. It happened during the French revolution. So we will sadly leave it to 7 days. But it is really simple to convert this "new calendar" into a 10-day-week calendar.</p>
+<p dir="auto">There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?</p>
+<p dir="auto"><strong>CELEBRATION DAYS ! Let celebrate the new year !</strong></p>
+<p dir="auto">Celebrate for one day or sometimes for 2 days. Most people already celebrate New Years Eve in this fashion.<br>
+This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.<br>
+Simple.<br>
+We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world today and even more  in the past. They just need one calendar and they will be just happy until someone tries to change it.</p>
+<p dir="auto">First we need a new name for disambiguation because the classic week has constantly 7 days. The new word should be "varweek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.<br>
+The varweekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown varweekdays in the date format. And having a numeric value for varweekday is way better than words that are different in every languages or cultures today.</p>
+<blockquote>
+<p dir="auto">Estimates of the number of human languages in the world vary between 5000 and 7000.</p>
+<p dir="auto"><a href="https://en.wikipedia.org/wiki/Language" rel="nofollow">https://en.wikipedia.org/wiki/Language</a></p>
+</blockquote>
+<p dir="auto">I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation one-dee, two-dee, three-dee, four-dee, five-dee, six-dee, seven-dee.</p>
+<p dir="auto">Quarters for business reports are very easily calculated: 52 varweeks / 4 = 13 varweeks per quarter.<br>
+Let abolish months altogether. The use of months should disappear in official life.<br>
+Sure people will use it in some cultural context in their private life just like we use zodiac signs in astrology today.
+Instead of a month, some things would be calculated in intervals of 4 varweeks. That makes exactly 13 four-varweeks intervals in a year. That is very close to the old notion of "month", but it is 13 and not 12. A big difference. So, simply don't use it.</p>
+<markdown-accessiblity-table><table>
+<thead>
+<tr>
+<th align="left">old month day</th>
+<th align="left">new varweek</th>
+<th align="left">pronunciation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">january 1st</td>
+<td align="left">01v 1d</td>
+<td align="left">varweek one one-dee</td>
+</tr>
+<tr>
+<td align="left">january 2nd</td>
+<td align="left">01v 2d</td>
+<td align="left">varweek one two-dee</td>
+</tr>
+<tr>
+<td align="left">january 7th</td>
+<td align="left">01v 7d</td>
+<td align="left">varweek one seven-dee</td>
+</tr>
+<tr>
+<td align="left">january 8th</td>
+<td align="left">02v 1d</td>
+<td align="left">varweek two one-dee</td>
+</tr>
+<tr>
+<td align="left">january 15th</td>
+<td align="left">03v 1d</td>
+<td align="left">varweek three one-dee</td>
+</tr>
+<tr>
+<td align="left">january 22th</td>
+<td align="left">04v 1d</td>
+<td align="left">varweek four one-dee</td>
+</tr>
+<tr>
+<td align="left">january 29th</td>
+<td align="left">05v 1d</td>
+<td align="left">varweek five one-dee</td>
+</tr>
+<tr>
+<td align="left">february 5th</td>
+<td align="left">06v 1d</td>
+<td align="left">varweek six one-dee</td>
+</tr>
+<tr>
+<td align="left">march 5th</td>
+<td align="left">10v 1d</td>
+<td align="left">varweek ten one-dee</td>
+</tr>
+<tr>
+<td align="left">april 2nd</td>
+<td align="left">14v 1d</td>
+<td align="left">varweek fourteen one-dee</td>
+</tr>
+<tr>
+<td align="left">may 7th</td>
+<td align="left">19v 1d</td>
+<td align="left">varweek nineteen one-dee</td>
+</tr>
+<tr>
+<td align="left">june 4th</td>
+<td align="left">23v 1d</td>
+<td align="left">varweek twenty three one-dee</td>
+</tr>
+<tr>
+<td align="left">july 2nd</td>
+<td align="left">27v 1d</td>
+<td align="left">varweek twenty seven one-dee</td>
+</tr>
+<tr>
+<td align="left">august 6th</td>
+<td align="left">32v 1d</td>
+<td align="left">varweek thirty two one-dee</td>
+</tr>
+<tr>
+<td align="left">september 3rd</td>
+<td align="left">36v 1d</td>
+<td align="left">varweek thirty six one-dee</td>
+</tr>
+<tr>
+<td align="left">october 1st</td>
+<td align="left">40v 1d</td>
+<td align="left">varweek forty one-dee</td>
+</tr>
+<tr>
+<td align="left">november 5th</td>
+<td align="left">45v 1d</td>
+<td align="left">varweek forty five one-dee</td>
+</tr>
+<tr>
+<td align="left">december 3th</td>
+<td align="left">49v 1d</td>
+<td align="left">varweek forty nine one-dee</td>
+</tr>
+<tr>
+<td align="left">december 25th</td>
+<td align="left">52v 2d</td>
+<td align="left">varweek fifty two two-dee</td>
+</tr>
+<tr>
+<td align="left">december 31th</td>
+<td align="left">53v 1d</td>
+<td align="left">celebration one-dee</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p dir="auto">People will probably shorten the pronunciation to <code>one one-dee</code>, <code>forty nine two-dee</code> without repeating <code>varweek</code> every single time.<br>
+It is very clear if a number finishes with a unit of measure.<br>
+For years it should be <code>c</code> for <code>CE - common era</code>, example:<br>
+<code>2021c</code><br>
+to disambiguate from the buddhist year (2564 B.E.), islamic year (1442 AH), Chinese year (4718) and <a href="https://allthatsinteresting.com/what-year-is-it" rel="nofollow">other years</a>.<br>
+Example of a global full date format with varweeks:<br>
+<code>2021c 23v 3d</code><br>
+Now for fun, compare this to one of the many formats today:<br>
+<code>9.6.2021 tuesday</code><br>
+And some more details for the single global format to be very explicit, correct and unambiguous:</p>
+<ul dir="auto">
+<li>every number must end with a unit (c, v, d - year CE, varweek, day)</li>
+<li>after the unit there is a space</li>
+<li>varweeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates and never confuse with days</li>
+<li>days are always one single digit, from 1 to 7</li>
+<li>years are always in 4 digits. The new date format is not suitable for ancient dates before 1000c , but neither is the current calendar. Historians use other types of calendars for the far past.</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">varweek calendar forever</h2><a id="user-content-varweek-calendar-forever" class="anchor" aria-label="Permalink: varweek calendar forever" href="#varweek-calendar-forever"></a></div>
+<p dir="auto">I prepared a simple spreadsheet with the new <code>varweek calendar</code>.<br>
+It is good forever:<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods">new_calendar_forever.ods</a><br>
+Actually it is so simple, you don't need a calendar, you already know it using simple logic.<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png" alt="calendar 1" style="max-width: 100%;"></a><br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods"><img src="https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png" alt="calendar 2" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">other varweeks millis projects</h2><a id="user-content-other-varweeks-millis-projects" class="anchor" aria-label="Permalink: other varweeks millis projects" href="#other-varweeks-millis-projects"></a></div>
+<p dir="auto">crate:<br>
+<a href="https://github.com/bestia-dev/varweeks_millis">https://github.com/bestia-dev/varweeks_millis</a><br>
+PWA wasm clock:<br>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock">https://github.com/bestia-dev/varweeks_millis_clock</a><br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png"><img src="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png" alt="screenshot" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Please comment</h2><a id="user-content-please-comment" class="anchor" aria-label="Permalink: Please comment" href="#please-comment"></a></div>
+<p dir="auto">It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.<br>
+Let discuss it in the <a href="https://github.com/bestia-dev/new_date_time_units_and_formats/discussions">Discussion</a> section of this repository.  Stuff like <code>time zones</code>, kiloseconds, swatch internet time,...<br>
+But most of all let strive for change for the better. All of humanity together.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">TL;DR - The shortest description</h2><a id="user-content-tldr---the-shortest-description" class="anchor" aria-label="Permalink: TL;DR - The shortest description" href="#tldr---the-shortest-description"></a></div>
+<p dir="auto">There must be a lot of compromises to adapt our time units to our planet's orbit.<br>
+A new standard should explicitly state chosen compromises for example (my proposal):</p>
+<ul dir="auto">
+<li>Make hours, minutes, and seconds obsolete. The only unit for time should be the already existing "day". Smaller is a milliday or microday. Logical. Metric. The "day" is defined as being equal to the time duration of 794 243 384 928 000 periods of the radiation corresponding to the transition between the two hyperfine levels of the fundamental unperturbed ground-state of the caesium-133 atom.</li>
+<li>An Earth's natural day is close to 1d=1000md, but not equal. Sometimes there is a leap second or microday to synchronize them.</li>
+<li>Time zones are very natural to people. I think they must stay. Today they are mostly rounded to one hour, but that can change arbitrarily. We have UTC to express a global planet time.</li>
+</ul>
+<p dir="auto">example: 6:00 AM = 250md, 12:00 AM = 500md, 6:00pm = 750md</p>
+<ul dir="auto">
+<li>Make months obsolete, they are not needed if we have weeks.</li>
+<li>A week has 7 days only because people have this tradition and built a lot of routines around that. This is impossible to change.</li>
+<li>Let start every year with a "Monday".  So we know for every day in the year which weekday it is. Forever.</li>
+<li>A year is not exactly 52 weeks. The remaining 1 or 2 "celebration days" are added to sync our measurement to the planet's orbit.</li>
+<li>So we need to create a new term for this new type of week that has the exception of "celebration days". Let call it "varweek" for fun.</li>
+<li>The weekday's names are different in every language. Let make things global and digital. monday is 1d, tuesday is 2d,.., sunday is 7d.</li>
+</ul>
+<p dir="auto">example: 1.1.2021 = 2021c 01v 1d,  11.3.2021 = 2021c 10v 7d<br>
+"c" stands for CE-common era. "v" stands for varweek, "d" stands for day.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Development of a little rust converter program (pwa, wasm) for mobile</h2><a id="user-content-development-of-a-little-rust-converter-program-pwa-wasm-for-mobile" class="anchor" aria-label="Permalink: Development of a little rust converter program (pwa, wasm) for mobile" href="#development-of-a-little-rust-converter-program-pwa-wasm-for-mobile"></a></div>
+<p dir="auto">Install some utilities:<br>
+<code>cargo install cargo-make</code><br>
+<code>cargo install auto_version_from_date</code><br>
+<code>cargo install basic-http-server</code><br>
+Run<br>
+<code>cargo make</code> - for help<br>
+Run<br>
+<code>cargo make release</code> - build the wasm pkg</p>
+<p dir="auto">Run the web server in a separate terminal so it can stay running all the time.<br>
+Go to the web server folder and run the server:<br>
+<code>cd ~/rustprojects/new_date_time_units_and_formats/web_server_folder; basic-http-server</code><br>
+Open the browser on:<br>
+<a href="http://127.0.0.1:4000/new_date_time_units_and_formats/" rel="nofollow">http://127.0.0.1:4000/new_date_time_units_and_formats/</a></p>
+<p dir="auto">This is a PWA application and works offline inside the browser with wasm.<br>
+It is made for mobile browsers. In the desktop browser press F12 and choose a  mobile format.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

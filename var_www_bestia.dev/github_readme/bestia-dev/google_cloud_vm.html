@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>google_cloud_vm</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Configuration of my Google VM">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/google_cloud_vm">https://github.com/bestia-dev/google_cloud_vm</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">google_cloud_vm</h1><a id="user-content-google_cloud_vm" class="anchor" aria-label="Permalink: google_cloud_vm" href="#google_cloud_vm"></a></div>
+<p dir="auto"><em><strong>Configuration of my Google VM</strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/dropbox_backup_to_external_disk/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bd28db943212295fc161dd7951ec76a5f6067a1ee727f1e520e699c899565ca0/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f313539383236353330352e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/1598265305.svg" alt="google_cloud_vm" style="max-width: 100%;"></a></p>
+<p dir="auto">Google is very kind to give me free resources on the cloud for 12 months.<br>
+I tried Microsoft Azure, but it was unclear to me what resources are 30 days and what 12 months free.<br>
+<em>Things are changing fast. This is the situation on 2020-04-30.</em></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">keep the secret secret</h2><a id="user-content-keep-the-secret-secret" class="anchor" aria-label="Permalink: keep the secret secret" href="#keep-the-secret-secret"></a></div>
+<p dir="auto">Don't ever write any passwords and keys in any readme or code ever.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">always free google VM</h2><a id="user-content-always-free-google-vm" class="anchor" aria-label="Permalink: always free google VM" href="#always-free-google-vm"></a></div>
+<p dir="auto">Now my 12 months trial is expired. I have still the "always free".<br>
+I had to move my one "mini" vm-snapshot from Singapore to Oregon: us-west1-b for a "e2-micro" "always free".<br>
+e2-micro (2 vCPU, 1 GB memory, Intel Broadwell), 30 GB-months HDD, 5 GB-month snapshot storage<br>
+Google Cloud Free Tier is also available for external IP addresses that are being used by VM instances.<br>
+It will be enough for my developer projects. But not for anything in production.<br>
+I am afraid of the possibility to have an enormous bill. So I went to Billing - Budgets and alerts and set a
+10 eur alert.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">NOT FREE egress traffic</h2><a id="user-content-not-free-egress-traffic" class="anchor" aria-label="Permalink: NOT FREE egress traffic" href="#not-free-egress-traffic"></a></div>
+<p dir="auto">Egress traffic is not free. It can accumulate a lot of cost if a DDOS attack want to download a lot of data.<br>
+The Billing budgets and alert don't really help. The interval to take Egress traffic under control is probably too slow, sometimes 24 hours. Then it just sends an email alert that can be missed. Later is already too late because the DDOS attack has already made your bill enormous. We are talking easy 3000$ per month for a VM that is basically free. Crazy. Till last month I had on average to pay 0,71$/month for Egress traffic, but last month was the eye opening 3$/month. After researching I found out, that I am just lucky that it is not 3000$. Google will not limit my traffic in any way or form because they make money if I have crazy traffic. But this could never be organic traffic for a personal hobby website. That could be only a DDOS attack, or now we can call it Denial of Wallet, because they could empty my already empty wallet. Bad Google made no effort to cap or limit my spending in any way. I am afraid of surprise enormous bills for basically nothing.
+How to solve this problem? I don't know. Maybe I could try to limit traffic on NGINX ?!? To keep the data under 30GB/month that is around 5$/month. My maximum acceptable cost for DDOS attacks.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">google cloud Debian VM</h2><a id="user-content-google-cloud-debian-vm" class="anchor" aria-label="Permalink: google cloud Debian VM" href="#google-cloud-debian-vm"></a></div>
+<p dir="auto">This was an extreme adventure for a windows guy.<br>
+It is a lot to learn and nothing is visual or intuitive.<br>
+So I need to write my own manual with only commands I really need.<br>
+First I created a cheap VM. They call it Compute Engine.</p>
+<ul dir="auto">
+<li>external ip:  35.199.190.85  (set to static in google console)</li>
+<li>internal ip.  10.148.0.2</li>
+</ul>
+<p dir="auto">I don't want to pay for a domain name, so I use the IP numbers.<br>
+There is no free "url name" from google cloud platform.</p>
+<p dir="auto">The VM's in cloud engine don't come with a root password setup by default.<br>
+Passwords aren't configured for local users on Linux VMs.<br>
+By default, Compute Engine uses project metadata to configure SSH keys and to manage SSH access.</p>
+<p dir="auto">Generate SSH key on every "client "computer, that is used as the connection initiator.<br>
+Never move that private key from there. The destination computer does not matter, you copy there only the public key.<br>
+If I have a "mac" I use the name Luciano_mac:<br>
+<code>ssh-keygen -t rsa -f ~/.ssh/luciano_mac -C luciano_bestia</code><br>
+in the last comment (-C) is the username. This is a google or Debian convention.<br>
+GitHub wants the email address for example.<br>
+-- connect from WSL<br>
+<code>ssh -i ~/.ssh/luciano_googlecloud luciano_bestia@bestia.dev -v</code></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Copying files</h2><a id="user-content-copying-files" class="anchor" aria-label="Permalink: Copying files" href="#copying-files"></a></div>
+<p dir="auto">TotalCmd has a plugin for SFTP that includes also SSH file transfer. This is great.<br>
+Created a project <code>c:\Users\Luciano\rustprojects\googlecloud\</code> to prepare and edit files locally.<br>
+Then I use TotalCmd to copy them to the VM.<br>
+It includes <code>/etc/nginx/sites-available/</code> and <code>/var/www/</code>.<br>
+-- give me write permission on subfolders and file<br>
+<code>sudo setfacl -d -R -m u:luciano_bestia:7 /var/www</code><br>
+<code>sudo setfacl -m u:luciano_bestia:7 /etc/nginx/sites-available/default</code>
+Another way to copy files over ssh:<br>
+<code>rsync -e ssh -avz --delete-after /home/luciano/rustprojects/googlecloud/var/www/webapps/mem6_game/</code></p>
+<p dir="auto">For backup of the entire /var/www folder run on server:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="pg_dump -F t -U admin -h localhost -p 5432 webpage_hit_counter &gt; postgres_backup/webpage_hit_counter_backup_2024_07_23.tar
+tar --exclude='bestia.dev/guitaraoke/videos' -czvf 2024_07_23_backup_of_var_www.tar.gz /var/www 
+sudo tar -czvf 2024_07_23_backup_of_home_luciano_bestia.tar.gz /home/luciano_bestia "><pre>pg_dump -F t -U admin -h localhost -p 5432 webpage_hit_counter <span class="pl-k">&gt;</span> postgres_backup/webpage_hit_counter_backup_2024_07_23.tar
+tar --exclude=<span class="pl-s"><span class="pl-pds">'</span>bestia.dev/guitaraoke/videos<span class="pl-pds">'</span></span> -czvf 2024_07_23_backup_of_var_www.tar.gz /var/www 
+sudo tar -czvf 2024_07_23_backup_of_home_luciano_bestia.tar.gz /home/luciano_bestia </pre></div>
+<p dir="auto">Then use Totalcmd SSH to copy the backup file.<br>
+GitHub does not allow files bigger than 100MB, so I compressed these backup files with Zip as multiple files of 99_000_000 bytes.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Bash</h2><a id="user-content-bash" class="anchor" aria-label="Permalink: Bash" href="#bash"></a></div>
+<p dir="auto">Arrows up/down for command history is truly great.<br>
+Ctrl+r for search history. Not very good.</p>
+<p dir="auto">Linux file system is very case sensitive. Be careful if you come from windows. The easiest way is to have all file/folder names always and only in small caps.<br>
+~ is the special sign for "user folder"<br>
+The Linux application mc is a great file manager<br>
+<code>sudo apt install mc</code><br>
+-- Remove directory not empty:<br>
+<code>rm -rf mem2</code><br>
+Create a symlink in WSL to win rustprojects folder<br>
+<code>ln -s /mnt/c/Users/Luciano/rustprojects ~/rustprojects</code><br>
+Cargo build inside WSL bash for Linux target. There will not be any windows servers any more in the future.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">NGINX</h2><a id="user-content-nginx" class="anchor" aria-label="Permalink: NGINX" href="#nginx"></a></div>
+<p dir="auto">Terrible settings and manuals for nginx. I hope I will use rust-warp in the future for reverse proxy.<br>
+At the end of this readme is an example of the conf file.<br>
+Some nginx tutorial:<br>
+<a href="https://phoenixnap.com/kb/nginx-reverse-proxy" rel="nofollow">https://phoenixnap.com/kb/nginx-reverse-proxy</a><br>
+-- install<br>
+<code>sudo apt install nginx</code><br>
+-- edit main conf<br>
+<code>sudo nano /etc/nginx/nginx.conf</code><br>
+-- edit other conf about websites<br>
+<code>sudo nano /etc/nginx/sites-enabled/default</code><br>
+-- test conf file<br>
+<code>sudo nginx -c /etc/nginx/nginx.conf -t</code><br>
+-- reload conf file<br>
+<code>sudo nginx -s reload</code><br>
+-- if nothing else works<br>
+<code>sudo reboot</code><br>
+-- read error log<br>
+<code>sudo tail -30 /var/log/nginx/error.log</code><br>
+-- quick test if http server forwarding works<br>
+<code>curl bestia.dev -v</code><br>
+<code>curl bestia.dev/mem4 -v</code><br>
+-- quick test if mem4_server works<br>
+<code>curl 127.0.0.1:8084 -v</code><br>
+<code>curl 127.0.0.1:8084/content/alphabet/text.json -v</code></p>
+<p dir="auto">sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">NGINX SSL</h3><a id="user-content-nginx-ssl" class="anchor" aria-label="Permalink: NGINX SSL" href="#nginx-ssl"></a></div>
+<p dir="auto">SSL mostly does not work on IP address. It requires a domain name.<br>
+Google cloud does not give me a domain name, just an IP.<br>
+So I have to buy the domain name <code>bestia.dev</code> at porkbun.com for 11$ per year.<br>
+The <code>.dev</code> TLD (top level domain) is a <code>forced https:</code> (but that's something only browsers care about).<br>
+In the porkbun.com I edited the DNS: added one A record (address) with the IP 35.199.190.85.<br>
+In <a href="https://console.cloud.google.com" rel="nofollow">https://console.cloud.google.com</a> check Firewalls - Allow HTTPS traffic.</p>
+<p dir="auto"><a href="https://linux4one.com/how-to-secure-nginx-with-lets-encrypt-ssl-on-debian-10/" rel="nofollow">https://linux4one.com/how-to-secure-nginx-with-lets-encrypt-ssl-on-debian-10/</a><br>
+<code>sudo certbot --nginx -d bestia.dev -d bestia.dev</code><br>
+The certbot writes in the folder: <code>/etc/letsencrypt/</code><br>
+The certbot changes the config file: <code>/etc/nginx/sites-enabled/default</code><br>
+Check if the site works:<br>
+<code>curl -k https://bestia.dev</code><br>
+<a href="https://www.ssllabs.com/ssltest/analyze.html?d=bestia.dev" rel="nofollow">https://www.ssllabs.com/ssltest/analyze.html?d=bestia.dev</a><br>
+List the certificates with expiration date:<br>
+<code>sudo certbot certificates</code><br>
+To try if there is need for renewal:<br>
+<code>sudo certbot renew --dry-run</code><br>
+Use crontab with sudo to schedule a renew attempt every 12 hours:<br>
+<code>sudo crontab -e</code><br>
+choose nano text editor. Add this line:<br>
+<code>0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system &amp;&amp; perl -e 'sleep int(rand(43200))' &amp;&amp; certbot -q renew</code><br>
+If the renew is not needed nothing happens. The -q stands for quiet.<br>
+To see the crontab log:<br>
+<code>grep CRON /var/log/syslog</code></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">snapshot</h2><a id="user-content-snapshot" class="anchor" aria-label="Permalink: snapshot" href="#snapshot"></a></div>
+<p dir="auto">Make a VM snapshot in GoogleCloud console. So in the case of a catastrophe, it is easy to return back to a working situation.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Git and ssh</h2><a id="user-content-git-and-ssh" class="anchor" aria-label="Permalink: Git and ssh" href="#git-and-ssh"></a></div>
+<p dir="auto">--use of ssh key for git with ssh agent<br>
+<code>ssh-agent bash -c 'ssh-add ~/.ssh/luciano_mac; git clone git@github.com:bestia-dev/mem4_game.git'</code></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">mem4_game</h2><a id="user-content-mem4_game" class="anchor" aria-label="Permalink: mem4_game" href="#mem4_game"></a></div>
+<p dir="auto">Basically is the same for every webapp.<br>
+Prepare the files in<br>
+<code>c:\Users\Luciano\rustprojects\googlecloud\var\www\webapps\mem4_game\</code><br>
+and copy them with TotalCmd.<br>
+-- command in SSH bash<br>
+<code>cd /var/www/webapps/mem4_game</code><br>
+-- make the file executable (only once)<br>
+<code>chmod +x mem4_server</code><br>
+-- to start the application in a new tab of Zellij
+name it mem4-8084
+-- start the game server<br>
+<code>sudo ./mem4_server 127.0.0.1 8084</code><br>
+-- detach background process<br>
+session, detach
+--the next time attach to this process with<br>
+<code>zellij attach</code></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Zellij command to execute after VM reboot</h2><a id="user-content-zellij-command-to-execute-after-vm-reboot" class="anchor" aria-label="Permalink: Zellij command to execute after VM reboot" href="#zellij-command-to-execute-after-vm-reboot"></a></div>
+<p dir="auto">Nginx is automatically started and so are static web-file-server pages:<br>
+bestia.dev/index.html, /mem1, /amafatt,...</p>
+<p dir="auto">Postgres is also automatically started, I guess.<br>
+For the webapps I run them in separate sessions with Zellij multiplexer.</p>
+<p dir="auto">-- open new tabs for every application and run the commands</p>
+<p dir="auto">-- game mem6<br>
+<code>cd /var/www/webapps/mem6_game ; sudo ./mem6_server 127.0.0.1 8086</code><br>
+-- cargo_crev_web web server<br>
+<code>cd /var/www/webapps/cargo_crev_web ; ./cargo_crev_web</code><br>
+-- cargo_crev_web git fetch repo<br>
+-- prepare credentials if needed (not for fetch)<br>
+<code>eval $(ssh-agent -s) ; ssh-add ~/.ssh/web_crev_dev_for_github</code><br>
+-- schedule for every hour at xx:04 minutes<br>
+<code>foreground_scheduler 4 cargo-crev "crev repo fetch trusted"</code><br>
+-- run webpage_hit_counter
+<code>cd bin/hit_counter_and_env; webpage_hit_counter</code></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Containers and Podman</h2><a id="user-content-containers-and-podman" class="anchor" aria-label="Permalink: Containers and Podman" href="#containers-and-podman"></a></div>
+<p dir="auto">I don't use Docker anymore for Linux containers, but instead I use Podman. It has the same functionality. Same same, but different.<br>
+It is important to understand the difference between images and containers.<br>
+The images are passive files you can copy around. They are like installation files. The containers are active running applications of these images.<br>
+First you have to build your own image. Usually an image is based on somebody others prepared image that you find on DockerHub.<br>
+To build an image I use Buildah, the companion of Podman. I never liked to use the old school docker-files. With Buildah you can run instructions step by step to create an image. Then this steps can be written in a simple bash script. Total control.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">IPv6</h2><a id="user-content-ipv6" class="anchor" aria-label="Permalink: IPv6" href="#ipv6"></a></div>
+<p dir="auto">IPv6 is the future. But it is really hard to activate this in google platform cloud.<br>
+Internally they have only IPv4 ?! For an external IPv6 address you need to create a load balancer and instance group. Too much work.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">nginx conf files</h2><a id="user-content-nginx-conf-files" class="anchor" aria-label="Permalink: nginx conf files" href="#nginx-conf-files"></a></div>
+<p dir="auto">edit conf:<br>
+<code>sudo nano /etc/nginx/nginx.conf</code><br>
+add:</p>
+<div class="highlight highlight-source-nginx notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''  close;
+}"><pre><span class="pl-k">map</span> <span class="pl-smi">$http_upgrade</span> <span class="pl-smi">$connection_upgrade</span> {
+   <span class="pl-c1"> default</span> upgrade;
+    <span class="pl-s">''</span>  close;
+}</pre></div>
+<p dir="auto">edit conf:<br>
+<code>sudo nano /etc/nginx/sites-enabled/default</code><br>
+looks like this:</p>
+<div class="highlight highlight-source-nginx notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    #region mem4
+    #without the trailing / it is not a directory (for the server and for the browser)
+    location = /mem4 {
+        return 301 /mem4/;
+    }
+    #for index.html a special location
+    location = /mem4/ {
+        proxy_pass http://127.0.0.1:8084/index.html;
+    }
+    #websocket special header - Upgrade rules
+    location /mem4/mem4ws/ {
+        proxy_pass http://127.0.0.1:8084/mem4ws/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+    }
+
+    # the trailing / after both of these lines means this route is not appended to the forwarding
+    location /mem4/ {
+        proxy_pass http://127.0.0.1:8084/;
+    }
+
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.  
+        try_files $uri $uri/ =404;
+    }
+}"><pre><span class="pl-k">server</span> {
+    <span class="pl-k">listen</span> <span class="pl-s">80</span><span class="pl-c1"> default_server</span>;
+    <span class="pl-k">listen</span> [::]:80<span class="pl-c1"> default_server</span>;
+
+    <span class="pl-k">root</span> /var/www/html;
+
+    <span class="pl-c"># Add index.php to the list if you are using PHP</span>
+    <span class="pl-k">index</span> index.html index.htm index.nginx-debian.html;
+
+    <span class="pl-k">server_name</span> _;
+
+    <span class="pl-c">#region mem4</span>
+    <span class="pl-c">#without the trailing / it is not a directory (for the server and for the browser)</span>
+    <span class="pl-k">location</span> <span class="pl-en">= /mem4 </span>{
+        <span class="pl-c1">return</span> <span class="pl-s">301</span> /mem4/;
+    }
+    <span class="pl-c">#for index.html a special location</span>
+    <span class="pl-k">location</span> <span class="pl-en">= /mem4/ </span>{
+        <span class="pl-k">proxy_pass</span> http://127.0.0.1:8084/index.html;
+    }
+    <span class="pl-c">#websocket special header - Upgrade rules</span>
+    <span class="pl-k">location</span> <span class="pl-en">/mem4/mem4ws/ </span>{
+        <span class="pl-k">proxy_pass</span> http://127.0.0.1:8084/mem4ws/;
+        <span class="pl-k">proxy_http_version</span> <span class="pl-c1">1.1</span>;
+        <span class="pl-k">proxy_set_header</span> Upgrade <span class="pl-smi">$http_upgrade</span>;
+        <span class="pl-k">proxy_set_header</span> Connection <span class="pl-smi">$connection_upgrade</span>;
+    }
+
+    <span class="pl-c"># the trailing / after both of these lines means this route is not appended to the forwarding</span>
+    <span class="pl-k">location</span> <span class="pl-en">/mem4/ </span>{
+        <span class="pl-k">proxy_pass</span> http://127.0.0.1:8084/;
+    }
+
+    <span class="pl-k">location</span> <span class="pl-en">/ </span>{
+        <span class="pl-c"># First attempt to serve request as file, then</span>
+        <span class="pl-c"># as directory, then fall back to displaying a 404.  </span>
+        <span class="pl-k">try_files</span> <span class="pl-smi">$uri</span> <span class="pl-smi">$uri</span>/ <span class="pl-c1">=404</span>;
+    }
+}</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Upgrade to Debian 11 bullseye</h2><a id="user-content-upgrade-to-debian-11-bullseye" class="anchor" aria-label="Permalink: Upgrade to Debian 11 bullseye" href="#upgrade-to-debian-11-bullseye"></a></div>
+<p dir="auto"><a href="https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/" rel="nofollow">https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/</a></p>
+<p dir="auto">The procedure is as follows:</p>
+<p dir="auto">1.Backup the system. GoogleCloud snapshot.<br>
+2.Update existing packages and reboot the Debian 10 system.<br>
+3.Edit the file /etc/apt/sources.list using a text editor and replace each instance of buster with bullseye.<br>
+Next find the security line, replace keyword   buster/updates with bullseye-security.<br>
+4.Update the packages index on Debian Linux, run:
+sudo apt update
+5.Prepare for the operating system minimal system upgrade, run:
+sudo apt upgrade --without-new-pkgs
+6.Finally, update Debian 10 to Debian 11 bullseye by running:
+sudo apt full-upgrade
+7.Reboot the Linux system so that you can boot into Debian 11 Bullseye
+8.Verify that everything is working correctly.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cat /etc/debian_version
+    10.12
+cat /etc/issue
+    Debian GNU/Linux 10 \n \l
+sudo apt update 
+sudo apt dist-upgrade 
+sudo reboot
+
+
+In all this files here change the word buster to bullseye:
+sudo nano /etc/apt/sources.list 
+
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo apt autoremove
+sudo apt clean
+
+sudo reboot
+cat /etc/issue
+    Debian GNU/Linux 11 \n \l
+cat /etc/debian_version
+    11.3"><pre>cat /etc/debian_version
+    10.12
+cat /etc/issue
+    Debian GNU/Linux 10 <span class="pl-cce">\n</span> <span class="pl-cce">\l</span>
+sudo apt update 
+sudo apt dist-upgrade 
+sudo reboot
+
+
+In all this files here change the word buster to bullseye:
+sudo nano /etc/apt/sources.list 
+
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo apt autoremove
+sudo apt clean
+
+sudo reboot
+cat /etc/issue
+    Debian GNU/Linux 11 <span class="pl-cce">\n</span> <span class="pl-cce">\l</span>
+cat /etc/debian_version
+    11.3</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">upgrade Debian 11 to 12</h2><a id="user-content-upgrade-debian-11-to-12" class="anchor" aria-label="Permalink: upgrade Debian 11 to 12" href="#upgrade-debian-11-to-12"></a></div>
+<p dir="auto"><a href="https://www.cyberciti.biz/faq/update-upgrade-debian-11-to-debian-12-bookworm/" rel="nofollow">https://www.cyberciti.biz/faq/update-upgrade-debian-11-to-debian-12-bookworm/</a></p>
+<ol dir="auto">
+<li>backup - I did a Snapshot to Archive of Google Compute Engine</li>
+<li>Update existing packages <code>sudo apt update</code> and <code>sudo apt upgrade</code> and <code>sudo reboot</code> the Debian 11 system.</li>
+<li>Edit the file <code>sudo nano /etc/apt/sources.list</code>
+and replace each instance of <code>bullseye</code> with <code>bookworm</code>.</li>
+<li>Update the packages index on  Debian Linux Linux, run: <code>sudo apt update</code></li>
+<li>Prepare for the operating system minimal system upgrade, run: <code>sudo apt upgrade --without-new-pkgs</code></li>
+<li>Finally, update  Debian 11 to Debian 12 Bookworm by running: <code>sudo apt full-upgrade</code><br>
+WARNING: On question if you want to change some conf files always choose the <code>default</code>: <code>not change the old one</code>. The new conf file will be stored as <code>pkg-new</code><br>
+Later you can compare the old and new files and modify it accordingly.</li>
+<li>Reboot the Linux system <code>sudo reboot</code> so that you can boot into Debian 12 Bookworm</li>
+<li>Verify that everything is working correctly <code>lsb_release -a</code>, <code>cat /etc/debian_version</code>, <code>uname -mrs</code>
+<code>sudo systemctl status nginx.service</code></li>
+<li>Free space <code>sudo apt --purge autoremove</code></li>
+<li>Run podman pod for hit counter, Zellij for mem6, web.crev.dev and crev git</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">SSH from Debian as a directory mount</h2><a id="user-content-ssh-from-debian-as-a-directory-mount" class="anchor" aria-label="Permalink: SSH from Debian as a directory mount" href="#ssh-from-debian-as-a-directory-mount"></a></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sshfs lucianobestia@bestia.dev:/ /mnt/bestia_dev_ssh -o reconnect"><pre>sshfs lucianobestia@bestia.dev:/ /mnt/bestia_dev_ssh -o reconnect</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">disk full, I need to free space</h2><a id="user-content-disk-full-i-need-to-free-space" class="anchor" aria-label="Permalink: disk full, I need to free space" href="#disk-full-i-need-to-free-space"></a></div>
+<p dir="auto">It happens to everybody. The disk is so small, that it is easy to fill it.<br>
+Nothing can work with the disk full. Neither the certbot for LetsEncrypt. Bad !<br>
+How much space do I have on my limited small VM disk 10 GB?</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="df -h
+   /dev/sda1       9.8G  9.8G  0.0G  100% /"><pre>df -h
+   /dev/sda1       9.8G  9.8G  0.0G  100% /</pre></div>
+<p dir="auto">Clean some space:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo apt-get clean"><pre>sudo apt-get clean</pre></div>
+<p dir="auto">Now I have a little more space:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="df -h
+   /dev/sda1       9.8G  7.6G  1.7G  83% /"><pre>df -h
+   /dev/sda1       9.8G  7.6G  1.7G  83% /</pre></div>
+<p dir="auto">Find the biggest files and directories</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo du -a / | sort -n -r | head -n 20"><pre>sudo du -a / <span class="pl-k">|</span> sort -n -r <span class="pl-k">|</span> head -n 20</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Remove Podman and pods for counter_hit and Postgres</h2><a id="user-content-remove-podman-and-pods-for-counter_hit-and-postgres" class="anchor" aria-label="Permalink: Remove Podman and pods for counter_hit and Postgres" href="#remove-podman-and-pods-for-counter_hit-and-postgres"></a></div>
+<p dir="auto">Podman pods for <code>counter_hit</code> and <code>Postgres 13</code> occupy too much space on my micro-limited disk 10 GB. Installing them normally on the Debian OS takes less space.<br>
+Remove pods, containers, images and podman. Be careful that the database data are in an external volume on the disk.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="podman pod list
+# remove pods
+podman pod rm pod_id
+
+podman ps
+# remove containers
+podman rm container_id
+
+podman images
+# remove images
+podman rmi image_id
+
+# Complete Uninstall
+sudo apt --purge remove buildah skopeo podman docker
+
+sudo ls /etc/containers
+sudo rm -rf /etc/containers
+
+sudo ls /var/lib/containers 
+sudo rm -rf /var/lib/containers 
+
+# Remember to delete containers personal to users:
+ls /home/luciano_bestia/.local/share/containers
+rm -rf /home/luciano_bestia/.local/share/containers"><pre>podman pod list
+<span class="pl-c"><span class="pl-c">#</span> remove pods</span>
+podman pod rm pod_id
+
+podman ps
+<span class="pl-c"><span class="pl-c">#</span> remove containers</span>
+podman rm container_id
+
+podman images
+<span class="pl-c"><span class="pl-c">#</span> remove images</span>
+podman rmi image_id
+
+<span class="pl-c"><span class="pl-c">#</span> Complete Uninstall</span>
+sudo apt --purge remove buildah skopeo podman docker
+
+sudo ls /etc/containers
+sudo rm -rf /etc/containers
+
+sudo ls /var/lib/containers 
+sudo rm -rf /var/lib/containers 
+
+<span class="pl-c"><span class="pl-c">#</span> Remember to delete containers personal to users:</span>
+ls /home/luciano_bestia/.local/share/containers
+rm -rf /home/luciano_bestia/.local/share/containers</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Uninstall Postgres</h2><a id="user-content-uninstall-postgres" class="anchor" aria-label="Permalink: Uninstall Postgres" href="#uninstall-postgres"></a></div>
+<p dir="auto">If needed uninstall old Postgres. Be careful to not delete your data directory. My data directory is <code>/home/luciano_bestia/postgres_data</code>.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="dpkg -l | grep postgres
+
+# result:
+# ii  postgresql-client                     15+248                                  all          front-end programs for PostgreSQL (supported version)
+# ii  postgresql-client-13                  13.15-1.pgdg120+1                       amd64        front-end programs for PostgreSQL 13
+# ii  postgresql-client-15                  15.7-0+deb12u1                          amd64        front-end programs for PostgreSQL 15
+# ii  postgresql-client-common
+# remove all the above
+
+sudo apt-get --purge remove postgresql-client postgresql-client-13 postgresql-client-15 postgresql-client-common
+
+sudo rm -rf /var/lib/postgresql/
+sudo rm -rf /var/log/postgresql/
+sudo rm -rf /etc/postgresql/"><pre>dpkg -l <span class="pl-k">|</span> grep postgres
+
+<span class="pl-c"><span class="pl-c">#</span> result:</span>
+<span class="pl-c"><span class="pl-c">#</span> ii  postgresql-client                     15+248                                  all          front-end programs for PostgreSQL (supported version)</span>
+<span class="pl-c"><span class="pl-c">#</span> ii  postgresql-client-13                  13.15-1.pgdg120+1                       amd64        front-end programs for PostgreSQL 13</span>
+<span class="pl-c"><span class="pl-c">#</span> ii  postgresql-client-15                  15.7-0+deb12u1                          amd64        front-end programs for PostgreSQL 15</span>
+<span class="pl-c"><span class="pl-c">#</span> ii  postgresql-client-common</span>
+<span class="pl-c"><span class="pl-c">#</span> remove all the above</span>
+
+sudo apt-get --purge remove postgresql-client postgresql-client-13 postgresql-client-15 postgresql-client-common
+
+sudo rm -rf /var/lib/postgresql/
+sudo rm -rf /var/log/postgresql/
+sudo rm -rf /etc/postgresql/</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install Postgres 13 on Debian 12</h2><a id="user-content-install-postgres-13-on-debian-12" class="anchor" aria-label="Permalink: Install Postgres 13 on Debian 12" href="#install-postgres-13-on-debian-12"></a></div>
+<p dir="auto">For now, I will use the same version of Postgres 13 as before.<br>
+The installation is awkward:<br>
+<a href="https://computingforgeeks.com/install-postgresql-on-debian-linux/" rel="nofollow">https://computingforgeeks.com/install-postgresql-on-debian-linux/</a></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="
+sudo apt update &amp;&amp; sudo apt -y upgrade
+sudo apt -y install gnupg2
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+
+echo &quot;deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main&quot; |sudo tee  /etc/apt/sources.list.d/pgdg.list
+cat /etc/apt/sources.list.d/pgdg.list
+sudo apt update
+
+sudo apt -y install postgresql-13
+
+# change data_directory
+sudo /etc/init.d/postgresql status
+sudo /etc/init.d/postgresql stop
+sudo nano /etc/postgresql/13/main/postgresql.conf
+
+# (change requires restart)
+# from:
+data_directory = '/var/lib/postgresql/13/main'
+# to:
+data_directory = '/home/luciano_bestia/postgres_data/webpage_hit_counter_pod'
+
+# start the executable for debugging before starting as a service, because there are no logs
+# first enter terminal as the user postgres
+sudo su  - postgres
+# then start postgres manually with debugging level 3 enabled:
+/usr/lib/postgresql/13/bin/postgres -d 3 -c config_file=/etc/postgresql/13/main/postgresql.conf
+# error:  data directory &quot;/home/luciano_bestia/postgres_data/webpage_hit_counter_pod&quot; has wrong ownership
+
+# correct the ownership to the user postgres
+sudo chown -Rf postgres:postgres /home/luciano_bestia/postgres_data
+sudo chmod -R 700 /home/luciano_bestia/postgres_data
+
+# retry 
+/usr/lib/postgresql/13/bin/postgres -d 3 -c config_file=/etc/postgresql/13/main/postgresql.conf
+# it should work.
+
+
+https://openbasesystems.com/2023/06/20/postgresql-error-fatal-role-username-does-not-exist/
+
+from my old installation:
+
+-e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=password \
+
+id admin
+# not exist
+useradd admin
+
+ALTER ROLE role_name WITH attribute_options;
+ALTER DATABASE postgres OWNER TO postgres;
+
+
+sudo /etc/init.d/postgresql start
+# enter a terminal session as the database user postgres
+sudo su  - postgres
+psql
+SHOW data_directory;
+   /var/lib/postgresql/15/main
+\q
+exit
+"><pre>sudo apt update <span class="pl-k">&amp;&amp;</span> sudo apt -y upgrade
+sudo apt -y install gnupg2
+curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc<span class="pl-k">|</span>sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>deb http://apt.postgresql.org/pub/repos/apt/ <span class="pl-s"><span class="pl-pds">`</span>lsb_release -cs<span class="pl-pds">`</span></span>-pgdg main<span class="pl-pds">"</span></span> <span class="pl-k">|</span>sudo tee  /etc/apt/sources.list.d/pgdg.list
+cat /etc/apt/sources.list.d/pgdg.list
+sudo apt update
+
+sudo apt -y install postgresql-13
+
+<span class="pl-c"><span class="pl-c">#</span> change data_directory</span>
+sudo /etc/init.d/postgresql status
+sudo /etc/init.d/postgresql stop
+sudo nano /etc/postgresql/13/main/postgresql.conf
+
+<span class="pl-c"><span class="pl-c">#</span> (change requires restart)</span>
+<span class="pl-c"><span class="pl-c">#</span> from:</span>
+data_directory = <span class="pl-s"><span class="pl-pds">'</span>/var/lib/postgresql/13/main<span class="pl-pds">'</span></span>
+<span class="pl-c"><span class="pl-c">#</span> to:</span>
+data_directory = <span class="pl-s"><span class="pl-pds">'</span>/home/luciano_bestia/postgres_data/webpage_hit_counter_pod<span class="pl-pds">'</span></span>
+
+<span class="pl-c"><span class="pl-c">#</span> start the executable for debugging before starting as a service, because there are no logs</span>
+<span class="pl-c"><span class="pl-c">#</span> first enter terminal as the user postgres</span>
+sudo su  - postgres
+<span class="pl-c"><span class="pl-c">#</span> then start postgres manually with debugging level 3 enabled:</span>
+/usr/lib/postgresql/13/bin/postgres -d 3 -c config_file=/etc/postgresql/13/main/postgresql.conf
+<span class="pl-c"><span class="pl-c">#</span> error:  data directory "/home/luciano_bestia/postgres_data/webpage_hit_counter_pod" has wrong ownership</span>
+
+<span class="pl-c"><span class="pl-c">#</span> correct the ownership to the user postgres</span>
+sudo chown -Rf postgres:postgres /home/luciano_bestia/postgres_data
+sudo chmod -R 700 /home/luciano_bestia/postgres_data
+
+<span class="pl-c"><span class="pl-c">#</span> retry </span>
+/usr/lib/postgresql/13/bin/postgres -d 3 -c config_file=/etc/postgresql/13/main/postgresql.conf
+<span class="pl-c"><span class="pl-c">#</span> it should work.</span>
+
+
+https://openbasesystems.com/2023/06/20/postgresql-error-fatal-role-username-does-not-exist/
+
+from my old installation:
+
+-e POSTGRES_USER=admin \
+  -e POSTGRES_PASSWORD=password \
+
+id admin
+<span class="pl-c"><span class="pl-c">#</span> not exist</span>
+useradd admin
+
+ALTER ROLE role_name WITH attribute_options<span class="pl-k">;</span>
+ALTER DATABASE postgres OWNER TO postgres<span class="pl-k">;</span>
+
+
+sudo /etc/init.d/postgresql start
+<span class="pl-c"><span class="pl-c">#</span> enter a terminal session as the database user postgres</span>
+sudo su  - postgres
+psql
+SHOW data_directory<span class="pl-k">;</span>
+   /var/lib/postgresql/15/main
+<span class="pl-cce">\q</span>
+<span class="pl-c1">exit</span>
+</pre></div>
+<p dir="auto">The default folders for Postgres 13 data is: ``
+I already have data in the folder <code>~/postgres_data</code> and the backup in `postgres_backup`.<br>
+How to attach this folder to postgres13 ?
+<a href="https://www.squash.io/exploring-postgresql-check-db-dir-in-postgresql-databases/" rel="nofollow">https://www.squash.io/exploring-postgresql-check-db-dir-in-postgresql-databases/</a>
+Yes, you can change the default  database directory in  PostgreSQL by modifying the data_directory configuration parameter in the  postgresql.conf file. By default, the data directory is set to /var/lib/postgresql//main on Linux systems.
+sudo find / -name postgresql.conf</p>
+<p dir="auto">/etc/postgresql/13/main/postgresql.conf
+/home/luciano_bestia/postgres_backup/before_upgrade/webpage_hit_counter_pod/postgresql.conf
+/home/luciano_bestia/postgres_data/webpage_hit_counter_pod/postgresql.conf</p>
+<p dir="auto">the default data directory is /var/lib/postgresql/13/main
+the directory /etc/postgresql/13/main is for internal use by Postgres</p>
+<p dir="auto">The default values of these variables are driven from the -D command-line
+option or PGDATA environment variable, represented here as ConfigDir.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>win10_wsl2_debian11</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="01. Tutorial to install Linux on Windows. Linux everywhere! (win10_wsl2_debian11) (2022-03)">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11">https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">win10_wsl2_debian11</h1><a id="user-content-win10_wsl2_debian11" class="anchor" aria-label="Permalink: win10_wsl2_debian11" href="#win10_wsl2_debian11"></a></div>
+<p dir="auto"><strong>01. Tutorial to install Linux on Windows. Linux everywhere! (win10_wsl2_debian11) (2022-03)</strong><br>
+<em><strong>version: 2024.326.1347  date: 2024-03-26 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c273959e453b2eacb9b7719663be397499b129c79eb13180305a069b3c2f5e51/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d79656c6c6f77"><img src="https://img.shields.io/badge/tutorial-yellow" alt="tutorial" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b052ae7e011ef8508f47e8b74811aaeae005e4b885b160731b19f2ecd1c48faa/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3535363632353034302e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/556625040.svg" alt="win10_wsl2_debian11" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/CRUSTDE_Containerized_Rust_DevEnv/main/images/crustde_250x250.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/CRUSTDE_Containerized_Rust_DevEnv/main/images/crustde_250x250.png" alt="logo" style="max-width: 100%;"></a>
+win10_wsl2_debian11 is a member of the <a href="https://github.com/orgs/CRUSTDE-ContainerizedRustDevEnv/repositories?q=sort%3Aname-asc">CRUSTDE-ContainerizedRustDevEnv</a> project.</p>
+<p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/"><img src="https://img.shields.io/badge/Lines_in_markdown-338-green.svg" alt="Lines in md" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<p dir="auto">For 30 years of my professional life, I programmed in Windows. It was good.<br>
+I am on a long vacation now and is time to learn something new.</p>
+<p dir="auto">This project has also a YouTube video tutorial. Watch it:</p>
+
+<p dir="auto"><a href="https://bestia.dev/youtube/win10_wsl2_debian11.html" rel="nofollow"><img src="https://bestia.dev/youtube/win10_wsl2_debian11.jpg" width="400px" style="max-width: 100%;"></a></p>
+
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Linux everywhere</h2><a id="user-content-linux-everywhere" class="anchor" aria-label="Permalink: Linux everywhere" href="#linux-everywhere"></a></div>
+<p dir="auto">My conclusion is that Windows (and MacOS) should just die a long death and be replaced by Linux.<br>
+Microsoft obviously concluded the same, therefor they introduced WSL (Windows Subsystem for Linux). Now we can run more and more Linux programs inside Windows. So Windows is less and less interesting to programmers.<br>
+MacOS and iOS are already similar to Linux because they are based on BSD, a cousin of Unix.<br>
+Android is basically a bastard child of Linux and Google.<br>
+Almost all the web servers and servers in the cloud are Linux today.<br>
+So today it makes sense to do all the programming only for Linux.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">standard modern GUI</h2><a id="user-content-standard-modern-gui" class="anchor" aria-label="Permalink: standard modern GUI" href="#standard-modern-gui"></a></div>
+<p dir="auto">The "elephant in the room" is the GUI. Every OS has on purpose made the GUI different and completely incompatible. Sadly!
+But we have a strong international standard for GUI that works literally everywhere: it is HTML+CSS+JavascriptEngine.<br>
+I explicitly didn't say Javascript, let's call it by its true name <strong>ECMAScript</strong> because it is an abomination.<br>
+Fortunately, we have now <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" rel="nofollow">WebAssembly</a> abbreviated as <a href="https://webassembly.org/" rel="nofollow">WASM</a> to save the day.<br>
+We can finally make client programs for the browser in some "normal" programming languages like Rust and many others.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Win10</h2><a id="user-content-win10" class="anchor" aria-label="Permalink: Win10" href="#win10"></a></div>
+<p dir="auto">Win10 is so ubiquitous that I have nothing interesting to say. It works just fine with all the drivers and peripherals and it comes preinstalled on most of the notebooks. We can say it is a winning OS in the desktop/notebook segment. In the enterprise world, Microsoft still has a firm grip with its Office suite. Blue-collar workers are just hooked to it like drug addicts even when there are good alternatives.<br>
+But Windows lost completely in the server segment and shamefully in the smartphone segment.<br>
+We "must" use it on notebooks because of the drivers, but it is slowly dying.<br>
+I don't have any opinion of Win11. Microsoft "promised" that Win10 was the last version of Windows and that the number would last forever and be free. In the background, there will be minor and major updates. They broke their promise. I think nobody really loves Win11.<br>
+It looks more like they are trying to push people away from Windows on purpose.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Installing WSL2</h2><a id="user-content-installing-wsl2" class="anchor" aria-label="Permalink: Installing WSL2" href="#installing-wsl2"></a></div>
+<p dir="auto">WSL2 is a revolution. With it, I have a lightweight virtual machine with a true Linux kernel. On my Lenovo notebook, I have Win10 and it works fine with all the drivers and peripherals, but now I have also Linux, so I can do some serious programming for the Linux cloud servers. Not just one Linux, I can have multiple Linux OS simultaneously on the same machine because they run in a VM.<br>
+Let's install/enable it on Win10:<br>
+<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2" rel="nofollow">https://docs.microsoft.com/en-us/windows/wsl/install-win10#update-to-wsl-2</a><br>
+Open <code>Windows git-bash Run as Administrator</code>:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="export MSYS_NO_PATHCONV=1
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# restart and update to WSL2
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+unset MSYS_NO_PATHCONV
+# Set WSL2 as default
+wsl --set-default-version 2
+# I can update the wsl now
+wsl --update"><pre><span class="pl-k">export</span> MSYS_NO_PATHCONV=1
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+<span class="pl-c"><span class="pl-c">#</span> restart and update to WSL2</span>
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+<span class="pl-c1">unset</span> MSYS_NO_PATHCONV
+<span class="pl-c"><span class="pl-c">#</span> Set WSL2 as default</span>
+wsl --set-default-version 2
+<span class="pl-c"><span class="pl-c">#</span> I can update the wsl now</span>
+wsl --update</pre></div>
+<p dir="auto">If needed restart Windows for this changes to be 100% in effect.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Debian11 - Bullseye</h2><a id="user-content-debian11---bullseye" class="anchor" aria-label="Permalink: Debian11 - Bullseye" href="#debian11---bullseye"></a></div>
+<p dir="auto">Debian is considered the grandfather of Linux-based operating systems. The Linux OSes are called "distribution" or "distro". All of them have in common the Linux Kernel developed firstly by Linux Torvald, but they differ in other components that make an Operating system.<br>
+Debian is conservative in its release cycle to ensure high stability. Some say that it is boringly stable ;-) I am old and I like "stable".<br>
+Some distros are derived from Debian and share a lot with it. Everybody has heard of Ubuntu, a big Linux popularity success for desktops.<br>
+The new version of Debian is 11. Every version has its unique name, version 11 is called Bullseye. Nice name.<br>
+Use the Microsoft Store to install Debian inside WSL2:</p>
+<p dir="auto"><a href="https://www.microsoft.com/en-us/p/debian/9msvkqc78pk6" rel="nofollow">https://www.microsoft.com/en-us/p/debian/9msvkqc78pk6</a></p>
+<p dir="auto">or in <code>Windows git-bash</code> a few lines:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# list the distros
+wsl --list --online
+# install Debian
+wsl --install -d Debian"><pre><span class="pl-c"><span class="pl-c">#</span> list the distros</span>
+wsl --list --online
+<span class="pl-c"><span class="pl-c">#</span> install Debian</span>
+wsl --install -d Debian</pre></div>
+<p dir="auto">It takes a minute! Now we can open the Debian bash terminal using the provided "Debian" icon in Start Menu. This Debian is without the GUI desktop. We could additionally install it, but we will rarely need it. A lot of Linux programs for programmers work just fine in the non-GUI mode inside a bash terminal.<br>
+The Windows user is automatically also a Debian user.</p>
+<p dir="auto">In the bash terminal we can type these commands to update/upgrade Debian packages:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo apt update
+sudo apt -y full-upgrade
+cat /etc/debian_version
+# 12.5"><pre>sudo apt update
+sudo apt -y full-upgrade
+cat /etc/debian_version
+<span class="pl-c"><span class="pl-c">#</span> 12.5</span></pre></div>
+<p dir="auto">WSL2 works very fast with its own filesystem.<br>
+From Linux, we can access the win10 filesystem mounted on <code>/mnt/c/</code>, but this is very slow.<br>
+From Windows, we can access the Linux files on <code>\\wsl$\Debian\</code>.  But sometimes when we copy files, we get an additional annoying file "*.attr" for attributes that differ on the 2 filesystems. I always delete it.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Updates 2024 and new knowledge</h2><a id="user-content-updates-2024-and-new-knowledge" class="anchor" aria-label="Permalink: Updates 2024 and new knowledge" href="#updates-2024-and-new-knowledge"></a></div>
+<p dir="auto">Debian is now 12 bookworm. But that doesn't change much. It is easy to uninstall the old Debian and install the new one just with the same commands.<br>
+First, store the important configuration of Debian somehow and restore it later.<br>
+The same commands will install the latest version. That takes just a minute! Great!.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">nano - simple editor in bash terminal</h2><a id="user-content-nano---simple-editor-in-bash-terminal" class="anchor" aria-label="Permalink: nano - simple editor in bash terminal" href="#nano---simple-editor-in-bash-terminal"></a></div>
+<p dir="auto">I configured <code>nano</code> as my default editor in the bash terminal for simple text editing. It is easy to use.</p>
+<p dir="auto">I like to use the mouse:</p>
+<ul dir="auto">
+<li>Select text with the mouse to copy. Nothing to click, just select.</li>
+<li>Right-click to paste.</li>
+<li>mouse wheel to scroll up and down</li>
+</ul>
+<p dir="auto">This works with the Windows clipboard and is used to transfer text from and to the bash terminal.
+This useful functionality comes from the Wezterm terminal and not from the nano editor.
+Don't use <code>set mouse</code> in file <code>~/.nanorc</code> because it will disable this useful terminal mouse functionality.</p>
+<p dir="auto">Editor <code>nano</code> important functions:</p>
+<ul dir="auto">
+<li>Arrows keys, pgup, pgdown, home and end move the terminal cursor intuitively</li>
+<li>Delete and backspace work intuitively</li>
+<li><code>Ctrl-K</code> to delete a line. Press longer to delete many lines.</li>
+<li><code>Ctrl-O</code> save file</li>
+<li><code>Ctrl-X</code> to exit</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">WSL2: disable auto-mount of Windows drives</h2><a id="user-content-wsl2-disable-auto-mount-of-windows-drives" class="anchor" aria-label="Permalink: WSL2: disable auto-mount of Windows drives" href="#wsl2-disable-auto-mount-of-windows-drives"></a></div>
+<p dir="auto">My main OS Windows can see the files inside WSL using paths like this: <code>\\wsl$\Debian\home\</code> or <code>\\wsl.localhost\Debian\home\</code>. I think this is fine. The host can see the guest.</p>
+<p dir="auto">I don't like that programs in WSL can see the files of my host OS Windows. The win drives are mounted like <code>/mnt/c/</code>, <code>/mnt/d/</code>,... It is called WSL auto-mount. I want to disable that.<br>
+For "security" I don't want WSL to see Windows drives, folders and files by default. It is never good that the guest can see the host. This access is even read/write. Bad.</p>
+<p dir="auto">There is a half-baked solution from Microsoft, but workable for my use case.<br>
+A malicious actor could still mount any Windows folder he wants if he gets admin privilege in WSL because then he can change the <code>/etc/wsl.conf</code> file.<br>
+This is not a good sandbox. It just makes exploits a little bit trickier, but possible nonetheless.<br>
+<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="953185029" data-permission-text="Title is private" data-url="https://github.com/microsoft/WSL/issues/7236" data-hovercard-type="issue" data-hovercard-url="/microsoft/WSL/issues/7236/hovercard" href="https://github.com/microsoft/WSL/issues/7236">microsoft/WSL#7236</a><br>
+Microsoft always does everything unsafe by default! On purpose. Bad Microsoft!</p>
+<p dir="auto">First, disable the <code>virtio9p</code> protocol that is used by WSL to access the files in Windows. At least I hope I understood that right.</p>
+<p dir="auto">In <code>Windows git-bash</code> create the file with the command:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="code ~/.wslconfig"><pre>code <span class="pl-k">~</span>/.wslconfig</pre></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="[wsl2]
+# disable wsl from accessing windows files
+virtio9p=false"><pre lang="conf" class="notranslate"><code>[wsl2]
+# disable wsl from accessing windows files
+virtio9p=false
+</code></pre></div>
+<p dir="auto">Second, write the file in the <code>Debian bash</code> with <code>nano</code>:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo nano /etc/wsl.conf"><pre>sudo nano /etc/wsl.conf</pre></div>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="# Automatically mount Windows drive when the distribution is launched
+[automount]
+
+# disable auto-mounting of win drives
+enabled = false
+
+# process fstab entries to allow some folders to be mounted
+mountFsTab = true
+
+# disable launching windows exe files
+[interop]
+enabled = false
+appendWindowsPath = false"><pre lang="conf" class="notranslate"><code># Automatically mount Windows drive when the distribution is launched
+[automount]
+
+# disable auto-mounting of win drives
+enabled = false
+
+# process fstab entries to allow some folders to be mounted
+mountFsTab = true
+
+# disable launching windows exe files
+[interop]
+enabled = false
+appendWindowsPath = false
+</code></pre></div>
+<p dir="auto">For the changes to take effect, in <code>Windows git-bash</code> shutdown WSL with:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="wsl --shutdown"><pre>wsl --shutdown</pre></div>
+<p dir="auto">After restart, the win drives are not automounted anymore, but the mounting points are still here.<br>
+In Debian bash:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="ls /mnt
+# c  d  wsl  wslg
+sudo rmdir /mnt/c
+sudo rmdir /mnt/d
+# mounting points c and d are now deleted
+ls /mnt
+# wsl  wslg"><pre>ls /mnt
+<span class="pl-c"><span class="pl-c">#</span> c  d  wsl  wslg</span>
+sudo rmdir /mnt/c
+sudo rmdir /mnt/d
+<span class="pl-c"><span class="pl-c">#</span> mounting points c and d are now deleted</span>
+ls /mnt
+<span class="pl-c"><span class="pl-c">#</span> wsl  wslg</span></pre></div>
+<p dir="auto">Now when starting WSL I get a stupid error:<br>
+&lt;3&gt;WSL (9) ERROR: UtilTranslatePathList:2866: Failed to translate C:\Users\luciano<br>
+And I don't know from where it comes from.<br>
+The <code>appendWindowsPath</code> is already set to false. Usually, this is the main reason for errors like that.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Git and SSH on Debian</h2><a id="user-content-git-and-ssh-on-debian" class="anchor" aria-label="Permalink: Git and SSH on Debian" href="#git-and-ssh-on-debian"></a></div>
+<p dir="auto">Git and SSH are essential to developers. We need to securely access our remote repositories on GitHub and our production Web servers. All over SSH. The installation of Git brings SSH with it.
+Install Git in Debian:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo apt install -y git
+git --version
+# git version 2.39.2
+ssh -V
+# OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023"><pre>sudo apt install -y git
+git --version
+<span class="pl-c"><span class="pl-c">#</span> git version 2.39.2</span>
+ssh -V
+<span class="pl-c"><span class="pl-c">#</span> OpenSSH_9.2p1 Debian-2+deb12u2, OpenSSL 3.0.11 19 Sep 2023</span></pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="
+# config git globally
+git config --global user.name &quot;Your Name&quot;"><pre><span class="pl-c"><span class="pl-c">#</span> config git globally</span>
+git config --global user.name <span class="pl-s"><span class="pl-pds">"</span>Your Name<span class="pl-pds">"</span></span></pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git config --global user.email &quot;youremail@yourdomain.com&quot;"><pre>git config --global user.email <span class="pl-s"><span class="pl-pds">"</span>youremail@yourdomain.com<span class="pl-pds">"</span></span></pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# for windows only:
+git config --global core.eol lf
+git config --global core.autocrlf input
+# I like to use the nano editor in the terminal
+git config --global core.editor &quot;nano&quot;
+git config --global -l"><pre><span class="pl-c"><span class="pl-c">#</span> for windows only:</span>
+git config --global core.eol lf
+git config --global core.autocrlf input
+<span class="pl-c"><span class="pl-c">#</span> I like to use the nano editor in the terminal</span>
+git config --global core.editor <span class="pl-s"><span class="pl-pds">"</span>nano<span class="pl-pds">"</span></span>
+git config --global -l</pre></div>
+<p dir="auto">Config SSH:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="mkdir -vp ~/.ssh
+chmod 700 ~/.ssh
+# From Windows from your encrypted vault, copy your existing ssh keys (private and public) for Github and your web server into ~/.ssh. Mine are called github_com_bestia_dev_git_ssh_1 and bestia_dev_luciano_bestia_ssh_1. 
+# Windows can read/write the Linux Filesystem. Linux should NOT read/write the Windows file system. Host-&gt;Guest ok. Guest-&gt;Host no-no."><pre>mkdir -vp <span class="pl-k">~</span>/.ssh
+chmod 700 <span class="pl-k">~</span>/.ssh
+<span class="pl-c"><span class="pl-c">#</span> From Windows from your encrypted vault, copy your existing ssh keys (private and public) for Github and your web server into ~/.ssh. Mine are called github_com_bestia_dev_git_ssh_1 and bestia_dev_luciano_bestia_ssh_1. </span>
+<span class="pl-c"><span class="pl-c">#</span> Windows can read/write the Linux Filesystem. Linux should NOT read/write the Windows file system. Host-&gt;Guest ok. Guest-&gt;Host no-no.</span></pre></div>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# config appropriate security for the private key files
+sudo chmod 600 ~/.ssh/github_com_bestia_dev_git_ssh_1
+sudo chmod 600 ~/.ssh/bestia_dev_luciano_bestia_ssh_1"><pre><span class="pl-c"><span class="pl-c">#</span> config appropriate security for the private key files</span>
+sudo chmod 600 <span class="pl-k">~</span>/.ssh/github_com_bestia_dev_git_ssh_1
+sudo chmod 600 <span class="pl-k">~</span>/.ssh/bestia_dev_luciano_bestia_ssh_1</pre></div>
+<p dir="auto">Create the file <code>~/.ssh/config</code> with <a href="/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/blob/main/configuration_files/debian_files/.ssh/config">this content</a>:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="nano ~/.ssh/config"><pre>nano <span class="pl-k">~</span>/.ssh/config</pre></div>
+<p dir="auto">Create the file <code>~/.ssh/sshadd.sh</code> with  <a href="/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/blob/main/configuration_files/debian_files/.ssh/sshadd.sh">this content</a></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="nano ~/.ssh/sshadd.sh"><pre>nano <span class="pl-k">~</span>/.ssh/sshadd.sh</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">.bashrc</h2><a id="user-content-bashrc" class="anchor" aria-label="Permalink: .bashrc" href="#bashrc"></a></div>
+<p dir="auto">To activate the <code>ssh-agent</code> and config other stuff on start of bash terminal,
+copy <a href="/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/blob/main/configuration_files/debian_files/.bashrc">this content</a> to file <code>~/.bashrc</code>.</p>
+<p dir="auto">First, use <code>Ctrl-K</code> multiple times to delete all existing lines.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="nano ~/.bashrc"><pre>nano <span class="pl-k">~</span>/.bashrc</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">.inputrc</h2><a id="user-content-inputrc" class="anchor" aria-label="Permalink: .inputrc" href="#inputrc"></a></div>
+<p dir="auto">Bash makes a horrible sound when using auto-completion.<br>
+Kill auto-completion horrible sound:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="printf &quot;set bell-style none\n&quot; &gt;&gt; ~/.inputrc"><pre><span class="pl-c1">printf</span> <span class="pl-s"><span class="pl-pds">"</span>set bell-style none\n<span class="pl-pds">"</span></span> <span class="pl-k">&gt;&gt;</span> <span class="pl-k">~</span>/.inputrc</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Removing Debian</h2><a id="user-content-removing-debian" class="anchor" aria-label="Permalink: Removing Debian" href="#removing-debian"></a></div>
+<p dir="auto">If you want a fresh new installation of Debian it is easy to remove the existing one in <code>Windows git-bash</code>.<br>
+Warning: You will lose all the content.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# get the exact distro name
+wsl -l -v
+wsl --unregister Debian"><pre><span class="pl-c"><span class="pl-c">#</span> get the exact distro name</span>
+wsl -l -v
+wsl --unregister Debian</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Removing WSL2</h2><a id="user-content-removing-wsl2" class="anchor" aria-label="Permalink: Removing WSL2" href="#removing-wsl2"></a></div>
+<p dir="auto">If you need to remove WSL2 open <code>Windows git-bash Run as Administrator</code>.<br>
+Warning: You will lose all the content.</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="MSYS_NO_PATHCONV=1 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux"><pre>MSYS_NO_PATHCONV=1 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Quirks</h2><a id="user-content-quirks" class="anchor" aria-label="Permalink: Quirks" href="#quirks"></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">network connection after sleep</h3><a id="user-content-network-connection-after-sleep" class="anchor" aria-label="Permalink: network connection after sleep" href="#network-connection-after-sleep"></a></div>
+<p dir="auto">After putting the laptop to sleep, sometimes the WSL2 does not work right. When I need to use <code>localhost</code> or <code>127.0.0.1</code> connection from Win10 to a Linux program, the connection is broken. I have to restart the WSL in <code>Windows git-bash Run as Administrator</code> with<br>
+<code>Get-Service LxssManager | Restart-Service</code>.<br>
+Not nice and very difficult to discover because WSL2 is running just fine, except for this.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">external disk obsolete content</h3><a id="user-content-external-disk-obsolete-content" class="anchor" aria-label="Permalink: external disk obsolete content" href="#external-disk-obsolete-content"></a></div>
+<p dir="auto">Sometimes the content of an external disk is completely wrong when looked at from the WSL2. It is obsolete, something that is a remnant of other external disks. I think I unmounted the <code>mnt/d</code> in Linux and then mounted it back to solve the problem.</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">git repository corruption</h3><a id="user-content-git-repository-corruption" class="anchor" aria-label="Permalink: git repository corruption" href="#git-repository-corruption"></a></div>
+<p dir="auto">My git repository inside WSL2 got corrupted. It looks like this happens to many people on WSL2.<br>
+The cure is:</p>
+<div class="highlight highlight-source-batchfile notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# backup the repo first!
+find .git/objects/ -type f -empty | xargs rm
+git fetch -p
+git fsck --full"><pre># backup the repo first!
+<span class="pl-k">find</span> .git/objects/ -type f -empty <span class="pl-k">|</span> xargs rm
+git fetch -p
+git fsck --full</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

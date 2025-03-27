@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>windows_reinstall</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Description of my Windows OS prepared for Rust development in Linux">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall">https://github.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">windows_reinstall</h1><a id="user-content-windows_reinstall" class="anchor" aria-label="Permalink: windows_reinstall" href="#windows_reinstall"></a></div>
+<p dir="auto"><strong>Description of my Windows OS prepared for Rust development in Linux</strong><br>
+<em><strong>version: 2024.326.1347 date: 2024-03-26 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c273959e453b2eacb9b7719663be397499b129c79eb13180305a069b3c2f5e51/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d79656c6c6f77"><img src="https://img.shields.io/badge/tutorial-yellow" alt="tutorial" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/0bc01b59f47cd0d9a1dda29ce3564e6b3db35e072e27d8f72a2af4a55eda92ea/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3634313735383339392e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/641758399.svg" alt="windows_reinstall" style="max-width: 100%;"></a></p>
+<p dir="auto"><strong>WARNING !!! This is a public repository: never write or save secrets here!!!</strong></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/CRUSTDE_Containerized_Rust_DevEnv/main/images/crustde_250x250.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/CRUSTDE_Containerized_Rust_DevEnv/main/images/crustde_250x250.png" alt="logo" style="max-width: 100%;"></a></p>
+<p dir="auto">windows_reinstall is a member of the <a href="https://github.com/orgs/CRUSTDE-ContainerizedRustDevEnv/repositories?q=sort%3Aname-asc">CRUSTDE-ContainerizedRustDevEnv</a> project.</p>
+<p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall/"><img src="https://img.shields.io/badge/Lines_in_markdown-280-green.svg" alt="Lines in md" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial #buildtool #developmenttool<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Win installation 2024</h2><a id="user-content-win-installation-2024" class="anchor" aria-label="Permalink: Win installation 2024" href="#win-installation-2024"></a></div>
+<p dir="auto">Often we must reinstall Windows from scratch to solve some unsolvable problems.<br>
+Thanks, Microsoft!<br>
+This is a good exercise. We must learn how to save settings for different programs.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">About my notebook</h2><a id="user-content-about-my-notebook" class="anchor" aria-label="Permalink: About my notebook" href="#about-my-notebook"></a></div>
+<p dir="auto">Asus Zenbook 14<br>
+Intel Core Ultra 7 155H, 16 cores, 22 threads<br>
+6 Performance-cores 1.4 GHz to 4.80 GHz<br>
+8 Efficient-cores 900 MHz to 3.8 GHz<br>
+2 Low Power Efficient-cores 2.5 GHz<br>
+24 MB Intel® Smart Cache<br>
+28 W to 115 W<br>
+Intel® Arc™ graphics 8 Xe-cores<br>
+Intel® Thunderbolt™ 4<br>
+Installed RAM 32,0 GB<br>
+SSD 1TB (M.2 NVMe™ PCIe® 4.0)<br>
+OLED 16:10, FHD (1920x1200) HDR, DCI-P3:100%, 600 nits, 60Hz</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Windows</h2><a id="user-content-windows" class="anchor" aria-label="Permalink: Windows" href="#windows"></a></div>
+<p dir="auto">Windows 11 Home 23H2<br>
+Activation: Windows is activated with a digital license</p>
+<p dir="auto">I split my SSD into partitions <code>C:</code> and <code>D:</code>. Every time I reinstall Windows I completely format the <code>C:</code> partition, but the <code>D:</code> partition remains intact.<br>
+I have the Dropbox folder on my <code>D:</code> partition. All my data is there. So it will survive the reinstallation of Windows. It is also better for backups to have separate system and data disks.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">System backup win11</h2><a id="user-content-system-backup-win11" class="anchor" aria-label="Permalink: System backup win11" href="#system-backup-win11"></a></div>
+<p dir="auto">Backup, backup, backup... Do it all the time. Disks can die in an instant and you lose everything.<br>
+My external disk is not NTFS, so the original windows backup function does not work.
+I will try with clonezilla.</p>
+<p dir="auto">It is funny that in Win10, the name of this function is "Backup and Restore (Windows 7)".<br>
+Open the System Backup Image Tool. In Windows 10, head to Control Panel &gt; Backup and Restore (Windows 7) &gt; Create a System Image onto an external disk.<br>
+A system image contains everything: data, programs, OS, config,... from the <code>C:</code> drive.</p>
+<p dir="auto">The <code>D:</code> drive contains only data and is much easier to backup/copy. I just copy all the files to an external drive. And I have Dropbox installed to sync this drive to the cloud.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Download ISO for Win10</h2><a id="user-content-download-iso-for-win10" class="anchor" aria-label="Permalink: Download ISO for Win10" href="#download-iso-for-win10"></a></div>
+<p dir="auto"><a href="https://www.microsoft.com/sl-si/software-download/windows10" rel="nofollow">https://www.microsoft.com/sl-si/software-download/windows10</a><br>
+special Media creation tool for download<br>
+download windows.iso to my Ventoy bootable USB storage<br>
+<a href="https://www.ventoy.net/en/index.html" rel="nofollow">https://www.ventoy.net/en/index.html</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install Win10 from scratch</h2><a id="user-content-install-win10-from-scratch" class="anchor" aria-label="Permalink: Install Win10 from scratch" href="#install-win10-from-scratch"></a></div>
+<p dir="auto">Turn off the computer. Insert the Ventoy bootable USB storage.<br>
+Turn on the computer and press F2 to enter the boot menu. Choose boot from USB.<br>
+Don't connect to the internet because then you cannot make a local account, but only a Microsoft online account.<br>
+I don't want a Microsoft account. I want to have a local account.<br>
+The computer will restart a couple of times. Pretty fast and easy to install.<br>
+The installation creates a new folder <code>windows.old</code> that contains 200GB of files of the old OS.<br>
+Detach the Ventoy bootable USB storage and restart.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">After installation</h2><a id="user-content-after-installation" class="anchor" aria-label="Permalink: After installation" href="#after-installation"></a></div>
+<p dir="auto">After installation is completed login to the machine.<br>
+Connect over wifi to the internet. In my case, it assumes that I am on a metered connection. Go to Wifi Properties and turn the metered connection off.<br>
+The computer will work in the background to download the drivers and updates and install them. That can take a while.<br>
+You can right-click on the Start button and choose "Device Manager" to see what drivers are missing.<br>
+For my computer, I will install the Lenovo software and drivers from:<br>
+<a href="https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/flex-series/flex-5-14are05" rel="nofollow">https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/flex-series/flex-5-14are05</a><br>
+Download Lenovo Vantage. Get from Microsoft store 430 MB.<br>
+Launch Lenovo Vantage. I don't need it to start at boot or other automatic things.<br>
+Then "Check updates" will find updates and I want to install them all. After 15 minutes all is installed. Restart the system.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Upgrade to Pro</h2><a id="user-content-upgrade-to-pro" class="anchor" aria-label="Permalink: Upgrade to Pro" href="#upgrade-to-pro"></a></div>
+<p dir="auto">Right-click on the Start button then choose System. My Windows is edition Home. I want to "upgrade" to Pro. I have the product key.<br>
+Choose "Change product key or upgrade your edition of Windows" and input the product key.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Language and region</h2><a id="user-content-language-and-region" class="anchor" aria-label="Permalink: Language and region" href="#language-and-region"></a></div>
+<p dir="auto">Left-click on the Language icon on the taskbar and choose Language Preferences.<br>
+Add language - Slovenian - Install language pack, but NOT Set as Windows display language.<br>
+Order of languages: English (United States), English(Slovenia), Slovenian.<br>
+Click on Date, Time and regional formatting - Current format: Slovenia</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Taskbar</h2><a id="user-content-taskbar" class="anchor" aria-label="Permalink: Taskbar" href="#taskbar"></a></div>
+<p dir="auto">On the taskbar right click then "Unlock the taskbar". Right-click on Taskbar and disable: Search box, Task view, News and interest, Windows Ink,...<br>
+I like to have the taskbar on the right and not on the bottom because there is way more space horizontally than vertically on a 19:6 screen. Right-click on Taskbar icons and Hide: Meet now.<br>
+Right-click on Taskbar - Taskbar settings - Turn system icons on and off - I don't need keyboard indicator, Location and microphone.<br>
+The taskbar does not show the day of the week. Unlock the taskbar and widen the taskbar just a bit to show the day of the week. Then lock the taskbar.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Start menu</h2><a id="user-content-start-menu" class="anchor" aria-label="Permalink: Start menu" href="#start-menu"></a></div>
+<p dir="auto">Unpin all the non-usable tiles. Eventually, Pin to start menu interesting shortcuts.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Desktop image, icons, dark mode</h2><a id="user-content-desktop-image-icons-dark-mode" class="anchor" aria-label="Permalink: Desktop image, icons, dark mode" href="#desktop-image-icons-dark-mode"></a></div>
+<p dir="auto">Search Theme and related settings - Desktop icons settings - Disable the Recycle bin.<br>
+In Theme and related settings - Click on Picture and browse   c\Users\Luciano\AppData\Roaming\Microsoft\Windows\Themes\wallpaper.png<br>
+Copy icons from c\Users\luciano\Desktop to C:\Users\luciano\Desktop<br>
+Search Turn on Dark mode system-wide and Choose your color: Dark.<br>
+Right-click on Desktop and choose Display settings - Multiple displays - Extend this display.<br>
+Right-click taskbar - Taskbar settings - Disable Show taskbar on all displays.<br>
+Right-click on Desktop - View - Large icons.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Tweaks</h2><a id="user-content-tweaks" class="anchor" aria-label="Permalink: Tweaks" href="#tweaks"></a></div>
+<p dir="auto">Make file extension visible in Powershell as administrator and then restart win10:</p>
+<div class="highlight highlight-source-powershell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="New-ItemProperty -Path &quot;HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced&quot; -Name &quot;HideFileExt&quot; -Value 0 -PropertyType DWORD -Force"><pre><span class="pl-c1">New-ItemProperty</span> <span class="pl-k">-</span>Path <span class="pl-s"><span class="pl-pds">"</span>HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced<span class="pl-pds">"</span></span> <span class="pl-k">-</span>Name <span class="pl-s"><span class="pl-pds">"</span>HideFileExt<span class="pl-pds">"</span></span> <span class="pl-k">-</span>Value <span class="pl-c1">0</span> <span class="pl-k">-</span>PropertyType DWORD <span class="pl-k">-</span>Force</pre></div>
+<p dir="auto">In Windows Explorer View - Enable Hidden items.<br>
+Press Win+V and enable the Clipboard manager to have more than one item in the clipboard.<br>
+I want to uninstall OneDrive because I use Dropbox. Apps &amp; features - Microsoft One Drive - Uninstall.<br>
+Similarly uninstall Skype, Movies, Sticky Notes, Weather, XBox, Maps, Mail... all apps that I already have and are NOT from Microsoft.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Certificates</h2><a id="user-content-certificates" class="anchor" aria-label="Permalink: Certificates" href="#certificates"></a></div>
+<p dir="auto">I have some personal certificates for use with the government. The backup of my keys is in my encrypted vault.</p>
+<p dir="auto">From the encrypted vault, copy the certificates .p12 files somewhere locally temporarily.<br>
+In Windows type mmc into Start and choose File - Add Remove Snap-in - Certificates - Personal.<br>
+Right-click - All tasks - Import - browse the certificate .p12 file - choose high security ask for the password on every use of the certificate. Don't make the private key exportable.<br>
+Git for Windows comes with <code>C:\Program Files\Git\usr\bin\shred.exe</code>. Use it to shred/delete the temporary .p12 files.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install Programs on Windows</h2><a id="user-content-install-programs-on-windows" class="anchor" aria-label="Permalink: Install Programs on Windows" href="#install-programs-on-windows"></a></div>
+<p dir="auto">A bunch of programs must be installed for a usable machine for development.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">TotalCmd</h2><a id="user-content-totalcmd" class="anchor" aria-label="Permalink: TotalCmd" href="#totalcmd"></a></div>
+<p dir="auto">To Install and configure TotalCmd follow the instructions: <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/total_commander_best_file_manager">https://github.com/CRUSTDE-ContainerizedRustDevEnv/total_commander_best_file_manager</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Firefox</h2><a id="user-content-firefox" class="anchor" aria-label="Permalink: Firefox" href="#firefox"></a></div>
+<p dir="auto"><a href="https://www.mozilla.org/en-US/firefox/new/" rel="nofollow">https://www.mozilla.org/en-US/firefox/new/</a>
+I use Firefox just for programming purposes because Rust was born at Mozilla.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Chrome</h2><a id="user-content-chrome" class="anchor" aria-label="Permalink: Chrome" href="#chrome"></a></div>
+<p dir="auto"><a href="https://www.google.com/chrome/" rel="nofollow">https://www.google.com/chrome/</a>
+I have more Google accounts: private, official, developer, project,...<br>
+Log in to a Google account, the 2FA is on my smartphone. The Chrome extensions are also stored in the account.<br>
+I use Chrome "Profiles" to isolate different Google accounts.<br>
+First login to a specific Google account. Then click the 3 dot menu at the top right of Chrome. Click Settings. Click Customize your Chrome profile. Scroll down and click the Create Desktop shortcut.<br>
+I want to have this shortcut in the Start menu and not on the desktop. Sadly, the "Pin to start" does not work, I don't know why.<br>
+But I can move the <code>lnk</code> file from the desktop location <code>%userprofile%\desktop</code> to the Start Menu location for the actual user (hidden and system folders):  <code>%AppData%\Microsoft\Windows\Start Menu\Programs</code>. Now the shortcut is in the Start menu and I can use Pin to Start to create a tile. That works perfectly.<br>
+FYI: There is also the folder <code>%ProgramData%\Microsoft\Windows\Start Menu\Programs</code> that contains Start Menu shortcuts for all users.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Libre office</h2><a id="user-content-libre-office" class="anchor" aria-label="Permalink: Libre office" href="#libre-office"></a></div>
+<p dir="auto"><a href="https://www.libreoffice.org/download/download-libreoffice/" rel="nofollow">https://www.libreoffice.org/download/download-libreoffice/</a><br>
+345 MB<br>
+I don't like autocomplete. Disable all of that.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Whatsapp</h2><a id="user-content-whatsapp" class="anchor" aria-label="Permalink: Whatsapp" href="#whatsapp"></a></div>
+<p dir="auto">It is already prepared in Win10, but it still needs to download the latest version.<br>
+Run it and it shows a QR code. On the smartphone open Whatsapp-Settings - QRCode-Scan code and then Link the device.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Dropbox</h2><a id="user-content-dropbox" class="anchor" aria-label="Permalink: Dropbox" href="#dropbox"></a></div>
+<p dir="auto">I split my SSD into partitions <code>C:</code> and <code>D:</code>. Every time I reinstall Windows I completely format the <code>C:</code> partition, but the <code>D:</code> partition remains intact.<br>
+I have the Dropbox folder on my <code>D:</code> partition. So it will survive the reinstallation of Windows. It is also better for backups to have separate system and data disks.</p>
+<p dir="auto">I already had Dropbox on my PC before the reinstall and used "Selective folders". Now I want to install it again, but I don't want to make a mess with my files.<br>
+I will rename d:\Dropbox into d:\Dropbox_old.<br>
+Login to <a href="https://www.dropbox.com/home" rel="nofollow">https://www.dropbox.com/home</a>. Click on the profile right top and choose "Install Dropbox app" - Download Dropbox app. Run DropboxInstaller.exe.<br>
+The browser should stay open on the user's Dropbox page. After installation, the application will use the browser to log in.<br>
+Choose folders to sync. I already split the folders into sync and non_sync folders. So it is easy to choose all the sync folders.<br>
+Advanced - location D:\Dropbox. Done. Wait a little to start. And then click the taskbar icon - Profile - Quit.<br>
+Now I can rename the D:\Dropbox_old to d:\Dropbox. Start Dropbox. It will index for 10 minutes.<br>
+If there is a conflict Dropbox will create a new file with the name containing the word "conflict".</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">WezTerm</h2><a id="user-content-wezterm" class="anchor" aria-label="Permalink: WezTerm" href="#wezterm"></a></div>
+<p dir="auto">WezTerm is a powerful cross-platform terminal emulator and multiplexer written in Rust.<br>
+I prefer to use it instead of Windows Console, Windows Terminal, Xterm or Terminator.<br>
+Install Wezterm from <a href="https://wezfurlong.org/wezterm/install/windows.html" rel="nofollow">here</a>.</p>
+<p dir="auto">I had a problem that using the Windows Clipboard Manager for "multi-item clipboard" it prepends extra ^[[200~. This is called "bracketed paste" and is becoming standard in many terminal applications because it does not run a command if it finds a character for Enter when pasting. It waits for the user to read what is pasted and then presses Enter manually or choose to abort the action. This is very important when copying commands from the internet. On the website, there are many technics to hide visually a text but still copy it to the clipboard. So there we go, no more WYSIWYG. Many administrators always paste text copied from the internet into a simple text editor like Notepad++. That will show all the important characters even the invisible ones if you need. From there you can copy a text that is visually correct without malicious hidden commands.<br>
+<a href="https://cirw.in/blog/bracketed-paste" rel="nofollow">https://cirw.in/blog/bracketed-paste</a><br>
+The Clipboard Manager is sending ctrl+v under the hood. That key combination means "the next character will be taken literally". Then shift-ctrl-v pastes the "bracketed paste" that starts with ^[[200~. But unfortunately, the first character is not understood as a special code, but as a normal character "literally".</p>
+<p dir="auto">Create/edit the configuration <code>wezterm.lua</code> file to ignore the ctrl+v key binding.<br>
+The template for <code>$HOME\.config\wezterm\wezterm.lua</code> is <a href="/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall/blob/main/configuration_files/win_files/c/Users/luciano/.config/wezterm/wezterm.lua">here</a>.</p>
+<p dir="auto">After <code>git-bash</code> and <code>WSL:Debian</code> are installed create 2 icons on the Desktop to use Wezterm as their terminal.<br>
+Download the Debian ico in <code>git-bash</code>:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="curl https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/main/images/Debian_logo.ico -o ~/.config/wezterm/Debian_logo.ico"><pre>curl https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11/main/images/Debian_logo.ico -o <span class="pl-k">~</span>/.config/wezterm/Debian_logo.ico</pre></div>
+<p dir="auto">Icon name: <code>git-bash</code></p>
+<ul dir="auto">
+<li>Target: "C:\Program Files\WezTerm\wezterm-gui.exe" start -- "C:\Program Files\Git\bin\bash.exe" -l</li>
+<li>Windows: Maximized</li>
+<li>Icon: <code>%ProgramFiles%\Git\git-bash.exe</code></li>
+</ul>
+<p dir="auto">Icon name: <code>WSL:Debian</code></p>
+<ul dir="auto">
+<li>Target: "C:\Program Files\WezTerm\wezterm-gui.exe" start --domain WSL:Debian</li>
+<li>Windows: Maximized</li>
+<li>Icon: <code>%UserProfile%\.config\wezterm\Debian_logo.ico</code></li>
+</ul>
+<p dir="auto">The icons on the Desktop should look like this:</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall/main/images/Wezterm_git_bash_wsl_debian.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall/main/images/Wezterm_git_bash_wsl_debian.png" alt="Icons on Desktop" style="max-width: 100%;"></a></p>
+<p dir="auto">You can now <code>Pin to start</code> or <code>Pin to taskbar</code> as you wish.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">CRUSTDE in detail</h2><a id="user-content-crustde-in-detail" class="anchor" aria-label="Permalink: CRUSTDE in detail" href="#crustde-in-detail"></a></div>
+<p dir="auto">The installation of the main programs used for CRUSTDE are described in more detail here:</p>
+<ul dir="auto">
+<li>git, git-bash, SSH and VSCdoe <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode">https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode</a></li>
+<li>WSL2 and Debian on Windows <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11">https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Other programs</h2><a id="user-content-other-programs" class="anchor" aria-label="Permalink: Other programs" href="#other-programs"></a></div>
+<ul dir="auto">
+<li>paint.net <a href="https://www.getpaint.net/" rel="nofollow">https://www.getpaint.net/</a></li>
+<li>Notepad++ <a href="https://notepad-plus-plus.org/downloads/" rel="nofollow">https://notepad-plus-plus.org/downloads/</a></li>
+<li>Shotcut <a href="https://shotcut.org/" rel="nofollow">https://shotcut.org/</a></li>
+<li>IrfanView <a href="https://www.irfanview.com/main_download_engl.htm" rel="nofollow">https://www.irfanview.com/main_download_engl.htm</a></li>
+<li>OBS studio <a href="https://obsproject.com/download" rel="nofollow">https://obsproject.com/download</a></li>
+<li>Android Studio <a href="https://developer.android.com/studio" rel="nofollow">https://developer.android.com/studio</a></li>
+<li>Krita <a href="https://krita.org/en/download/" rel="nofollow">https://krita.org/en/download/</a></li>
+<li>Arduino <a href="https://www.arduino.cc/en/software" rel="nofollow">https://www.arduino.cc/en/software</a></li>
+<li>Calibre <a href="https://calibre-ebook.com/download" rel="nofollow">https://calibre-ebook.com/download</a></li>
+<li>Audacity <a href="https://www.audacityteam.org/download/" rel="nofollow">https://www.audacityteam.org/download/</a></li>
+<li>Inkspace <a href="https://inkscape.org/" rel="nofollow">https://inkscape.org/</a></li>
+<li>PhotoFilmStrip <a href="https://www.photofilmstrip.org/en/download/" rel="nofollow">https://www.photofilmstrip.org/en/download/</a></li>
+<li>qBittorent <a href="https://www.qbittorrent.org/download" rel="nofollow">https://www.qbittorrent.org/download</a></li>
+<li>TeamViewer <a href="https://www.teamviewer.com/en/download/windows/" rel="nofollow">https://www.teamviewer.com/en/download/windows/</a></li>
+<li>VLC <a href="https://www.videolan.org/" rel="nofollow">https://www.videolan.org/</a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">websites</h2><a id="user-content-websites" class="anchor" aria-label="Permalink: websites" href="#websites"></a></div>
+<p dir="auto">My websites are on a Google Linux virtual machine.<br>
+On my local disk, I always prepare the files and folder structure for the websites. Then I synchronize this folder with the directory on the VM.<br>
+It already happened that I deleted my VM on Google and had to set up a new one from scratch. I wanted a clean start. So having an identical copy on my local disk is paramount.<br>
+The local folder is synced with Dropbox for backup.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">confusion with names</h2><a id="user-content-confusion-with-names" class="anchor" aria-label="Permalink: confusion with names" href="#confusion-with-names"></a></div>
+<p dir="auto">Sadly, it is not possible to use consistently the same "name" everywhere, because there are always some limitations on what characters are allowed.<br>
+Alphanumerics are allowed everywhere, but dot, hyphen, underscore are not.<br>
+Also, uppercase and lowercase can be limited.</p>
+<p dir="auto">Variants of my name:</p>
+<p dir="auto">bestia.dev - domain name and primary, preferred name<br>
+info.bestia.dev at gmail.com  (bestia.dev is NOT available 2024-03, but it is not in use?!?)<br>
+info at bestia.dev - email address is forwarded to info.bestia.dev at gmail.com<br>
+bestiadev  - docker<br>
+bestia-dev - GitHub (bestiadev is NOT available 2024-03, dot and underscore are not allowed)</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

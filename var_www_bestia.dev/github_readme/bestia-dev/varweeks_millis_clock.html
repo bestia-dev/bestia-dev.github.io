@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>varweeks_millis_clock</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="clock with new date time units formats: varweeks and millis">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/varweeks_millis_clock">https://github.com/bestia-dev/varweeks_millis_clock</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">varweeks_millis_clock</h1><a id="user-content-varweeks_millis_clock" class="anchor" aria-label="Permalink: varweeks_millis_clock" href="#varweeks_millis_clock"></a></div>
+<p dir="auto"><strong>clock with new date time units formats: varweeks and millis</strong><br>
+<em><strong>version: 2023.526.1051 date: 2023-05-26 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/varweeks_millis_clock">Github</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://img.shields.io/badge/Lines_in_Rust-91-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-7-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://img.shields.io/badge/Lines_in_comments-18-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://img.shields.io/badge/Lines_in_tests-0-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/varweeks_millis_clock/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/varweeks_millis_clock/"><img src="https://github.com/bestia-dev/varweeks_millis_clock/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/cb1ef230319479f6ba751f02d234b33f07ad54c96f10d5d23483037a794f101b/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3934393732383138342e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/949728184.svg" alt="varweeks_millis_clock" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial #datetime #pwa #wasm #webassembly #datetime<br>
+My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Try it</h2><a id="user-content-try-it" class="anchor" aria-label="Permalink: Try it" href="#try-it"></a></div>
+<p dir="auto"><a href="https://bestia.dev/varweeks_millis_clock/" rel="nofollow">https://bestia.dev/varweeks_millis_clock/</a><br>
+Compare the new varweeks millis wit the classic clock:<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png"><img src="https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png" alt="screenshot" style="max-width: 100%;"></a><br>
+<a href="https://github.com/bestia-dev/rust_wasm_pwa_minimal_clock">https://github.com/bestia-dev/rust_wasm_pwa_minimal_clock</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">clock</h2><a id="user-content-clock" class="anchor" aria-label="Permalink: clock" href="#clock"></a></div>
+<p dir="auto">A <strong>big digital clock</strong> on the screen with the new varweeks and millis is nice to have.<br>
+It is a PWA application made with rust and compiled to wasm.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">other varweeks millis projects</h2><a id="user-content-other-varweeks-millis-projects" class="anchor" aria-label="Permalink: other varweeks millis projects" href="#other-varweeks-millis-projects"></a></div>
+<p dir="auto">crate:<br>
+<a href="https://github.com/bestia-dev/varweeks_millis">https://github.com/bestia-dev/varweeks_millis</a><br>
+PWA wasm converter:<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats">https://github.com/bestia-dev/new_date_time_units_and_formats</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

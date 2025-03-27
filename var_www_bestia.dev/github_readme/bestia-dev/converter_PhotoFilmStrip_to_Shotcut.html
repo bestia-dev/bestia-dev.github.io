@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>converter_PhotoFilmStrip_to_Shotcut</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="converts PhotoFilmStrip projects to Shotcut projects">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut">https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">converter_PhotoFilmStrip_to_Shotcut</h1><a id="user-content-converter_photofilmstrip_to_shotcut" class="anchor" aria-label="Permalink: converter_PhotoFilmStrip_to_Shotcut" href="#converter_photofilmstrip_to_shotcut"></a></div>
+<p dir="auto"><strong>converts PhotoFilmStrip projects to Shotcut projects</strong><br>
+<em><strong>version: 1.0.14 date: 2024-01-28 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut">Github</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ed04c398eacfa6db03184d92a4980c9e5618bf6994b483ab49ab3d7e1969ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776f726b5f696e5f70726f67726573732d79656c6c6f77"><img src="https://img.shields.io/badge/work_in_progress-yellow" alt="work_in_progress" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/"><img src="https://img.shields.io/badge/Lines_in_Rust-107-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-262-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/"><img src="https://img.shields.io/badge/Lines_in_comments-38-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/"><img src="https://img.shields.io/badge/Lines_in_examples-19-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/"><img src="https://img.shields.io/badge/Lines_in_tests-30-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/converter_PhotoFilmStrip_to_Shotcut/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8436bab19ee6b0b64910c0f428c14b3d424eea86f8e2ee023bf02710f3d0ce31/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f313238373931323934312e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/1287912941.svg" alt="converter_PhotoFilmStrip_to_Shotcut" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial #sqlite #xml #cli<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Motivation</h2><a id="user-content-motivation" class="anchor" aria-label="Permalink: Motivation" href="#motivation"></a></div>
+<p dir="auto"><a href="https://www.photofilmstrip.org/en/features/" rel="nofollow">PhotoFilmStrip</a> has a great simple UI to make slideshows. I use it to make videos of my travels.<br>
+First I choose a song as a background. That defines the duration of the video.<br>
+Then I add images. PhotoFilmStrip adds some random animations to every image. That's ok.<br>
+The duration of the image is automatically calculated to fill the song duration. Great.<br>
+I then add subtitles to every image. Eventually, I can modify the animation and change the order of the images.<br>
+The UI is so easy, that even my wife likes to use it.<br>
+Finally, PhotoFilmStrip renders the slideshow as a mp4 file and the subtitles as a srt file. That is fine, but...</p>
+<p dir="auto">I prefer to have the subtitles embedded in the video, so every video player will show them exactly how I want it. I encountered a lot of odd problems with separated <code>srt</code> files in different video players online and offline.</p>
+<p dir="auto">There are some technics to embed the subtitles into mp4 using <code>ffmpeg</code> or VLC. But I am a programmer and every problem is an excuse to start a new project. In Rust, of course.</p>
+<p dir="auto">For my video editing, I use <a href="https://shotcut.org/" rel="nofollow">Shotcut</a>. It is simple and works for me. I would like to export the PhotoFilmStrip project to Shotcut.<br>
+Shotcut can embed "subtitles" into the video and maybe later I could make some video editing that is not possible in PhotoFilmStrip.</p>
+<p dir="auto">So the problem is simple. I need a simple tool to make a one-time conversion from PhotoFilmStrip to Shotcut.<br>
+After that, I can continue to work in Shotcut to modify the video at my will without the limitations of PhotoFilmStrip.</p>
+<p dir="auto">PhotoFilmStrip saves the project in an SQLite database in a <code>pfs</code> file. I could read that with Rust.<br>
+Shotcut saves the projects in XML format in an <code>mlt</code> file. I could write that in Rust.</p>
+<p dir="auto">It is time to discover the elements of these 2 formats and how to transform them.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">PhotoFilmStrip format</h2><a id="user-content-photofilmstrip-format" class="anchor" aria-label="Permalink: PhotoFilmStrip format" href="#photofilmstrip-format"></a></div>
+<p dir="auto">I need to read SQLite file <code>pfs</code>.
+<a href="https://github.com/rusqlite/rusqlite">https://github.com/rusqlite/rusqlite</a>
+VSCode extension: <a href="https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer" rel="nofollow">https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer</a></p>
+<p dir="auto">table <code>picture</code> columns:
+filename,
+width height,
+start_left, start_top, start_width, start_height,
+target_left, target_top, target_width, target_height,
+duration, comment,</p>
+<p dir="auto">what means duration=7 ? not seconds? I will have all same duration, so no problem.</p>
+<p dir="auto">This is the rectangle inside the image of the original size.</p>
+<p dir="auto">First image is 4:3 and not 16:9:
+C:\Users\luciano\Downloads\photofilmstrip_format\LF2023-12-11 11-07-09 Minja Luciano.jpg
+4000   3000
+0   181   4000  2250
+79  744   3920  2205
+7  ¡Hola México!</p>
+<p dir="auto">Second image is portrait:
+C:\Users\luciano\Downloads\photofilmstrip_format\LF2023-12-15 10-46-45 minja es alta.jpg
+2268   4032
+0   772   2268  1275
+0  1793   2268  1275
+7  Minja Alto</p>
+<p dir="auto">Third image 16:9:
+C:\Users\luciano\Downloads\photofilmstrip_format\LF2023-12-13 13-42-18.JPG
+6000  3376
+0  0    6000 3375
+973  802  4500 2531</p>
+<p dir="auto">Fourth image 16:9
+C:\Users\luciano\Downloads\photofilmstrip_format\LF2023-12-14 15-18-14.JPG
+6000  3376
+1500  0  4500  2531.25
+0  0  6000 3375</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Shotcut format</h2><a id="user-content-shotcut-format" class="anchor" aria-label="Permalink: Shotcut format" href="#shotcut-format"></a></div>
+<p dir="auto">In the <code>Example_3_images.mlt</code> there are:</p>
+<ul dir="auto">
+<li>1 song on the V1 playlist</li>
+<li>3 images with animation and transition on the V2 playlist and</li>
+<li>3 subtitles on the V3 playlist</li>
+</ul>
+<p dir="auto">The music is defined with these XML elements:</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="  &lt;chain id=&quot;chain0&quot; out=&quot;00:03:26.763&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;00:03:26.796&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;Cielito lindo_2.mp3&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;avformat-novalidate&lt;/property&gt;
+    &lt;property name=&quot;meta.media.nb_streams&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.stream.type&quot;&gt;audio&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.sample_fmt&quot;&gt;fltp&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.sample_rate&quot;&gt;48000&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.channels&quot;&gt;2&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.name&quot;&gt;mp3float&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.long_name&quot;&gt;MP3 (MPEG audio layer 3)&lt;/property&gt;
+    &lt;property name=&quot;meta.media.0.codec.bit_rate&quot;&gt;173608&lt;/property&gt;
+    &lt;property name=&quot;meta.attr.0.stream.encoder.markup&quot;&gt;LAME3.100&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;audio_index&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;video_index&quot;&gt;-1&lt;/property&gt;
+    &lt;property name=&quot;creation_time&quot;&gt;2024-01-09T03:42:17&lt;/property&gt;
+    &lt;property name=&quot;astream&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;shotcut:skipConvert&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:hash&quot;&gt;93c2fac0ff95295326d7e61a9113c409&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+  &lt;/chain&gt;
+  &lt;playlist id=&quot;playlist0&quot;&gt;
+    &lt;property name=&quot;shotcut:video&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:name&quot;&gt;V1&lt;/property&gt;
+    &lt;entry producer=&quot;chain0&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:11.418&quot;/&gt;
+  &lt;/playlist&gt;"><pre>  &lt;<span class="pl-ent">chain</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>chain0<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:03:26.763<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;00:03:26.796&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;Cielito lindo_2.mp3&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;avformat-novalidate&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.nb_streams<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.stream.type<span class="pl-pds">"</span></span>&gt;audio&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.sample_fmt<span class="pl-pds">"</span></span>&gt;fltp&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.sample_rate<span class="pl-pds">"</span></span>&gt;48000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.channels<span class="pl-pds">"</span></span>&gt;2&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.name<span class="pl-pds">"</span></span>&gt;mp3float&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.long_name<span class="pl-pds">"</span></span>&gt;MP3 (MPEG audio layer 3)&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.0.codec.bit_rate<span class="pl-pds">"</span></span>&gt;173608&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.attr.0.stream.encoder.markup<span class="pl-pds">"</span></span>&gt;LAME3.100&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>audio_index<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>video_index<span class="pl-pds">"</span></span>&gt;-1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span>&gt;2024-01-09T03:42:17&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>astream<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:skipConvert<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:hash<span class="pl-pds">"</span></span>&gt;93c2fac0ff95295326d7e61a9113c409&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+  &lt;/<span class="pl-ent">chain</span>&gt;
+  &lt;<span class="pl-ent">playlist</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>playlist0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:video<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:name<span class="pl-pds">"</span></span>&gt;V1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>chain0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:11.418<span class="pl-pds">"</span></span>/&gt;
+  &lt;/<span class="pl-ent">playlist</span>&gt;</pre></div>
+<p dir="auto">The resource defines the file's name in the same folder as <code>mlt</code>.</p>
+<p dir="auto">The 3 images are defined like this:</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content=" &lt;producer id=&quot;producer0&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;LF2023-12-11 11-07-09 Minja Luciano.jpg&lt;/property&gt;
+    &lt;property name=&quot;ttl&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.progressive&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;format&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.width&quot;&gt;4000&lt;/property&gt;
+    &lt;property name=&quot;meta.media.height&quot;&gt;3000&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;qimage&lt;/property&gt;
+    &lt;property name=&quot;creation_time&quot;&gt;2023-12-11T17:07:14&lt;/property&gt;
+    &lt;property name=&quot;shotcut:skipConvert&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:hash&quot;&gt;49b86054f8a507f8007afebf1204ec95&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;LF2023-12-11 11-07-09 Minja Luciano.jpg&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter0&quot; out=&quot;00:00:02.970&quot;&gt;
+      &lt;property name=&quot;background&quot;&gt;color:#00000000&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;affine&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;affineSizePosition&lt;/property&gt;
+      &lt;property name=&quot;transition.fill&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;transition.distort&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.rect&quot;&gt;00:00:00.033=-9.15305 -65.6166 1919.29 1439.47 1;00:00:02.871=-3.44725 -299.554 1919.29 1439.47 1&lt;/property&gt;
+      &lt;property name=&quot;transition.valign&quot;&gt;middle&lt;/property&gt;
+      &lt;property name=&quot;transition.halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animIn&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animOut&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;transition.threads&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.fix_rotate_x&quot;&gt;0&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;producer id=&quot;producer1&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;LF2023-12-15 10-46-45 minja es alta.jpg&lt;/property&gt;
+    &lt;property name=&quot;ttl&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.progressive&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;format&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.width&quot;&gt;2268&lt;/property&gt;
+    &lt;property name=&quot;meta.media.height&quot;&gt;4032&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;qimage&lt;/property&gt;
+    &lt;property name=&quot;creation_time&quot;&gt;2023-12-15T16:46:47&lt;/property&gt;
+    &lt;property name=&quot;shotcut:skipConvert&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:hash&quot;&gt;eb4241e90288fa46456eedb129e23c6d&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;LF2023-12-15 10-46-45 minja es alta.jpg&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter1&quot; out=&quot;00:00:03.267&quot;&gt;
+      &lt;property name=&quot;background&quot;&gt;color:#00000000&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;affine&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;affineSizePosition&lt;/property&gt;
+      &lt;property name=&quot;transition.fill&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;transition.distort&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.rect&quot;&gt;00:00:00.330=-331.909 -800 2363.06 4201 1;00:00:02.772=-331.909 -1924.05 2363.06 4201 1&lt;/property&gt;
+      &lt;property name=&quot;transition.valign&quot;&gt;middle&lt;/property&gt;
+      &lt;property name=&quot;transition.halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animIn&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animOut&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;transition.threads&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.fix_rotate_x&quot;&gt;0&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;tractor id=&quot;tractor0&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;&gt;
+    &lt;property name=&quot;shotcut:transition&quot;&gt;lumaMix&lt;/property&gt;
+    &lt;track producer=&quot;producer0&quot; in=&quot;00:00:02.640&quot; out=&quot;00:00:02.970&quot;/&gt;
+    &lt;track producer=&quot;producer1&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;/&gt;
+    &lt;transition id=&quot;transition0&quot; out=&quot;00:00:00.330&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;factory&quot;&gt;loader&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;luma&lt;/property&gt;
+      &lt;property name=&quot;alpha_over&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;fix_background_alpha&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+    &lt;transition id=&quot;transition1&quot; out=&quot;00:00:00.330&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;mix&lt;/property&gt;
+      &lt;property name=&quot;start&quot;&gt;-1&lt;/property&gt;
+      &lt;property name=&quot;accepts_blanks&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+  &lt;/tractor&gt;
+  &lt;producer id=&quot;producer2&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;LF2023-12-13 13-42-18.JPG&lt;/property&gt;
+    &lt;property name=&quot;ttl&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.progressive&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;format&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.width&quot;&gt;6000&lt;/property&gt;
+    &lt;property name=&quot;meta.media.height&quot;&gt;3376&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;qimage&lt;/property&gt;
+    &lt;property name=&quot;creation_time&quot;&gt;2023-12-13T20:42:18&lt;/property&gt;
+    &lt;property name=&quot;shotcut:skipConvert&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:hash&quot;&gt;7c879a105b45925f2bfc779a3b8d0b52&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;LF2023-12-13 13-42-18.JPG&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter2&quot; out=&quot;00:00:03.267&quot;&gt;
+      &lt;property name=&quot;background&quot;&gt;color:#00000000&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;affine&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;affineSizePosition&lt;/property&gt;
+      &lt;property name=&quot;transition.fill&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;transition.distort&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.rect&quot;&gt;00:00:00.396=0 0 1919.43 1080 1;00:00:02.970=-479.858 -270 2879.15 1620 1&lt;/property&gt;
+      &lt;property name=&quot;transition.valign&quot;&gt;middle&lt;/property&gt;
+      &lt;property name=&quot;transition.halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animIn&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animOut&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;transition.threads&quot;&gt;0&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;tractor id=&quot;tractor1&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;&gt;
+    &lt;property name=&quot;shotcut:transition&quot;&gt;lumaMix&lt;/property&gt;
+    &lt;track producer=&quot;producer1&quot; in=&quot;00:00:02.937&quot; out=&quot;00:00:03.267&quot;/&gt;
+    &lt;track producer=&quot;producer2&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;/&gt;
+    &lt;transition id=&quot;transition2&quot; out=&quot;00:00:00.330&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;factory&quot;&gt;loader&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;luma&lt;/property&gt;
+      &lt;property name=&quot;alpha_over&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;fix_background_alpha&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+    &lt;transition id=&quot;transition3&quot; out=&quot;00:00:00.330&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;mix&lt;/property&gt;
+      &lt;property name=&quot;start&quot;&gt;-1&lt;/property&gt;
+      &lt;property name=&quot;accepts_blanks&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+  &lt;/tractor&gt;
+  &lt;producer id=&quot;producer3&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;LF2023-12-14 15-18-14.JPG&lt;/property&gt;
+    &lt;property name=&quot;ttl&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.progressive&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;format&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;meta.media.width&quot;&gt;6000&lt;/property&gt;
+    &lt;property name=&quot;meta.media.height&quot;&gt;3376&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;qimage&lt;/property&gt;
+    &lt;property name=&quot;creation_time&quot;&gt;2023-12-14T22:18:14&lt;/property&gt;
+    &lt;property name=&quot;shotcut:skipConvert&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:hash&quot;&gt;40f4246ad1988e820f60bddc2ca0713c&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;LF2023-12-14 15-18-14.JPG&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter3&quot; out=&quot;00:00:02.871&quot;&gt;
+      &lt;property name=&quot;background&quot;&gt;color:#00000000&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;affine&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;affineSizePosition&lt;/property&gt;
+      &lt;property name=&quot;transition.fill&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;transition.distort&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;transition.rect&quot;&gt;00:00:00.363=-479.858 -270 2879.15 1620 1;00:00:02.739=0 0 1919.43 1080 1&lt;/property&gt;
+      &lt;property name=&quot;transition.valign&quot;&gt;middle&lt;/property&gt;
+      &lt;property name=&quot;transition.halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animIn&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;shotcut:animOut&quot;&gt;00:00:00.000&lt;/property&gt;
+      &lt;property name=&quot;transition.threads&quot;&gt;0&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;tractor id=&quot;tractor2&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.297&quot;&gt;
+    &lt;property name=&quot;shotcut:transition&quot;&gt;lumaMix&lt;/property&gt;
+    &lt;track producer=&quot;producer2&quot; in=&quot;00:00:02.970&quot; out=&quot;00:00:03.267&quot;/&gt;
+    &lt;track producer=&quot;producer3&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.297&quot;/&gt;
+    &lt;transition id=&quot;transition4&quot; out=&quot;00:00:00.297&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;factory&quot;&gt;loader&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;luma&lt;/property&gt;
+      &lt;property name=&quot;alpha_over&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;fix_background_alpha&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+    &lt;transition id=&quot;transition5&quot; out=&quot;00:00:00.297&quot;&gt;
+      &lt;property name=&quot;a_track&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;b_track&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;mix&lt;/property&gt;
+      &lt;property name=&quot;start&quot;&gt;-1&lt;/property&gt;
+      &lt;property name=&quot;accepts_blanks&quot;&gt;1&lt;/property&gt;
+    &lt;/transition&gt;
+  &lt;/tractor&gt;
+  &lt;playlist id=&quot;playlist1&quot;&gt;
+    &lt;property name=&quot;shotcut:video&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:name&quot;&gt;V2&lt;/property&gt;
+    &lt;property name=&quot;shotcut:lock&quot;&gt;0&lt;/property&gt;
+    &lt;entry producer=&quot;producer0&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:02.607&quot;/&gt;
+    &lt;entry producer=&quot;tractor0&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;/&gt;
+    &lt;entry producer=&quot;producer1&quot; in=&quot;00:00:00.363&quot; out=&quot;00:00:02.904&quot;/&gt;
+    &lt;entry producer=&quot;tractor1&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.330&quot;/&gt;
+    &lt;entry producer=&quot;producer2&quot; in=&quot;00:00:00.363&quot; out=&quot;00:00:02.937&quot;/&gt;
+    &lt;entry producer=&quot;tractor2&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:00.297&quot;/&gt;
+    &lt;entry producer=&quot;producer3&quot; in=&quot;00:00:00.330&quot; out=&quot;00:00:02.871&quot;/&gt;
+  &lt;/playlist&gt;"><pre> &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;LF2023-12-11 11-07-09 Minja Luciano.jpg&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ttl<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.progressive<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.width<span class="pl-pds">"</span></span>&gt;4000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.height<span class="pl-pds">"</span></span>&gt;3000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;qimage&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span>&gt;2023-12-11T17:07:14&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:skipConvert<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:hash<span class="pl-pds">"</span></span>&gt;49b86054f8a507f8007afebf1204ec95&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;LF2023-12-11 11-07-09 Minja Luciano.jpg&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter0<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.970<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>background<span class="pl-pds">"</span></span>&gt;color:#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;affine&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;affineSizePosition&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fill<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.distort<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.rect<span class="pl-pds">"</span></span>&gt;00:00:00.033=-9.15305 -65.6166 1919.29 1439.47 1;00:00:02.871=-3.44725 -299.554 1919.29 1439.47 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.valign<span class="pl-pds">"</span></span>&gt;middle&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animIn<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animOut<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.threads<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fix_rotate_x<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;LF2023-12-15 10-46-45 minja es alta.jpg&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ttl<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.progressive<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.width<span class="pl-pds">"</span></span>&gt;2268&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.height<span class="pl-pds">"</span></span>&gt;4032&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;qimage&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span>&gt;2023-12-15T16:46:47&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:skipConvert<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:hash<span class="pl-pds">"</span></span>&gt;eb4241e90288fa46456eedb129e23c6d&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;LF2023-12-15 10-46-45 minja es alta.jpg&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter1<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:03.267<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>background<span class="pl-pds">"</span></span>&gt;color:#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;affine&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;affineSizePosition&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fill<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.distort<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.rect<span class="pl-pds">"</span></span>&gt;00:00:00.330=-331.909 -800 2363.06 4201 1;00:00:02.772=-331.909 -1924.05 2363.06 4201 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.valign<span class="pl-pds">"</span></span>&gt;middle&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animIn<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animOut<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.threads<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fix_rotate_x<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">tractor</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:transition<span class="pl-pds">"</span></span>&gt;lumaMix&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.640<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.970<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition0<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>factory<span class="pl-pds">"</span></span>&gt;loader&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;luma&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha_over<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fix_background_alpha<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition1<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;mix&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>&gt;-1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>accepts_blanks<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+  &lt;/<span class="pl-ent">tractor</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;LF2023-12-13 13-42-18.JPG&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ttl<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.progressive<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.width<span class="pl-pds">"</span></span>&gt;6000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.height<span class="pl-pds">"</span></span>&gt;3376&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;qimage&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span>&gt;2023-12-13T20:42:18&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:skipConvert<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:hash<span class="pl-pds">"</span></span>&gt;7c879a105b45925f2bfc779a3b8d0b52&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;LF2023-12-13 13-42-18.JPG&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter2<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:03.267<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>background<span class="pl-pds">"</span></span>&gt;color:#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;affine&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;affineSizePosition&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fill<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.distort<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.rect<span class="pl-pds">"</span></span>&gt;00:00:00.396=0 0 1919.43 1080 1;00:00:02.970=-479.858 -270 2879.15 1620 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.valign<span class="pl-pds">"</span></span>&gt;middle&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animIn<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animOut<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.threads<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">tractor</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:transition<span class="pl-pds">"</span></span>&gt;lumaMix&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.937<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:03.267<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition2<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>factory<span class="pl-pds">"</span></span>&gt;loader&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;luma&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha_over<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fix_background_alpha<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition3<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;mix&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>&gt;-1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>accepts_blanks<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+  &lt;/<span class="pl-ent">tractor</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer3<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;LF2023-12-14 15-18-14.JPG&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ttl<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.progressive<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.width<span class="pl-pds">"</span></span>&gt;6000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.media.height<span class="pl-pds">"</span></span>&gt;3376&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;qimage&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>creation_time<span class="pl-pds">"</span></span>&gt;2023-12-14T22:18:14&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:skipConvert<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:hash<span class="pl-pds">"</span></span>&gt;40f4246ad1988e820f60bddc2ca0713c&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;LF2023-12-14 15-18-14.JPG&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter3<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.871<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>background<span class="pl-pds">"</span></span>&gt;color:#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;affine&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;affineSizePosition&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.fill<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.distort<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.rect<span class="pl-pds">"</span></span>&gt;00:00:00.363=-479.858 -270 2879.15 1620 1;00:00:02.739=0 0 1919.43 1080 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.valign<span class="pl-pds">"</span></span>&gt;middle&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animIn<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:animOut<span class="pl-pds">"</span></span>&gt;00:00:00.000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>transition.threads<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">tractor</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.297<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:transition<span class="pl-pds">"</span></span>&gt;lumaMix&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.970<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:03.267<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">track</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer3<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.297<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition4<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.297<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>factory<span class="pl-pds">"</span></span>&gt;loader&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;luma&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha_over<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fix_background_alpha<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+    &lt;<span class="pl-ent">transition</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>transition5<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.297<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>a_track<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>b_track<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;mix&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>&gt;-1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>accepts_blanks<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">transition</span>&gt;
+  &lt;/<span class="pl-ent">tractor</span>&gt;
+  &lt;<span class="pl-ent">playlist</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>playlist1<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:video<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:name<span class="pl-pds">"</span></span>&gt;V2&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:lock<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.607<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor0<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.363<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.904<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor1<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.363<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.937<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>tractor2<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.297<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer3<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.871<span class="pl-pds">"</span></span>/&gt;
+  &lt;/<span class="pl-ent">playlist</span>&gt;</pre></div>
+<p dir="auto">The <code>producer</code> is the video, the <code>tractor</code> is the transition. They must be defined before the playlist contains a reference to them.<br>
+The id is changing sequentially like producer0, producer1, producer2,... or tractor0, tractor1, tractor2,...<br>
+This looks like a serialization of internal structures in the code.
+This looks like an alias to "max" <code>out="04:00:00.000"</code> or <code>name="length"&gt;04:00:00.033</code>.<br>
+There are 2 points in time for animation.</p>
+<p dir="auto">First change the size of the image. From the original to the new.
+Then use the position to move the new image size.</p>
+<p dir="auto">First image:
+00:00:00.033=-9.15305 -65.6166 1919.29 1439.47 1;00:00:02.871=-3.44725 -299.554 1919.29 1439.47 1</p>
+<p dir="auto">Start:<br>
+Position -9  -66<br>
+Size 1919    1439</p>
+<p dir="auto">End:<br>
+Position -3   -300<br>
+Size 1919   1439</p>
+<p dir="auto">Second image
+00:00:00.330=-331.909 -800 2363.06 4201 1;00:00:02.772=-331.909 -1924.05 2363.06 4201 1</p>
+<p dir="auto">Start:<br>
+Position -332  -800<br>
+Size  2363   4201</p>
+<p dir="auto">End<br>
+Position -332   -1924<br>
+Size  2363   4201</p>
+<p dir="auto">The subtitles are defined like this:</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content=" &lt;producer id=&quot;producer4&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;#00000000&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;color&lt;/property&gt;
+    &lt;property name=&quot;mlt_image_format&quot;&gt;rgba&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;transparent&lt;/property&gt;
+    &lt;property name=&quot;ignore_points&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter4&quot; out=&quot;00:00:02.607&quot;&gt;
+      &lt;property name=&quot;argument&quot;&gt;¡Hola México!&lt;/property&gt;
+      &lt;property name=&quot;geometry&quot;&gt;0 900 1920 180 1&lt;/property&gt;
+      &lt;property name=&quot;family&quot;&gt;Verdana&lt;/property&gt;
+      &lt;property name=&quot;size&quot;&gt;80&lt;/property&gt;
+      &lt;property name=&quot;weight&quot;&gt;1000&lt;/property&gt;
+      &lt;property name=&quot;style&quot;&gt;normal&lt;/property&gt;
+      &lt;property name=&quot;fgcolour&quot;&gt;#ffffffff&lt;/property&gt;
+      &lt;property name=&quot;bgcolour&quot;&gt;#00000000&lt;/property&gt;
+      &lt;property name=&quot;olcolour&quot;&gt;#aa000000&lt;/property&gt;
+      &lt;property name=&quot;pad&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;valign&quot;&gt;bottom&lt;/property&gt;
+      &lt;property name=&quot;outline&quot;&gt;3&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;dynamictext&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;dynamicText&lt;/property&gt;
+      &lt;property name=&quot;shotcut:usePointSize&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;shotcut:pointSize&quot;&gt;60&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;producer id=&quot;producer5&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;#00000000&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;color&lt;/property&gt;
+    &lt;property name=&quot;mlt_image_format&quot;&gt;rgba&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;transparent&lt;/property&gt;
+    &lt;property name=&quot;ignore_points&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter5&quot; out=&quot;00:00:02.541&quot;&gt;
+      &lt;property name=&quot;argument&quot;&gt;Minja el signal es 
+demasiado Alto por ti&lt;/property&gt;
+      &lt;property name=&quot;geometry&quot;&gt;0 900 1920 180 1&lt;/property&gt;
+      &lt;property name=&quot;family&quot;&gt;Verdana&lt;/property&gt;
+      &lt;property name=&quot;size&quot;&gt;80&lt;/property&gt;
+      &lt;property name=&quot;weight&quot;&gt;1000&lt;/property&gt;
+      &lt;property name=&quot;style&quot;&gt;normal&lt;/property&gt;
+      &lt;property name=&quot;fgcolour&quot;&gt;#ffffffff&lt;/property&gt;
+      &lt;property name=&quot;bgcolour&quot;&gt;#00000000&lt;/property&gt;
+      &lt;property name=&quot;olcolour&quot;&gt;#aa000000&lt;/property&gt;
+      &lt;property name=&quot;pad&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;valign&quot;&gt;bottom&lt;/property&gt;
+      &lt;property name=&quot;outline&quot;&gt;3&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;dynamictext&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;dynamicText&lt;/property&gt;
+      &lt;property name=&quot;shotcut:usePointSize&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;shotcut:pointSize&quot;&gt;60&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;producer id=&quot;producer6&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;#00000000&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;color&lt;/property&gt;
+    &lt;property name=&quot;mlt_image_format&quot;&gt;rgba&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;transparent&lt;/property&gt;
+    &lt;property name=&quot;ignore_points&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter6&quot; in=&quot;00:00:00.165&quot; out=&quot;00:00:02.739&quot;&gt;
+      &lt;property name=&quot;argument&quot;&gt;Murales es mejor que graffiti&lt;/property&gt;
+      &lt;property name=&quot;geometry&quot;&gt;0 900 1920 180 1&lt;/property&gt;
+      &lt;property name=&quot;family&quot;&gt;Verdana&lt;/property&gt;
+      &lt;property name=&quot;size&quot;&gt;80&lt;/property&gt;
+      &lt;property name=&quot;weight&quot;&gt;1000&lt;/property&gt;
+      &lt;property name=&quot;style&quot;&gt;normal&lt;/property&gt;
+      &lt;property name=&quot;fgcolour&quot;&gt;#ffffffff&lt;/property&gt;
+      &lt;property name=&quot;bgcolour&quot;&gt;#00000000&lt;/property&gt;
+      &lt;property name=&quot;olcolour&quot;&gt;#aa000000&lt;/property&gt;
+      &lt;property name=&quot;pad&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;valign&quot;&gt;bottom&lt;/property&gt;
+      &lt;property name=&quot;outline&quot;&gt;3&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;dynamictext&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;dynamicText&lt;/property&gt;
+      &lt;property name=&quot;shotcut:usePointSize&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;shotcut:pointSize&quot;&gt;60&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;producer id=&quot;producer7&quot; in=&quot;00:00:00.000&quot; out=&quot;04:00:00.000&quot;&gt;
+    &lt;property name=&quot;length&quot;&gt;04:00:00.033&lt;/property&gt;
+    &lt;property name=&quot;eof&quot;&gt;pause&lt;/property&gt;
+    &lt;property name=&quot;resource&quot;&gt;#00000000&lt;/property&gt;
+    &lt;property name=&quot;aspect_ratio&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;mlt_service&quot;&gt;color&lt;/property&gt;
+    &lt;property name=&quot;mlt_image_format&quot;&gt;rgba&lt;/property&gt;
+    &lt;property name=&quot;shotcut:caption&quot;&gt;transparent&lt;/property&gt;
+    &lt;property name=&quot;ignore_points&quot;&gt;0&lt;/property&gt;
+    &lt;property name=&quot;meta.shotcut.vui&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;xml&quot;&gt;was here&lt;/property&gt;
+    &lt;property name=&quot;seekable&quot;&gt;1&lt;/property&gt;
+    &lt;filter id=&quot;filter7&quot; in=&quot;00:00:00.165&quot; out=&quot;00:00:02.706&quot;&gt;
+      &lt;property name=&quot;argument&quot;&gt;Mucho murales en Mexico&lt;/property&gt;
+      &lt;property name=&quot;geometry&quot;&gt;0 900 1920 180 1&lt;/property&gt;
+      &lt;property name=&quot;family&quot;&gt;Verdana&lt;/property&gt;
+      &lt;property name=&quot;size&quot;&gt;80&lt;/property&gt;
+      &lt;property name=&quot;weight&quot;&gt;1000&lt;/property&gt;
+      &lt;property name=&quot;style&quot;&gt;normal&lt;/property&gt;
+      &lt;property name=&quot;fgcolour&quot;&gt;#ffffffff&lt;/property&gt;
+      &lt;property name=&quot;bgcolour&quot;&gt;#00000000&lt;/property&gt;
+      &lt;property name=&quot;olcolour&quot;&gt;#aa000000&lt;/property&gt;
+      &lt;property name=&quot;pad&quot;&gt;0&lt;/property&gt;
+      &lt;property name=&quot;halign&quot;&gt;center&lt;/property&gt;
+      &lt;property name=&quot;valign&quot;&gt;bottom&lt;/property&gt;
+      &lt;property name=&quot;outline&quot;&gt;3&lt;/property&gt;
+      &lt;property name=&quot;mlt_service&quot;&gt;dynamictext&lt;/property&gt;
+      &lt;property name=&quot;shotcut:filter&quot;&gt;dynamicText&lt;/property&gt;
+      &lt;property name=&quot;shotcut:usePointSize&quot;&gt;1&lt;/property&gt;
+      &lt;property name=&quot;shotcut:pointSize&quot;&gt;60&lt;/property&gt;
+    &lt;/filter&gt;
+  &lt;/producer&gt;
+  &lt;playlist id=&quot;playlist2&quot;&gt;
+    &lt;property name=&quot;shotcut:video&quot;&gt;1&lt;/property&gt;
+    &lt;property name=&quot;shotcut:name&quot;&gt;V3&lt;/property&gt;
+    &lt;entry producer=&quot;producer4&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:02.607&quot;/&gt;
+    &lt;blank length=&quot;00:00:00.363&quot;/&gt;
+    &lt;entry producer=&quot;producer5&quot; in=&quot;00:00:00.000&quot; out=&quot;00:00:02.541&quot;/&gt;
+    &lt;blank length=&quot;00:00:00.363&quot;/&gt;
+    &lt;entry producer=&quot;producer6&quot; in=&quot;00:00:00.165&quot; out=&quot;00:00:02.739&quot;/&gt;
+    &lt;blank length=&quot;00:00:00.330&quot;/&gt;
+    &lt;entry producer=&quot;producer7&quot; in=&quot;00:00:00.165&quot; out=&quot;00:00:02.706&quot;/&gt;
+  &lt;/playlist&gt;"><pre> &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer4<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;color&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_image_format<span class="pl-pds">"</span></span>&gt;rgba&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;transparent&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ignore_points<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter4<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.607<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>argument<span class="pl-pds">"</span></span>&gt;¡Hola México!&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>geometry<span class="pl-pds">"</span></span>&gt;0 900 1920 180 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>family<span class="pl-pds">"</span></span>&gt;Verdana&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>size<span class="pl-pds">"</span></span>&gt;80&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>weight<span class="pl-pds">"</span></span>&gt;1000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>style<span class="pl-pds">"</span></span>&gt;normal&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fgcolour<span class="pl-pds">"</span></span>&gt;#ffffffff&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>bgcolour<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>olcolour<span class="pl-pds">"</span></span>&gt;#aa000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>pad<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>valign<span class="pl-pds">"</span></span>&gt;bottom&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>outline<span class="pl-pds">"</span></span>&gt;3&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;dynamictext&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;dynamicText&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:usePointSize<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:pointSize<span class="pl-pds">"</span></span>&gt;60&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer5<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;color&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_image_format<span class="pl-pds">"</span></span>&gt;rgba&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;transparent&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ignore_points<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter5<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.541<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>argument<span class="pl-pds">"</span></span>&gt;Minja el signal es 
+demasiado Alto por ti&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>geometry<span class="pl-pds">"</span></span>&gt;0 900 1920 180 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>family<span class="pl-pds">"</span></span>&gt;Verdana&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>size<span class="pl-pds">"</span></span>&gt;80&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>weight<span class="pl-pds">"</span></span>&gt;1000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>style<span class="pl-pds">"</span></span>&gt;normal&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fgcolour<span class="pl-pds">"</span></span>&gt;#ffffffff&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>bgcolour<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>olcolour<span class="pl-pds">"</span></span>&gt;#aa000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>pad<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>valign<span class="pl-pds">"</span></span>&gt;bottom&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>outline<span class="pl-pds">"</span></span>&gt;3&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;dynamictext&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;dynamicText&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:usePointSize<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:pointSize<span class="pl-pds">"</span></span>&gt;60&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer6<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;color&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_image_format<span class="pl-pds">"</span></span>&gt;rgba&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;transparent&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ignore_points<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter6<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.165<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.739<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>argument<span class="pl-pds">"</span></span>&gt;Murales es mejor que graffiti&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>geometry<span class="pl-pds">"</span></span>&gt;0 900 1920 180 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>family<span class="pl-pds">"</span></span>&gt;Verdana&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>size<span class="pl-pds">"</span></span>&gt;80&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>weight<span class="pl-pds">"</span></span>&gt;1000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>style<span class="pl-pds">"</span></span>&gt;normal&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fgcolour<span class="pl-pds">"</span></span>&gt;#ffffffff&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>bgcolour<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>olcolour<span class="pl-pds">"</span></span>&gt;#aa000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>pad<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>valign<span class="pl-pds">"</span></span>&gt;bottom&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>outline<span class="pl-pds">"</span></span>&gt;3&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;dynamictext&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;dynamicText&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:usePointSize<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:pointSize<span class="pl-pds">"</span></span>&gt;60&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">producer</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>producer7<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>04:00:00.000<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>length<span class="pl-pds">"</span></span>&gt;04:00:00.033&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>eof<span class="pl-pds">"</span></span>&gt;pause&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>aspect_ratio<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;color&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_image_format<span class="pl-pds">"</span></span>&gt;rgba&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:caption<span class="pl-pds">"</span></span>&gt;transparent&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>ignore_points<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>meta.shotcut.vui<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>xml<span class="pl-pds">"</span></span>&gt;was here&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>seekable<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">filter</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>filter7<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.165<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.706<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>argument<span class="pl-pds">"</span></span>&gt;Mucho murales en Mexico&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>geometry<span class="pl-pds">"</span></span>&gt;0 900 1920 180 1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>family<span class="pl-pds">"</span></span>&gt;Verdana&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>size<span class="pl-pds">"</span></span>&gt;80&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>weight<span class="pl-pds">"</span></span>&gt;1000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>style<span class="pl-pds">"</span></span>&gt;normal&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>fgcolour<span class="pl-pds">"</span></span>&gt;#ffffffff&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>bgcolour<span class="pl-pds">"</span></span>&gt;#00000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>olcolour<span class="pl-pds">"</span></span>&gt;#aa000000&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>pad<span class="pl-pds">"</span></span>&gt;0&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>halign<span class="pl-pds">"</span></span>&gt;center&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>valign<span class="pl-pds">"</span></span>&gt;bottom&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>outline<span class="pl-pds">"</span></span>&gt;3&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>mlt_service<span class="pl-pds">"</span></span>&gt;dynamictext&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:filter<span class="pl-pds">"</span></span>&gt;dynamicText&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:usePointSize<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+      &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:pointSize<span class="pl-pds">"</span></span>&gt;60&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;/<span class="pl-ent">filter</span>&gt;
+  &lt;/<span class="pl-ent">producer</span>&gt;
+  &lt;<span class="pl-ent">playlist</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>playlist2<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:video<span class="pl-pds">"</span></span>&gt;1&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">property</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>shotcut:name<span class="pl-pds">"</span></span>&gt;V3&lt;/<span class="pl-ent">property</span>&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer4<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.607<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">blank</span> <span class="pl-e">length</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.363<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer5<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.000<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.541<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">blank</span> <span class="pl-e">length</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.363<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer6<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.165<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.739<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">blank</span> <span class="pl-e">length</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.330<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">entry</span> <span class="pl-e">producer</span>=<span class="pl-s"><span class="pl-pds">"</span>producer7<span class="pl-pds">"</span></span> <span class="pl-e">in</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:00.165<span class="pl-pds">"</span></span> <span class="pl-e">out</span>=<span class="pl-s"><span class="pl-pds">"</span>00:00:02.706<span class="pl-pds">"</span></span>/&gt;
+  &lt;/<span class="pl-ent">playlist</span>&gt;</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Convert image sizes</h2><a id="user-content-convert-image-sizes" class="anchor" aria-label="Permalink: Convert image sizes" href="#convert-image-sizes"></a></div>
+<p dir="auto">Interestingly enough, PhotoFilmStrip and Shotcut have chosen the opposite approach to image size.</p>
+<p dir="auto">In PhotoFilmStrip the original size of the image is stored. Then a rectangle with a proportion of screen 16:9 is drawn inside the image. It represents the screen size. With these two sizes, we can easily understand what part of the image is shown on the screen. The in-drawn rectangle can never be outside the image. There are never black stripes on the screen without the image. Images are sometimes not full on the screen. But that is ok because we have image animation.</p>
+<p dir="auto">In Shotcut they use the opposite approach. First, they adjust the image size to the screen size. In all my cases (16:9 landscape, 9:16 portrait, 4:3) they adjust the size proportionally using the height, not the width. This sometimes causes left and right black stripes on the screen. The image is always full inside the screen but can become very small.<br>
+Then you can use a filter to alter the size and make the image bigger to show only partially on the screen. These are the numbers stored in the data.</p>
+<p dir="auto">The formula for converting the size is simple:</p>
+<ol dir="auto">
+<li>PhotoFilmStrip: calculate the ratio of height
+ratio=photo_new_height/original_heigh</li>
+<li>we need the reversed ratio
+reversed_ratio = 1/ratio</li>
+<li>Shotcut: get the size of the image that can be contained in the screen.
+This can be limited by height or by width.
+r1 = 1920/original_width
+r2 = 1080/original_heigh</li>
+</ol>
+<p dir="auto">if r1 &lt; r2 then
+shot_image_width=original_width<em>r1
+shot_image_height=original_heigh</em>r1
+else
+shot_image_width=original_width<em>r2
+shot_image_height=original_heigh</em>r2
+end
+4. we use the reversed_ration to calculate the new size in Shotcut
+shot_new_width=shot_image_width<em>reversed_ratio
+shot_new_height=shot_image_height</em>reversed_ratio</p>
+<p dir="auto">Test the formula with these numbers</p>
+<p dir="auto">First image 4:3:
+original_width=4000
+original_heigh=3000
+photo_new_height=2250
+pos_x1=0  pos_y1=181
+pos_x2= 79 pos_y2=744</p>
+<p dir="auto">ratio= 2250/3000=0,75
+reversed_ratio= 1/0,75=1,3333</p>
+<p dir="auto">r1=1920/4000=0,48
+r2=1080/3000=0,36
+r1 !&lt; r2
+shot_image_width=4000<em>0,36=1440
+shot_image_height=3000</em>0,36=1080</p>
+<p dir="auto">shot_new_width=1440<em>1,3333=1920
+shot_new_height=1080</em>1,3333=1440</p>
+<p dir="auto">pos_x1=0*-1,3333=0  pos_y1=181*-1,3333=-241
+pos_x2= 79*-1,3333=-106 pos_y2=744*-1,3333=-992</p>
+<p dir="auto">Second image is portrait 9:16:
+original_width=2268
+original_heigh=4032
+photo_new_height=1275
+pos_x1=0  pos_y1=772
+pos_x2=0 pos_y2=1793</p>
+<p dir="auto">ratio= 1275/4032=0,3162
+reversed_ratio= 1/0,3162=3,1624</p>
+<p dir="auto">r1=1920/2268=0,8466
+r2=1080/4032=0,2679
+r1 !&lt; r2
+shot_image_width=2268<em>0,2679=607,5
+shot_image_height=4032</em>0,2679=1080</p>
+<p dir="auto">shot_new_width=607,5<em>3,1624=1920
+shot_new_height=1080</em>3,16242=3415</p>
+<p dir="auto">pos_x1=0*-3,1624=0  pos_y1=772*-3,1624=-2441
+pos_x2= 0*-3,1624=0 pos_y2=1793*-3,1624=-5670</p>
+<p dir="auto">Third image 16:9:
+original_width=6000
+original_heigh=3376
+photo_new_height=2531
+pos_x1=0  pos_y1=0
+pos_x2=973 pos_y2=802</p>
+<p dir="auto">ratio= 2531/3376=0,7497
+reversed_ratio= 1/0,7497=1,3339</p>
+<p dir="auto">r1=1920/6000=0,32
+r2=1080/3376=0,32
+r1 = r2
+shot_image_width=6000<em>0,32=1920
+shot_image_height=3376</em>0,32=1080</p>
+<p dir="auto">shot_new_width=1920<em>1,3339=2562
+shot_new_height=1080</em>1,3339=1440</p>
+<p dir="auto">pos_x1=0*-1,3339=0  pos_y1=0*-1,3339=-0
+pos_x2= 973*-1,3339=-1298 pos_y2=802*-1,3339=-1070</p>
+<p dir="auto">Fourth image 16:9
+original_width=6000
+original_heigh=3376
+photo_new_height=2531
+pos_x1=1500  pos_y1=0
+pos_x2=0 pos_y2=0</p>
+<p dir="auto">ratio= 2531/3376=0,7497
+reversed_ratio= 1/0,7497=1,3339</p>
+<p dir="auto">r1=1920/6000=0,32
+r2=1080/3376=0,32
+r1 = r2
+shot_image_width=6000<em>0,32=1920
+shot_image_height=3376</em>0,32=1080</p>
+<p dir="auto">shot_new_width=1920<em>1,3339=2562
+shot_new_height=1080</em>1,3339=1440</p>
+<p dir="auto">pos_x1=1500*-1,3339=2000  pos_y1=0*-1,3339=-0
+pos_x2= 0*-1,3339=0 pos_y2=0*-1,3339=0</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Convert image position</h2><a id="user-content-convert-image-position" class="anchor" aria-label="Permalink: Convert image position" href="#convert-image-position"></a></div>
+<p dir="auto">From the image size calculation, we have the reversed_ratio.
+We multiply the pos_X and pos_y and make it negative.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

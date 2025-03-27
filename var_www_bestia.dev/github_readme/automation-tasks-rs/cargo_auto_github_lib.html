@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cargo_auto_github_lib</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="OBSOLETE: Library for cargo-auto -automation tasks written in rust language- with functions for GitHub.">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib">https://github.com/automation-tasks-rs/cargo_auto_github_lib</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">cargo_auto_github_lib</h1><a id="user-content-cargo_auto_github_lib" class="anchor" aria-label="Permalink: cargo_auto_github_lib" href="#cargo_auto_github_lib"></a></div>
+<p dir="auto"><strong>OBSOLETE: Library for cargo-auto -automation tasks written in rust language- with functions for GitHub.</strong><br>
+<em><strong>version: 1.1.9 date: 2025-03-09 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3cd93794c5945575f0ec11b7350f577451a7e856724331e0699d49aa8629fe97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f62736f6c6574652d726564"><img src="https://img.shields.io/badge/obsolete-red" alt="obsolete" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/593a9f40d5eabd4ee4fa14383030c300c3eabb3dba8ca227ed470c328a850e6a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573742d6f72616e6765"><img src="https://img.shields.io/badge/rust-orange" alt="rust" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e6f1969c308bac4406bdf124b9115abb7aca98d58d1f69ed3e80fe62aacc6819/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636172676f5f6175746f2d6f72616e6765"><img src="https://img.shields.io/badge/cargo_auto-orange" alt="cargo-auto" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_Rust-539-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-161-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_comments-41-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_tests-60-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://crates.io/crates/cargo_auto_github_lib" rel="nofollow"><img src="https://img.shields.io/crates/v/cargo_auto_github_lib.svg" alt="crates.io" style="max-width: 100%;"></a> <a href="https://docs.rs/cargo_auto_github_lib/" rel="nofollow"><img src="https://docs.rs/cargo_auto_github_lib/badge.svg" alt="Documentation" style="max-width: 100%;"></a> <a href="https://web.crev.dev/rust-reviews/crate/cargo_auto_github_lib/" rel="nofollow"><img src="https://web.crev.dev/rust-reviews/badge/crev_count/cargo_auto_github_lib.svg" alt="crev reviews" style="max-width: 100%;"></a> <a href="https://lib.rs/crates/cargo_auto_github_lib/" rel="nofollow"><img src="https://img.shields.io/badge/Lib.rs-rust-orange.svg" alt="Lib.rs" style="max-width: 100%;"></a> <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a> <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://github.com/automation-tasks-rs/cargo_auto_github_lib/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a> <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/46025a01d36a5a73ea448e58dd001963c2f8ee29e1eb9eb871032da9b5bbc9be/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3731343337333533302e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/714373530.svg" alt="Hits" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #buildtool #developmenttool #github<br>
+My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">OBSOLETE</h2><a id="user-content-obsolete" class="anchor" aria-label="Permalink: OBSOLETE" href="#obsolete"></a></div>
+<p dir="auto">This will not be a separate crate anymore. This will be a module file that the developer copy-paste into his source code.<br>
+I decided that the developer must have complete control over this code in its own project.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Try it</h2><a id="user-content-try-it" class="anchor" aria-label="Permalink: Try it" href="#try-it"></a></div>
+<p dir="auto">In your rust project root directory (where the Cargo.toml is)<br>
+first install <a href="https://crates.io/crates/cargo-auto" rel="nofollow">cargo-auto</a> and generate a new helper project:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo install cargo-auto
+cargo auto new"><pre>cargo install cargo-auto
+cargo auto new</pre></div>
+<p dir="auto">In a new editor open the generated directory <code>automation_tasks_rs</code> as an independent rust project. There is already this dependency in <code>Cargo.toml</code>:</p>
+<div class="highlight highlight-source-toml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo_auto_github_lib=&quot;0.1.*&quot;"><pre><span class="pl-smi">cargo_auto_github_lib</span>=<span class="pl-s"><span class="pl-pds">"</span>0.1.*<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto">Preview the code and observe all the <code>auto_github_*</code> functions from <code>cargo_auto_github_lib</code>.<br>
+Example:</p>
+<div class="highlight highlight-source-rust notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="fn task_github_new_release() {
+    // ...
+
+    let github_client = crate::github_mod::GitHubClient::new();
+    let json_value = github_client.send_to_github_api(cgl::github_api_create_new_release(
+        &amp;github_owner,
+        &amp;repo_name,
+        &amp;tag_name_version,
+        &amp;release_name,
+        branch,
+        &amp;body_md_text,
+    ));
+
+    //...
+
+    // upload asset
+    cgl::github_api_upload_asset_to_release(
+        &amp;github_client,
+        &amp;github_owner,
+        &amp;repo_name,
+        &amp;release_id,
+        &amp;tar_name,
+    );
+}
+"><pre><span class="pl-k">fn</span> <span class="pl-en">task_github_new_release</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-c">// ...</span>
+
+    <span class="pl-k">let</span> github_client = <span class="pl-k">crate</span><span class="pl-kos">::</span>github_mod<span class="pl-kos">::</span><span class="pl-smi">GitHubClient</span><span class="pl-kos">::</span><span class="pl-en">new</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+    <span class="pl-k">let</span> json_value = github_client<span class="pl-kos">.</span><span class="pl-en">send_to_github_api</span><span class="pl-kos">(</span>cgl<span class="pl-kos">::</span><span class="pl-en">github_api_create_new_release</span><span class="pl-kos">(</span>
+        <span class="pl-c1">&amp;</span>github_owner<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>repo_name<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>tag_name_version<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>release_name<span class="pl-kos">,</span>
+        branch<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>body_md_text<span class="pl-kos">,</span>
+    <span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+    <span class="pl-c">//...</span>
+
+    <span class="pl-c">// upload asset</span>
+    cgl<span class="pl-kos">::</span><span class="pl-en">github_api_upload_asset_to_release</span><span class="pl-kos">(</span>
+        <span class="pl-c1">&amp;</span>github_client<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>github_owner<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>repo_name<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>release_id<span class="pl-kos">,</span>
+        <span class="pl-c1">&amp;</span>tar_name<span class="pl-kos">,</span>
+    <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span></pre></div>
+<p dir="auto">You need to have a <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub PAT (personal access secret_token)</a>.</p>
+<p dir="auto">Run (in your main rust project):</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo auto release
+cargo auto github_new_release"><pre>cargo auto release
+cargo auto github_new_release</pre></div>
+<p dir="auto">With a little luck, it will create a new release in github.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Functions</h2><a id="user-content-functions" class="anchor" aria-label="Permalink: Functions" href="#functions"></a></div>
+<p dir="auto">All the functions have extensive hep/docs to describe how they work.<br>
+It is nice when you use a code editor with IntelliSense like VSCode.<br>
+Here is a list of some of them:</p>
+<ul dir="auto">
+<li><code>auto_github_create_new_release()</code> - creates new release on Github</li>
+<li><code>auto_github_upload_asset_to_release()</code> - add asset to the github release</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">GitHub API secret_token</h2><a id="user-content-github-api-secret_token" class="anchor" aria-label="Permalink: GitHub API secret_token" href="#github-api-secret_token"></a></div>
+<p dir="auto">The GitHub API secret_token is a secret just like a password. Maybe even greater.<br>
+With this API secret_token, a maleficent actor can change basically anything in your GitHub account. You don't want that.</p>
+<p dir="auto">How to protect this secret?<br>
+Ok, there are some basic recommendations:</p>
+<ul dir="auto">
+<li>HTTPS is a no-brainer. Never use HTTP ever again. It is plain text over the wire.</li>
+<li>Expire the secret_token frequently, so old secret_tokens are of no use</li>
+<li>Never store the secret_token in a file as plain text</li>
+<li>Plain text inside env vars can also be accessed from malware</li>
+<li>give the least permission/authorization to the API secret_token</li>
+</ul>
+<p dir="auto">But the true problem arises at the moment when you want to use the secret_token. How to trust the code you are giving the secret_token to?<br>
+Probably the best is that this code is written by you or that you have complete control over it. This makes very cumbersome the use of libraries/crates. You cannot trust them by default. However, it is impossible to avoid trust in low-level crates/libraries.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

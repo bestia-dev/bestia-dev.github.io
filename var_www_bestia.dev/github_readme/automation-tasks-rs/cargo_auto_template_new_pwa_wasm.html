@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cargo_auto_template_new_pwa_wasm</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Template for a minimal pwa wasm project for browser">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">cargo_auto_template_new_pwa_wasm</h1><a id="user-content-cargo_auto_template_new_pwa_wasm" class="anchor" aria-label="Permalink: cargo_auto_template_new_pwa_wasm" href="#cargo_auto_template_new_pwa_wasm"></a></div>
+<p dir="auto"><strong>Template for a minimal pwa wasm project for browser</strong><br>
+<em><strong>version: 0.0.8 date: 2025-03-18 author: <a href="https://web_server_domain" rel="nofollow">web_server_domain</a> repository: <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ed04c398eacfa6db03184d92a4980c9e5618bf6994b483ab49ab3d7e1969ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776f726b5f696e5f70726f67726573732d79656c6c6f77"><img src="https://img.shields.io/badge/work_in_progress-yellow" alt="work-in-progress" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c5e923a78e1ab92876471acfc6da2bbad8147fa20cfd96028e8bff332865a7d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7761736d2d6f72616e6765"><img src="https://img.shields.io/badge/wasm-orange" alt="wasm" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_Rust-348-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-130-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_comments-70-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_tests-16-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #maintained #ready-for-use #rustlang #automation #workflow<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.<br>
+I recommend using the <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod">CRUSTDE - Containerized Rust Development Environment</a> to write Rust projects on Linux, isolated from your system.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">This template</h2><a id="user-content-this-template" class="anchor" aria-label="Permalink: This template" href="#this-template"></a></div>
+<p dir="auto">Just like <code>cargo new</code> makes a soft and gentle introduction to Rust projects and development, I want to make the same for an in-browser WASM project with</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cargo auto new_pwa_wasm"><pre>cargo auto new_pwa_wasm</pre></div>
+<p dir="auto">Extremely simple, just the basic moving parts and use cases.<br>
+This simplest template does not have a PWA implementation or dedicated web server app.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Development details</h2><a id="user-content-development-details" class="anchor" aria-label="Permalink: Development details" href="#development-details"></a></div>
+<p dir="auto">Read the development details in a separate md file:
+<a href="/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/blob/main/DEVELOPMENT.md">DEVELOPMENT.md</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Releases changelog</h2><a id="user-content-releases-changelog" class="anchor" aria-label="Permalink: Releases changelog" href="#releases-changelog"></a></div>
+<p dir="auto">Read the releases changelog in a separate md file:
+<a href="/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/blob/main/RELEASES.md">RELEASES.md</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">TODO</h2><a id="user-content-todo" class="anchor" aria-label="Permalink: TODO" href="#todo"></a></div>
+<p dir="auto">And code happily ever after...</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

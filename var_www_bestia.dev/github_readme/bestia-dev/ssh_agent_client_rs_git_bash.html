@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ssh_agent_client_rs_git_bash</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Add git-bash ssh-agent implementation for nresare/ssh-agent-client-rs">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash">https://github.com/bestia-dev/ssh_agent_client_rs_git_bash</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">ssh_agent_client_rs_git_bash</h1><a id="user-content-ssh_agent_client_rs_git_bash" class="anchor" aria-label="Permalink: ssh_agent_client_rs_git_bash" href="#ssh_agent_client_rs_git_bash"></a></div>
+<p dir="auto"><strong>Add git-bash ssh-agent implementation for nresare/ssh-agent-client-rs</strong><br>
+<em><strong>version: 0.0.12 date: 2025-03-16 author: <a href="https://bestia.dev" rel="nofollow">Bestia.dev</a> repository: <a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready-for-use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://crates.io/crates/ssh_agent_client_rs_git_bash" rel="nofollow"><img src="https://img.shields.io/crates/v/ssh_agent_client_rs_git_bash.svg" alt="crates.io" style="max-width: 100%;"></a>
+<a href="https://docs.rs/ssh_agent_client_rs_git_bash/" rel="nofollow"><img src="https://docs.rs/ssh_agent_client_rs_git_bash/badge.svg" alt="Documentation" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/workflows/rust_fmt_auto_build_test/badge.svg"><img src="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2a23812e1e8c7950afb1b3c76176a4dd48f03410a4ddba82f139f0186a75ca13/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3932383639323333352e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/928692335.svg" alt="ssh_agent_client_rs_git_bash" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/"><img src="https://img.shields.io/badge/Lines_in_Rust-164-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-119-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/"><img src="https://img.shields.io/badge/Lines_in_comments-14-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
+<a href="https://github.com/bestia-dev/ssh_agent_client_rs_git_bash/"><img src="https://img.shields.io/badge/Lines_in_tests-130-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #maintained #ready-for-use #rustlang<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Description</h2><a id="user-content-description" class="anchor" aria-label="Permalink: Description" href="#description"></a></div>
+<p dir="auto">This is an extension for the crate <a href="https://github.com/nresare/ssh-agent-client-rs">nresare/ssh-agent-client-rs</a>.<br>
+It adds the implementation for windows git-bash.<br>
+The original dependency is re-exported.<br>
+Instead of adding dependency to <code>ssh-agent-client-rs</code>, add <code>ssh_agent_client_rs_git_bash</code>.<br>
+Instead of <code>Client::connect()</code>, use the method <code>Client::connect_to_git_bash_or_linux()</code> of the new trait:</p>
+<div class="highlight highlight-source-toml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# Cargo.toml
+[dependencies]
+ssh_agent_client_rs_git_bash = {git=&quot;https://github.com/bestia-dev/ssh_agent_client_rs_git_bash.git&quot;}"><pre><span class="pl-c"><span class="pl-c">#</span> Cargo.toml</span>
+[<span class="pl-en">dependencies</span>]
+<span class="pl-smi">ssh_agent_client_rs_git_bash</span> = {<span class="pl-smi">git</span>=<span class="pl-s"><span class="pl-pds">"</span>https://github.com/bestia-dev/ssh_agent_client_rs_git_bash.git<span class="pl-pds">"</span></span>}</pre></div>
+<div class="highlight highlight-source-rust notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="use ssh_agent_client_rs_git_bash::Client;
+// import trait to scope
+use ssh_agent_client_rs_git_bash::GitBash;
+let mut client = Client::connect_to_git_bash_or_linux(&amp;path_ssh_auth_sock)
+    .expect(&quot;Cannot connect to ssh-agent.&quot;);
+// then normal code with Client
+client.list-identities().unwrap;"><pre><span class="pl-k">use</span> ssh_agent_client_rs_git_bash<span class="pl-kos">::</span><span class="pl-v">Client</span><span class="pl-kos">;</span>
+<span class="pl-c">// import trait to scope</span>
+<span class="pl-k">use</span> ssh_agent_client_rs_git_bash<span class="pl-kos">::</span><span class="pl-v">GitBash</span><span class="pl-kos">;</span>
+<span class="pl-k">let</span> <span class="pl-k">mut</span> client = <span class="pl-smi">Client</span><span class="pl-kos">::</span><span class="pl-en">connect_to_git_bash_or_linux</span><span class="pl-kos">(</span><span class="pl-c1">&amp;</span>path_ssh_auth_sock<span class="pl-kos">)</span>
+    <span class="pl-kos">.</span><span class="pl-en">expect</span><span class="pl-kos">(</span><span class="pl-s">"Cannot connect to ssh-agent."</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-c">// then normal code with Client</span>
+client<span class="pl-kos">.</span><span class="pl-c1">list</span>-<span class="pl-en">identities</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">.</span><span class="pl-c1">unwrap</span><span class="pl-kos">;</span></pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Windows git-bash</h2><a id="user-content-windows-git-bash" class="anchor" aria-label="Permalink: Windows git-bash" href="#windows-git-bash"></a></div>
+<p dir="auto">The implementation of ssh-agent in git-bash works over Tcp socket and is supported by this client.<br>
+The rust target is x86_64-pc-windows-gnu and can be cross-compiled from Linux to Windows.<br>
+Windows git-bash environment has also other names: cygwin, msys2, mingW64, git-for-windows, ...</p>
+<p dir="auto">Windows has other not compatible ssh-agent implementations that are NOT supported by this client.</p>
+<ul dir="auto">
+<li>Microsoft ssh works over named pipes.</li>
+<li>After 2019 Microsoft introduced Unix Sockets.</li>
+<li>Old and obsolete msys or msysGit</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

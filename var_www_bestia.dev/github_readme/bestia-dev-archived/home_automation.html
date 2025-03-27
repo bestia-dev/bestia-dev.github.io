@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>home_automation</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Is comfort our end goal in life ?">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev-archived/home_automation">https://github.com/bestia-dev-archived/home_automation</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">home_automation</h1><a id="user-content-home_automation" class="anchor" aria-label="Permalink: home_automation" href="#home_automation"></a></div>
+<p dir="auto"><strong>Is comfort our end goal in life ?</strong><br>
+<em><strong>version: 1.0  date: 2021-02-23 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/bestia-dev/home_automation">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3cd93794c5945575f0ec11b7350f577451a7e856724331e0699d49aa8629fe97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6f62736f6c6574652d726564"><img src="https://img.shields.io/badge/obsolete-red" alt="status" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e54b9fd42d0af004535a982c48a2dc4a5c8c2eebc8fe49426eb3f69fdddf2c36/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61726368697665642d726564"><img src="https://img.shields.io/badge/archived-red" alt="status" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c273959e453b2eacb9b7719663be397499b129c79eb13180305a069b3c2f5e51/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7475746f7269616c2d79656c6c6f77"><img src="https://img.shields.io/badge/tutorial-yellow" alt="status" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f84c9d25628be3a267ed06be5f3f591258d86460a6f8b039893baa2f3ae75a4e/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3133323436333933352e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/132463935.svg" alt="Hits" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #tutorial</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">The big TV screen</h2><a id="user-content-the-big-tv-screen" class="anchor" aria-label="Permalink: The big TV screen" href="#the-big-tv-screen"></a></div>
+<p dir="auto">I don't watch "television" anymore. But I have a big flat Panasonic TV screen attached to my Thinkpad notebook and I watch much too much Youtube videos.<br>
+The Thinkpad and the "big monitor" are switched on all day. What can I do? I am crazy about computers and stuff, and I hoard them.<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/home_automation/raw/main/images/TV_setup.jpg"><img src="https://github.com/bestia-dev/home_automation/raw/main/images/TV_setup.jpg" alt="TV setup" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">turn them on</h2><a id="user-content-turn-them-on" class="anchor" aria-label="Permalink: turn them on" href="#turn-them-on"></a></div>
+<p dir="auto">First I want to turn all of the components with one switch: TV, active speakers, mixing console and the Thinkpad. I put all of them on one power outlet which I then control with a 433 MHz remote control. But there was  problem (like always): the Thinkpad cannot be turned on like this. So I made a simple Arduino project for that. All the info is here:<br>
+<a href="https://github.com/bestia-dev/arduino_turns_on_laptop">https://github.com/bestia-dev/arduino_turns_on_laptop</a><br>
+It is not great, but it is good enough. It works.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">I need a clock</h2><a id="user-content-i-need-a-clock" class="anchor" aria-label="Permalink: I need a clock" href="#i-need-a-clock"></a></div>
+<p dir="auto">I don't have any clock around my flat, but I need one. The TV screen is always on, why not use it to show a big black clock. And for fun let make it a rust project as a tutorial for new programmers.<br>
+<a href="https://github.com/bestia-dev/rust_wasm_pwa_minimal_clock">https://github.com/bestia-dev/rust_wasm_pwa_minimal_clock</a><br>
+It is even more fun if it speaks the time every full hour.<br>
+I want it to start as soon as I turn on the computer. I used the Task Scheduler with this important parts:</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="&lt;Task version=&quot;1.2&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt;
+  &lt;RegistrationInfo&gt;
+    &lt;URI&gt;\clock on startup&lt;/URI&gt;
+  &lt;/RegistrationInfo&gt;
+  &lt;Triggers&gt;
+    &lt;LogonTrigger&gt;
+      &lt;Enabled&gt;true&lt;/Enabled&gt;
+    &lt;/LogonTrigger&gt;
+  &lt;/Triggers&gt;
+  &lt;Actions Context=&quot;Author&quot;&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe&quot;&lt;/Command&gt;
+      &lt;Arguments&gt;--profile-directory=Default --app-id=ccfjhdebcopgibimdhklogjkbeoigcme&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;"><pre>&lt;<span class="pl-ent">Task</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.2<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/windows/2004/02/mit/task<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">RegistrationInfo</span>&gt;
+    &lt;<span class="pl-ent">URI</span>&gt;\clock on startup&lt;/<span class="pl-ent">URI</span>&gt;
+  &lt;/<span class="pl-ent">RegistrationInfo</span>&gt;
+  &lt;<span class="pl-ent">Triggers</span>&gt;
+    &lt;<span class="pl-ent">LogonTrigger</span>&gt;
+      &lt;<span class="pl-ent">Enabled</span>&gt;true&lt;/<span class="pl-ent">Enabled</span>&gt;
+    &lt;/<span class="pl-ent">LogonTrigger</span>&gt;
+  &lt;/<span class="pl-ent">Triggers</span>&gt;
+  &lt;<span class="pl-ent">Actions</span> <span class="pl-e">Context</span>=<span class="pl-s"><span class="pl-pds">"</span>Author<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Exec</span>&gt;
+      &lt;<span class="pl-ent">Command</span>&gt;"C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe"&lt;/<span class="pl-ent">Command</span>&gt;
+      &lt;<span class="pl-ent">Arguments</span>&gt;--profile-directory=Default --app-id=ccfjhdebcopgibimdhklogjkbeoigcme&lt;/<span class="pl-ent">Arguments</span>&gt;
+    &lt;/<span class="pl-ent">Exec</span>&gt;
+  &lt;/<span class="pl-ent">Actions</span>&gt;
+&lt;/<span class="pl-ent">Task</span>&gt;</pre></div>
+<p dir="auto">It was a pain to discover how to start a PWA in Win10. Finally I found it in the app icon properties. Wow! So strange and unusual.<br>
+The browser opens in the same size and position where it was used last. That is convenient, but prone to mistakes in the future if somebody inadvertently moves the window and then closes it. Later I discovered how to give the size and position as arguments to start the browser. I used it for my other PWA.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">I want a radio</h2><a id="user-content-i-want-a-radio" class="anchor" aria-label="Permalink: I want a radio" href="#i-want-a-radio"></a></div>
+<p dir="auto">I don't have a classic radio, but there are many radio stations on the internet. I like one in particular "radio SI". They have made it a PWA and I like that.<br>
+I'd like to start it as soon as I start my Thinkpad+TV combo. I used the Task Scheduler (simplified exported xml):</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="&lt;Task version=&quot;1.2&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt;
+  &lt;RegistrationInfo&gt;
+    &lt;URI&gt;\radio SI on startup&lt;/URI&gt;
+  &lt;/RegistrationInfo&gt;
+  &lt;Triggers&gt;
+    &lt;LogonTrigger&gt;
+      &lt;Delay&gt;PT5S&lt;/Delay&gt;
+    &lt;/LogonTrigger&gt;
+  &lt;/Triggers&gt;
+  &lt;Actions Context=&quot;Author&quot;&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;&quot;C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe&quot;&lt;/Command&gt;
+      &lt;Arguments&gt;--profile-directory=Default --app-id=ndhchppnnecjjogmjmfnajggokoloahe&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;"><pre>&lt;<span class="pl-ent">Task</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.2<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/windows/2004/02/mit/task<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">RegistrationInfo</span>&gt;
+    &lt;<span class="pl-ent">URI</span>&gt;\radio SI on startup&lt;/<span class="pl-ent">URI</span>&gt;
+  &lt;/<span class="pl-ent">RegistrationInfo</span>&gt;
+  &lt;<span class="pl-ent">Triggers</span>&gt;
+    &lt;<span class="pl-ent">LogonTrigger</span>&gt;
+      &lt;<span class="pl-ent">Delay</span>&gt;PT5S&lt;/<span class="pl-ent">Delay</span>&gt;
+    &lt;/<span class="pl-ent">LogonTrigger</span>&gt;
+  &lt;/<span class="pl-ent">Triggers</span>&gt;
+  &lt;<span class="pl-ent">Actions</span> <span class="pl-e">Context</span>=<span class="pl-s"><span class="pl-pds">"</span>Author<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Exec</span>&gt;
+      &lt;<span class="pl-ent">Command</span>&gt;"C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe"&lt;/<span class="pl-ent">Command</span>&gt;
+      &lt;<span class="pl-ent">Arguments</span>&gt;--profile-directory=Default --app-id=ndhchppnnecjjogmjmfnajggokoloahe&lt;/<span class="pl-ent">Arguments</span>&gt;
+    &lt;/<span class="pl-ent">Exec</span>&gt;
+  &lt;/<span class="pl-ent">Actions</span>&gt;
+&lt;/<span class="pl-ent">Task</span>&gt;</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Calendar</h2><a id="user-content-calendar" class="anchor" aria-label="Permalink: Calendar" href="#calendar"></a></div>
+<p dir="auto">The Google calendar is very convenient to have it in sight all the time. Let start it on Logon with a particular profile and defined size and position. Here is the important parts of the exported xml from Task Scheduler:</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt;
+&lt;Task version=&quot;1.2&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt;
+  &lt;RegistrationInfo&gt;
+    &lt;URI&gt;\calendar&lt;/URI&gt;
+  &lt;/RegistrationInfo&gt;
+  &lt;Triggers&gt;
+    &lt;LogonTrigger&gt;
+      &lt;Enabled&gt;true&lt;/Enabled&gt;
+    &lt;/LogonTrigger&gt;
+  &lt;/Triggers&gt;
+  &lt;Actions Context=&quot;Author&quot;&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot;&lt;/Command&gt;
+      &lt;Arguments&gt;--new-window &quot;https://calendar.google.com/calendar/u/0/r/month&quot; --window-size=&quot;800,450&quot; --window-position=&quot;480,270&quot; --user-data-dir=&quot;C:\Users\happy guest\Documents\ChromeProfiles\Profile1&quot;&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>UTF-16<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">Task</span> <span class="pl-e">version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.2<span class="pl-pds">"</span></span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/windows/2004/02/mit/task<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">RegistrationInfo</span>&gt;
+    &lt;<span class="pl-ent">URI</span>&gt;\calendar&lt;/<span class="pl-ent">URI</span>&gt;
+  &lt;/<span class="pl-ent">RegistrationInfo</span>&gt;
+  &lt;<span class="pl-ent">Triggers</span>&gt;
+    &lt;<span class="pl-ent">LogonTrigger</span>&gt;
+      &lt;<span class="pl-ent">Enabled</span>&gt;true&lt;/<span class="pl-ent">Enabled</span>&gt;
+    &lt;/<span class="pl-ent">LogonTrigger</span>&gt;
+  &lt;/<span class="pl-ent">Triggers</span>&gt;
+  &lt;<span class="pl-ent">Actions</span> <span class="pl-e">Context</span>=<span class="pl-s"><span class="pl-pds">"</span>Author<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Exec</span>&gt;
+      &lt;<span class="pl-ent">Command</span>&gt;"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"&lt;/<span class="pl-ent">Command</span>&gt;
+      &lt;<span class="pl-ent">Arguments</span>&gt;--new-window "https://calendar.google.com/calendar/u/0/r/month" --window-size="800,450" --window-position="480,270" --user-data-dir="C:\Users\happy guest\Documents\ChromeProfiles\Profile1"&lt;/<span class="pl-ent">Arguments</span>&gt;
+    &lt;/<span class="pl-ent">Exec</span>&gt;
+  &lt;/<span class="pl-ent">Actions</span>&gt;
+&lt;/<span class="pl-ent">Task</span>&gt;</pre></div>
+<p dir="auto">This is a combination of 4 calendars:</p>
+<ol dir="auto">
+<li>my personal calendar</li>
+<li>my wife's personal calendar</li>
+<li>our common calendar for events we do together</li>
+<li>my mother's personal calendar</li>
+</ol>
+<p dir="auto">Every calendar event has its own color to easy distinguish.
+Just like everything: it is not perfect, but it works good enough.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">clock in millidays</h2><a id="user-content-clock-in-millidays" class="anchor" aria-label="Permalink: clock in millidays" href="#clock-in-millidays"></a></div>
+<p dir="auto">My hobby is to think about time and date formats. There would be no fun in it, if these formats were "perfect", but they are terribly confusing and outdated. So I am proposing a reform to time/date to make it look modern, more <code>metric</code>. Sure we have to adapt it to the rotation of our planet and to human rhythms and traditions. It will always be just a compromise. It is impossible to make it "perfect". But we have to somehow change this archaic ways we use today to something better.<br>
+<a href="https://github.com/bestia-dev/new_date_time_units_and_formats">https://github.com/bestia-dev/new_date_time_units_and_formats</a><br>
+<a href="https://github.com/bestia-dev/veeks_millis_clock">https://github.com/bestia-dev/veeks_millis_clock</a><br>
+<a href="https://github.com/bestia-dev/veeks_millis">https://github.com/bestia-dev/veeks_millis</a></p>
+<p dir="auto">The Task Scheduler exported xml (only important parts):</p>
+<div class="highlight highlight-text-xml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="  &lt;RegistrationInfo&gt;
+    &lt;URI&gt;\millis clock on startup&lt;/URI&gt;
+  &lt;/RegistrationInfo&gt;
+  &lt;Triggers&gt;
+    &lt;LogonTrigger&gt;
+      &lt;Enabled&gt;true&lt;/Enabled&gt;
+      &lt;Delay&gt;PT15S&lt;/Delay&gt;
+    &lt;/LogonTrigger&gt;
+  &lt;/Triggers&gt;
+  &lt;Actions Context=&quot;Author&quot;&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;&quot;C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe&quot;&lt;/Command&gt;
+      &lt;Arguments&gt;--profile-directory=Default --app-id=njeblkadplcimcagioidhnldecembkoa&lt;/Arguments&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;"><pre>  &lt;<span class="pl-ent">RegistrationInfo</span>&gt;
+    &lt;<span class="pl-ent">URI</span>&gt;\millis clock on startup&lt;/<span class="pl-ent">URI</span>&gt;
+  &lt;/<span class="pl-ent">RegistrationInfo</span>&gt;
+  &lt;<span class="pl-ent">Triggers</span>&gt;
+    &lt;<span class="pl-ent">LogonTrigger</span>&gt;
+      &lt;<span class="pl-ent">Enabled</span>&gt;true&lt;/<span class="pl-ent">Enabled</span>&gt;
+      &lt;<span class="pl-ent">Delay</span>&gt;PT15S&lt;/<span class="pl-ent">Delay</span>&gt;
+    &lt;/<span class="pl-ent">LogonTrigger</span>&gt;
+  &lt;/<span class="pl-ent">Triggers</span>&gt;
+  &lt;<span class="pl-ent">Actions</span> <span class="pl-e">Context</span>=<span class="pl-s"><span class="pl-pds">"</span>Author<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Exec</span>&gt;
+      &lt;<span class="pl-ent">Command</span>&gt;"C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe"&lt;/<span class="pl-ent">Command</span>&gt;
+      &lt;<span class="pl-ent">Arguments</span>&gt;--profile-directory=Default --app-id=njeblkadplcimcagioidhnldecembkoa&lt;/<span class="pl-ent">Arguments</span>&gt;
+    &lt;/<span class="pl-ent">Exec</span>&gt;
+  &lt;/<span class="pl-ent">Actions</span>&gt;
+&lt;/<span class="pl-ent">Task</span>&gt;</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">all together</h2><a id="user-content-all-together" class="anchor" aria-label="Permalink: all together" href="#all-together"></a></div>
+<p dir="auto">On modern 16:9 screens it is clever to put the task bar on the left edge and fix it. Today monitors are far too wide and vertically extremely thin. Every vertical pixel is like gold. Unfortunately windows design was created in times when the monitors were much taller. So there is a lot of elements that consume vertical space instead of horizontal space. Unfortunate!</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/bestia-dev/home_automation/raw/main/images/screenshot_1.png"><img src="https://github.com/bestia-dev/home_automation/raw/main/images/screenshot_1.png" alt="screenshot" style="max-width: 100%;"></a></p>
+<p dir="auto">I like to have a button for fast shutdown on the Taskbar. The Win10 original way to do it is crazy long: click Start - Power - Shutdown.  Maybe there is also a keyboard shortcut, but good luck to teach that to my wife.<br>
+I created a new icon with properties:<br>
+<code>Target: C:\Windows\System32\shutdown.exe /s /t 00</code><br>
+And changed the Icon file:<br>
+<a href="https://github.com/bestia-dev/home_automation/raw/main/images/shutdown.ico">https://github.com/bestia-dev/home_automation/raw/main/images/shutdown.ico</a></p>
+<p dir="auto">I love the file manager TotalCommander from Ghisler:<br>
+<a href="https://github.com/bestia-dev/total_commander_best_file_manager">https://github.com/bestia-dev/total_commander_best_file_manager</a><br>
+I cannot live without it.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">other tiny things</h2><a id="user-content-other-tiny-things" class="anchor" aria-label="Permalink: other tiny things" href="#other-tiny-things"></a></div>
+<p dir="auto">Sometimes I would like to listen to music from my smartphone. I don't have a good bluetooth speaker, but I have a Thinkpad attached to big speakers. I found this app <code>Bluetooth Audio Receiver</code> from Mark Smirnov and I am happy with it:<br>
+<a href="https://www.microsoft.com/en-us/p/bluetooth-audio-receiver/9n9wclwdqs5j?activetab=pivot:overviewtab" rel="nofollow">https://www.microsoft.com/en-us/p/bluetooth-audio-receiver/9n9wclwdqs5j?activetab=pivot:overviewtab</a></p>
+<p dir="auto">I use some remote controlled 433 Mhz switches for power outlets. They come with their own remote controls and that is fine. But sometimes I would like to control them from my computer. So I used a Raspberry Pi as a local web server on my WiFi network. Attached to it is an arduino with a 433Mhz transmitter. With a little bit of software it works as a PMHAS - "poor man home automation system" :-). My friend Pingec helped me with Arduino:<br>
+<a href="https://github.com/pingec/SerialRcSwitch">https://github.com/pingec/SerialRcSwitch</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">conclusion</h2><a id="user-content-conclusion" class="anchor" aria-label="Permalink: conclusion" href="#conclusion"></a></div>
+<p dir="auto">So I have my radio, calendar and clock, all in the digital world. Not bad. Maybe overkill, but a lot of fun.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>obsidian_portugues</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="Description" content="Obsidian notes for my learning of Portugues">
+    <meta name="author" content="https://github.com/bestia-dev">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/bestia01.css">
+    <script>
+        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
+        function toggle_responsive_navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className.includes(" responsive")) {
+                x.className = x.className.replace(" responsive", "");
+            } else {
+                x.className += " responsive";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fixed_header">
+        <div id="navbar">
+            <a id="navbar_brand" href="https://bestia.dev">
+                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
+                <span id="navbar_title"> Bestia dev</span>
+            </a>
+            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
+            <div id="navbar_topics">
+                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
+                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
+                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
+                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
+                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div>&nbsp;</div> 
+    <div class="small">This is a copy of the Github readme.<br/>
+    Find the original on <a href="https://github.com/bestia-dev/obsidian_portugues">https://github.com/bestia-dev/obsidian_portugues</a></div>
+
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">Obsidian Portugues</h1><a id="user-content-obsidian-portugues" class="anchor" aria-label="Permalink: Obsidian Portugues" href="#obsidian-portugues"></a></div>
+<p dir="auto"><em><strong>Obsidian notes for my learning of Portugues</strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready_for_use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Motivation</h2><a id="user-content-motivation" class="anchor" aria-label="Permalink: Motivation" href="#motivation"></a></div>
+<p dir="auto">Once I was in Brasil, I discovered that my knowledge of Spanish and Italian is not enough.<br>
+I have to learn some Portugues. It is not that easy, but it is not that hard.<br>
+I need to write my notes somewhere. I choose Obsidian. It looks nice.<br>
+Obviously I wanted to use my laptop, table and smartphone.<br>
+To make all that in sync I will use git and Github repository.
+Git on laptop is a no-brainer.
+On android table and smartphone I use <code>Termux</code> and there I installed git. Android is basically a bastard son of Google and Linux.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Git and GitHub</h2><a id="user-content-git-and-github" class="anchor" aria-label="Permalink: Git and GitHub" href="#git-and-github"></a></div>
+<p dir="auto">It is easy to use git and GitHub.
+After initiating the repository and connecting it with the remote repository is just:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git add .
+git commit -m &quot;message&quot;
+git push"><pre>git add <span class="pl-c1">.</span>
+git commit -m <span class="pl-s"><span class="pl-pds">"</span>message<span class="pl-pds">"</span></span>
+git push</pre></div>
+<p dir="auto">and in the other direction</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="git pull"><pre>git pull</pre></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Add Portugues characters to the keyboard</h2><a id="user-content-add-portugues-characters-to-the-keyboard" class="anchor" aria-label="Permalink: Add Portugues characters to the keyboard" href="#add-portugues-characters-to-the-keyboard"></a></div>
+<p dir="auto">In the folder "MSKLC keyboard layout" there is the program to change the windows keyboard layout.<br>
+The file "LucKey.klc" has the new layout definition.</p>
+<p dir="auto">Portuguese makes use of five diacritics:</p>
+<ul dir="auto">
+<li>cedilla (ç)</li>
+<li>acute accent (á, é, í, ó, ú)</li>
+<li>circumflex accent (â, ê, ô)</li>
+<li>tilde (ã, õ)</li>
+</ul>
+<p dir="auto">My Win11 keyboard is Slovenian.
+It has some characters we need in Portuguese:</p>
+<ul dir="auto">
+<li>altgr + + prepares for ç</li>
+<li>altgr + 9 prepares for á, é, í, ó, ú</li>
+<li>altgr + 3 prepares for â, ô, BUT not for ê</li>
+</ul>
+<p dir="auto">But it does not have the other characters.</p>
+<p dir="auto">I will use MSKLC to customize the keyboard "Slovenian - Custom LucKey".</p>
+<ul dir="auto">
+<li>altgr + 3 prepares for ê</li>
+<li>altgr + 1 prepares for ã, õ</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
+<p dir="auto">My open-source projects are free as a beer (MIT license).<br>
+I just love programming.<br>
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my <a href="https://paypal.me/LucianoBestia" rel="nofollow">PayPal</a>.<br>
+You know the price of a beer in your local bar ;-)<br>
+So I can drink a free beer for your health :-)<br>
+<a href="https://translate.google.com/?hl=en&amp;sl=sl&amp;tl=en&amp;text=Na%20zdravje&amp;op=translate" rel="nofollow">Na zdravje!</a> <a href="https://dictionary.cambridge.org/dictionary/italian-english/alla-salute" rel="nofollow">Alla salute!</a> <a href="https://dictionary.cambridge.org/dictionary/german-english/prost" rel="nofollow">Prost!</a> <a href="https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/" rel="nofollow">Nazdravlje!</a> 🍻</p>
+<p dir="auto"><a href="https://bestia.dev" rel="nofollow">//bestia.dev</a><br>
+<a href="https://github.com/bestia-dev">//github.com/bestia-dev</a><br>
+<a href="https://bestiadev.substack.com" rel="nofollow">//bestiadev.substack.com</a><br>
+<a href="https://youtube.com/@bestia-dev-tutorials" rel="nofollow">//youtube.com/@bestia-dev-tutorials</a></p>
+</article>
+</body>
+
+</html>
