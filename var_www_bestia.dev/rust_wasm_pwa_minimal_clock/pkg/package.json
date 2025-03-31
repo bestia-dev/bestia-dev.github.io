@@ -1,0 +1,21 @@
+{
+  "name": "rust_wasm_pwa_minimal_clock",
+  "collaborators": [
+    "Luciano Bestia <Luciano.Bestia@gmail.com>"
+  ],
+  "description": "tutorial for a minimal example of rust wasm PWA",
+  "version": "2021.204.1558",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucianoBestia/rust_wasm_pwa_minimal_clock"
+  },
+  "files": [
+    "rust_wasm_pwa_minimal_clock_bg.wasm",
+    "rust_wasm_pwa_minimal_clock.js",
+    "rust_wasm_pwa_minimal_clock.d.ts"
+  ],
+  "module": "rust_wasm_pwa_minimal_clock.js",
+  "types": "rust_wasm_pwa_minimal_clock.d.ts",
+  "sideEffects": false
+}

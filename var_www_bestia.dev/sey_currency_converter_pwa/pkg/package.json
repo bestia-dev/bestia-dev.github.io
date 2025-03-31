@@ -1,0 +1,25 @@
+{
+  "name": "sey_currency_converter_pwa",
+  "collaborators": [
+    "bestia.dev"
+  ],
+  "description": "SEY currency converter Progressive Web App",
+  "version": "2022.511.1507",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestia-dev/sey_currency_converter_pwa"
+  },
+  "files": [
+    "sey_currency_converter_pwa_bg.wasm",
+    "sey_currency_converter_pwa.js",
+    "sey_currency_converter_pwa.d.ts"
+  ],
+  "module": "sey_currency_converter_pwa.js",
+  "homepage": "https://bestia.dev",
+  "types": "sey_currency_converter_pwa.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "wasm"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "varweeks_millis_clock",
+  "collaborators": [
+    "bestia.dev"
+  ],
+  "description": "clock with new date time units formats: varweeks and millis",
+  "version": "2023.526.1051",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestia-dev/varweeks_millis_clock"
+  },
+  "files": [
+    "varweeks_millis_clock_bg.wasm",
+    "varweeks_millis_clock.js",
+    "varweeks_millis_clock.d.ts"
+  ],
+  "module": "varweeks_millis_clock.js",
+  "homepage": "https://bestia.dev",
+  "types": "varweeks_millis_clock.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "wasm"
+  ]
+}

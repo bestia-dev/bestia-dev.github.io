@@ -1,0 +1,25 @@
+{
+  "name": "sort_text_international_rust_wasm_pwa",
+  "collaborators": [
+    "bestia.dev"
+  ],
+  "description": "Sort text in different collations. It is a tutorial for Rust WASM PWA.",
+  "version": "2022.717.1738",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestia-dev/sort_text_international_rust_wasm_pwa"
+  },
+  "files": [
+    "sort_text_international_rust_wasm_pwa_bg.wasm",
+    "sort_text_international_rust_wasm_pwa.js",
+    "sort_text_international_rust_wasm_pwa.d.ts"
+  ],
+  "module": "sort_text_international_rust_wasm_pwa.js",
+  "homepage": "https://bestia.dev",
+  "types": "sort_text_international_rust_wasm_pwa.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "wasm"
+  ]
+}

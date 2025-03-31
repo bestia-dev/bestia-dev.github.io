@@ -1,0 +1,21 @@
+{
+  "name": "rust_regex_explanation_pwa",
+  "collaborators": [
+    "Luciano Bestia <Luciano.Bestia@gmail.com>"
+  ],
+  "description": "Rust regex explanations in PWA",
+  "version": "2020.810.640",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucianoBestia/rust_regex_explanation_pwa"
+  },
+  "files": [
+    "rust_regex_explanation_pwa_bg.wasm",
+    "rust_regex_explanation_pwa.js",
+    "rust_regex_explanation_pwa.d.ts"
+  ],
+  "module": "rust_regex_explanation_pwa.js",
+  "types": "rust_regex_explanation_pwa.d.ts",
+  "sideEffects": "false"
+}

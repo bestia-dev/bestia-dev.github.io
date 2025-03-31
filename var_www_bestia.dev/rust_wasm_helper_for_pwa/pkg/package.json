@@ -1,0 +1,24 @@
+{
+  "name": "rust_wasm_helper_for_pwa",
+  "collaborators": [
+    "Luciano Bestia <Luciano.Bestia@gmail.com>"
+  ],
+  "description": "creates a minimal PWA you can copy to your project",
+  "version": "2021.704.1429",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucianoBestia/rust_wasm_helper_for_pwa_game"
+  },
+  "files": [
+    "rust_wasm_helper_for_pwa_bg.wasm",
+    "rust_wasm_helper_for_pwa.js",
+    "rust_wasm_helper_for_pwa.d.ts"
+  ],
+  "module": "rust_wasm_helper_for_pwa.js",
+  "types": "rust_wasm_helper_for_pwa.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "wasm"
+  ]
+}

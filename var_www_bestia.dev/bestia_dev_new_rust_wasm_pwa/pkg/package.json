@@ -1,0 +1,25 @@
+{
+  "name": "bestia_dev_new_rust_wasm_pwa",
+  "collaborators": [
+    "bestia.dev"
+  ],
+  "description": "Creates a new Rust Wasm PWA project",
+  "version": "2022.714.2048",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestia-dev/bestia_dev_new_rust_wasm_pwa_game"
+  },
+  "files": [
+    "bestia_dev_new_rust_wasm_pwa_bg.wasm",
+    "bestia_dev_new_rust_wasm_pwa.js",
+    "bestia_dev_new_rust_wasm_pwa.d.ts"
+  ],
+  "module": "bestia_dev_new_rust_wasm_pwa.js",
+  "homepage": "https://bestia.dev",
+  "types": "bestia_dev_new_rust_wasm_pwa.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "wasm"
+  ]
+}

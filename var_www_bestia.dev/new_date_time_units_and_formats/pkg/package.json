@@ -1,0 +1,27 @@
+{
+  "name": "new_date_time_units_and_formats",
+  "collaborators": [
+    "bestia.dev"
+  ],
+  "description": "my proposal for a new date time units and formats",
+  "version": "2023.526.1202",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bestia-dev/new_date_time_units_and_formats"
+  },
+  "files": [
+    "new_date_time_units_and_formats_bg.wasm",
+    "new_date_time_units_and_formats.js",
+    "new_date_time_units_and_formats.d.ts"
+  ],
+  "module": "new_date_time_units_and_formats.js",
+  "homepage": "https://bestia.dev",
+  "types": "new_date_time_units_and_formats.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "wasm"
+  ]
+}
