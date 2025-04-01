@@ -81,8 +81,8 @@ I use <a href="https://crates.io/crates/cargo-auto" rel="nofollow">cargo-auto</a
 This is just a library project. There are projects for different user-interfaces that depend on this library. Compile and run them to test the application.</p>
 <p dir="auto">Then I use WSL2 (Debian) on Win10 to execute the compiled program.<br>
 The external disk path from WSL2 looks like this: <code>/mnt/d/DropBoxBackup1</code>.<br>
-The CLI saves the list of the local files metadata in <code>temp_data/list_destination_files.csv</code>.<br>
-And the list of the files metadata from the remote Dropbox to in <code>temp_data/list_source_files.csv</code>.
+The CLI saves the list of the local files metadata in <code>tmp/temp_data/list_destination_files.csv</code>.<br>
+And the list of the files metadata from the remote Dropbox to in <code>tmp/temp_data/list_source_files.csv</code>.
 Tab delimited with metadata: path (with name), datetime modified, size.
 The remote path is not really case-sensitive. They try to make it case-preserve, but this apply only to the last part of the path. Before that it is random-case.
 For big dropbox remotes it can take a while to complete. After the first level folders are listed, I use 3 threads in a ThreadPool to get sub-folders recursively in parallel. It makes it much faster. Also the download of files is in parallel on multiple threads.<br>
