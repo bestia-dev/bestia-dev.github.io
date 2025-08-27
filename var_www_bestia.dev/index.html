@@ -10,17 +10,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bestia01.css">
-  <script>
-    /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-    function toggle_responsive_navbar() {
-      var x = document.getElementById("navbar");
-      if (x.className.includes(" responsive")) {
-        x.className = x.className.replace(" responsive", "");
-      } else {
-        x.className += " responsive";
-      }
-    }
-  </script>
   <!-- HTML Meta Tags -->
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://bestia.dev/">
@@ -43,9 +32,11 @@
 <body style="background-image: url('images/rust_background.jpg');">
   <header>
     <nav>
+      <!-- https://www.youtube.com/watch?v=8eFeIFKAKHw https://www.coding2go.com/ -->
+      <a href="index.html">bestia.dev</a>
       <input type="checkbox" id="sidebar-active">
       <label for="sidebar-active" id="open-sidebar-button">
-        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 660" width="32">
           <!-- hamburger for open menu -->
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
@@ -55,13 +46,12 @@
       <div id="nav-links-container">
         <label for="sidebar-active" id="close-sidebar-button">
           <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-          <!-- X for close menu -->
+            <!-- X for close menu -->
             <path
               d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
           </svg>
         </label>
 
-        <a href="#home">Home</a>
         <a href="#tutorials">Tutorials</a>
         <a href="#games">Games</a>
         <a href="index.html#productivity">Productivity</a>
@@ -401,7 +391,10 @@
   <hr />
   <section>
     <h1 id="youtube_videos">Youtube videos</h1>
-    <h3 class="link"><a href="//youtube.com/@IzolaMjuzikFest" target="_blank">Channel
+    <h3 class="link"><a href="https://www.youtube.com/channel/UCabSLu8z-T2QhCYBynrPzQA" target="_blank">Channel
+        //youtube.com/@dancemamblita2005 (2025-08)</a></h3>
+
+    <h3 class="link"><a href="https://youtube.com/@IzolaMjuzikFest" target="_blank">Channel
         //youtube.com/@IzolaMjuzikFest
         (2023-04)</a></h3>
     <h3 class="link"><a href="https://www.youtube.com/watch?v=b79JTe0Jspg&list=PLvC8kBsKgz_ibQR3TXNiFKIvNX_k40PM2"
@@ -409,10 +402,7 @@
     <h3 class="link"><a href="https://www.youtube.com/watch?v=ztpWWZFwLJ8&list=PLvC8kBsKgz_gRh780O8KV1E92VbDu7yjq"
         target="_blank">Playlist IzolaMjuzikFest 2023</a></h3>
 
-    <h3 class="link"><a href="//youtube.com/@MarketGarden97" target="_blank">Channel
-        //youtube.com/@MarketGarden97
-        (2023-04)</a></h3>
-    <h3 class="link"><a href="https://www.youtube.com/watch?v=TQcdtKq1oO0&list=PLXISmLIn3t0SsJym_5XVCPNdhRfUnnlIE"
+    <h3 class="link"><a href="https://www.youtube.com/watch?v=TQcdtKq1oO0&list=PLbXDHfG-c3U_TfQg2dIHEfYrGF7GXZmsM"
         target="_blank">Playlist MarketGarden97Figa 2023-04-01</a></h3>
   </section>
   <hr />
@@ -430,14 +420,14 @@
   <hr />
   <section>
     <h1 id="archived_projects">Archived projects</h1>
-    <h3 class="link"><a href="https://bestia.dev/archived.html" target="_blank">Many projects are archived
+    <h3 class="link"><a href="archived.html" target="_blank">Many projects are archived
         and not in
         use anymore (2023-11)</a></h3>
   </section>
   <hr />
   <section>
     <h1 id="work_in_progress_projects">Work in progress projects</h1>
-    <h3 class="link"><a href="https://bestia.dev/work_in_progress.html" target="_blank">Many projects are
+    <h3 class="link"><a href="work_in_progress.html" target="_blank">Many projects are
         work in progress and not ready yet (2025-03)</a></h3>
   </section>
   <hr />
