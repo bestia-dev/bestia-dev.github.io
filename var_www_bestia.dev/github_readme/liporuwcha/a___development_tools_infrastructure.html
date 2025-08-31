@@ -10,42 +10,23 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/liporuwcha/a___development_tools_infrastructure">https://github.com/liporuwcha/a___development_tools_infrastructure</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/liporuwcha/a___development_tools_infrastructure">https://github.com/liporuwcha/a___development_tools_infrastructure</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">a___development_tools_infrastructure</h1><a id="user-content-a___development_tools_infrastructure" class="anchor" aria-label="Permalink: a___development_tools_infrastructure" href="#a___development_tools_infrastructure"></a></div>
 <p dir="auto"><em><strong>liporuwcha namespace a__ development tools, infrastructure</strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="https://github.com/liporuwcha/.github/blob/main/images/logo/logo_liporuwcha.png"><img src="https://github.com/liporuwcha/.github/raw/main/images/logo/logo_liporuwcha.png" alt="logo" style="max-width: 100%;"></a><br>
+liporuwcha is a "GitHub organization" that groups <a href="https://github.com/orgs/liporuwcha/repositories?q=sort%3Aname-asc">multiple repositories</a> together</p>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ed04c398eacfa6db03184d92a4980c9e5618bf6994b483ab49ab3d7e1969ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776f726b5f696e5f70726f67726573732d79656c6c6f77"><img src="https://img.shields.io/badge/work_in_progress-yellow" alt="work-in-progress" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/317f2d5fe0382294802e10b5756052854fb4d1361b7ca809f0d814acfb481410/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706f7374677265732d6f72616e6765"><img src="https://img.shields.io/badge/postgres-orange" alt="postgres" style="max-width: 100%;"></a>

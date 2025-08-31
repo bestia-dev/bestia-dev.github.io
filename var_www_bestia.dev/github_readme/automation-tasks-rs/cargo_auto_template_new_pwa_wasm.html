@@ -10,50 +10,31 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text">
 <div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">cargo_auto_template_new_pwa_wasm</h1><a id="user-content-cargo_auto_template_new_pwa_wasm" class="anchor" aria-label="Permalink: cargo_auto_template_new_pwa_wasm" href="#cargo_auto_template_new_pwa_wasm"></a></div>
 <p dir="auto"><strong>Template for a minimal pwa wasm project for browser</strong><br>
-<em><strong>version: 0.0.8 date: 2025-03-18 author: <a href="https://web_server_domain" rel="nofollow">web_server_domain</a> repository: <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">GitHub</a></strong></em></p>
+<em><strong>version: 0.0.11 date: 2025-07-15 author: <a href="https://web_server_domain" rel="nofollow">web_server_domain</a> repository: <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm">GitHub</a></strong></em></p>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ed04c398eacfa6db03184d92a4980c9e5618bf6994b483ab49ab3d7e1969ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f776f726b5f696e5f70726f67726573732d79656c6c6f77"><img src="https://img.shields.io/badge/work_in_progress-yellow" alt="work-in-progress" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c5e923a78e1ab92876471acfc6da2bbad8147fa20cfd96028e8bff332865a7d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7761736d2d6f72616e6765"><img src="https://img.shields.io/badge/wasm-orange" alt="wasm" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/automation-tasks-rs/cargo-auto/main/images/logo/logo_cargo_auto.svg"><img src="https://raw.githubusercontent.com/automation-tasks-rs/cargo-auto/main/images/logo/logo_cargo_auto.svg" alt="logo" style="max-width: 100%;"></a>
+this repo is part of the <a href="https://github.com/automation-tasks-rs">automation_tasks_rs</a> project</p>
 <p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a></p>
-<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_Rust-348-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_Rust-353-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-130-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_comments-70-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo_auto_template_new_pwa_wasm/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>

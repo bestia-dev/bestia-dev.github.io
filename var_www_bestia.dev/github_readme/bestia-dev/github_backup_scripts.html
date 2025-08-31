@@ -10,39 +10,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/bestia-dev/github_backup_scripts">https://github.com/bestia-dev/github_backup_scripts</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/bestia-dev/github_backup_scripts">https://github.com/bestia-dev/github_backup_scripts</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text">
 <div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">github_backup_scripts</h1><a id="user-content-github_backup_scripts" class="anchor" aria-label="Permalink: github_backup_scripts" href="#github_backup_scripts"></a></div>
@@ -61,7 +40,7 @@ My projects on GitHub are more like a tutorial than a finished product: <a href=
 <p dir="auto">My GitHub backup folders are in my DropBox folder:<br>
 <code>d:\Dropbox\BestiaDev\github_backup_active\</code> and<br>
 <code>d:\Dropbox\BestiaDev\github_backup_archived\</code></p>
-<p dir="auto">This way they got synchronized to my DropBox automatically. To be sure I also make a backup of the DropBox folder to my 2 external disks eventually.</p>
+<p dir="auto">This way they got synchronized to my DropBox automatically. To be sure I also make a backup of the DropBox folder to my 2 external disks regularly.</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">git-bash scripts</h2><a id="user-content-git-bash-scripts" class="anchor" aria-label="Permalink: git-bash scripts" href="#git-bash-scripts"></a></div>
 <p dir="auto">On Win10 I have installed <code>git</code> and with it comes <code>git-bash</code>. It is fantastic that I can use bash scripts in Windows. It makes my life so much easier.</p>
 <p dir="auto">In this repository, there are copies of these scripts in folders just like I have them in my DropBox folder.</p>

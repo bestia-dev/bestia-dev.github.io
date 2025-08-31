@@ -10,39 +10,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib">https://github.com/automation-tasks-rs/cargo_auto_github_lib</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib">https://github.com/automation-tasks-rs/cargo_auto_github_lib</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text">
 <div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">cargo_auto_github_lib</h1><a id="user-content-cargo_auto_github_lib" class="anchor" aria-label="Permalink: cargo_auto_github_lib" href="#cargo_auto_github_lib"></a></div>
@@ -56,6 +35,8 @@
 <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_comments-41-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://img.shields.io/badge/Lines_in_tests-60-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/automation-tasks-rs/cargo-auto/main/images/logo/logo_cargo_auto.svg"><img src="https://raw.githubusercontent.com/automation-tasks-rs/cargo-auto/main/images/logo/logo_cargo_auto.svg" alt="logo" style="max-width: 100%;"></a>
+this repo is part of the <a href="https://github.com/automation-tasks-rs">automation_tasks_rs</a> project</p>
 <p dir="auto"><a href="https://crates.io/crates/cargo_auto_github_lib" rel="nofollow"><img src="https://img.shields.io/crates/v/cargo_auto_github_lib.svg" alt="crates.io" style="max-width: 100%;"></a> <a href="https://docs.rs/cargo_auto_github_lib/" rel="nofollow"><img src="https://docs.rs/cargo_auto_github_lib/badge.svg" alt="Documentation" style="max-width: 100%;"></a> <a href="https://web.crev.dev/rust-reviews/crate/cargo_auto_github_lib/" rel="nofollow"><img src="https://web.crev.dev/rust-reviews/badge/crev_count/cargo_auto_github_lib.svg" alt="crev reviews" style="max-width: 100%;"></a> <a href="https://lib.rs/crates/cargo_auto_github_lib/" rel="nofollow"><img src="https://img.shields.io/badge/Lib.rs-rust-orange.svg" alt="Lib.rs" style="max-width: 100%;"></a> <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a> <a href="https://github.com/automation-tasks-rs/cargo_auto_github_lib/"><img src="https://github.com/automation-tasks-rs/cargo_auto_github_lib/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a> <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/46025a01d36a5a73ea448e58dd001963c2f8ee29e1eb9eb871032da9b5bbc9be/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3731343337333533302e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/714373530.svg" alt="Hits" style="max-width: 100%;"></a></p>
 <p dir="auto">Hashtags: #rustlang #buildtool #developmenttool #github<br>
 My projects on Github are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>

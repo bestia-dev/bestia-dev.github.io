@@ -10,44 +10,23 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/automation-tasks-rs/cargo-auto">https://github.com/automation-tasks-rs/cargo-auto</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/automation-tasks-rs/cargo-auto">https://github.com/automation-tasks-rs/cargo-auto</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text">
 <div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">cargo-auto</h1><a id="user-content-cargo-auto" class="anchor" aria-label="Permalink: cargo-auto" href="#cargo-auto"></a></div>
 <p dir="auto"><strong>Automation tasks coded in Rust language for the workflow of Rust projects</strong><br>
-<em><strong>version: 2025.318.1132 date: 2025-03-18 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/automation-tasks-rs/cargo-auto">GitHub</a></strong></em></p>
+<em><strong>version: 2025.814.1154 date: 2025-08-14 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/automation-tasks-rs/cargo-auto">GitHub</a></strong></em></p>
 <p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready-for-use" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
@@ -63,9 +42,9 @@ cargo-auto is part of the <a href="https://github.com/automation-tasks-rs">autom
 <a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://github.com/automation-tasks-rs/cargo-auto/workflows/rust_fmt_auto_build_test/badge.svg" alt="Rust" style="max-width: 100%;"></a>
 <a href="https://automation-tasks-rs.github.io/cargo-auto/cargo_auto/index.html" rel="nofollow"><img src="https://img.shields.io/badge/newest_docs-blue.svg" alt="Newest docs" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1929c43d44e7197f33c69f4e040c142b62f1daf0835269c61f943041cd8ff678/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3935393130333938322e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/959103982.svg" alt="cargo-auto" style="max-width: 100%;"></a></p>
-<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_Rust-748-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
-<a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-591-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
-<a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_comments-106-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
+<p dir="auto"><a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_Rust-923-green.svg" alt="Lines in Rust code" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_Doc_comments-611-blue.svg" alt="Lines in Doc comments" style="max-width: 100%;"></a>
+<a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_comments-136-purple.svg" alt="Lines in Comments" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_examples-0-yellow.svg" alt="Lines in examples" style="max-width: 100%;"></a>
 <a href="https://github.com/automation-tasks-rs/cargo-auto/"><img src="https://img.shields.io/badge/Lines_in_tests-0-orange.svg" alt="Lines in tests" style="max-width: 100%;"></a></p>
 <p dir="auto">Hashtags: #maintained #ready-for-use #rustlang #automation #workflow<br>

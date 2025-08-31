@@ -10,39 +10,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode">https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode">https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode</a></div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">win_git_git_bash_ssh_VSCode</h1><a id="user-content-win_git_git_bash_ssh_vscode" class="anchor" aria-label="Permalink: win_git_git_bash_ssh_VSCode" href="#win_git_git_bash_ssh_vscode"></a></div>
 <p dir="auto"><strong>Windows utils for CRUSTDE: git, git-bash, SSH, VSCode</strong><br>
@@ -51,7 +30,7 @@
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/06fa5acdec9b8b6d5324868c9918dfe534fc350b4b786c95f16f96d2e9ccf9a5/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f313039393135323430382e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/1099152408.svg" alt="win_git_git_bash_ssh_VSCode" style="max-width: 100%;"></a></p>
 <p dir="auto"><strong>WARNING !!! This is a public repository: never write or save secrets here!!!</strong></p>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png" alt="logo" style="max-width: 100%;"></a>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png" alt="logo" style="max-width: 100%;"></a><br>
 win_git_git_bash_ssh_VSCode is a member of the <a href="https://github.com/orgs/CRUSTDE-ContainerizedRustDevEnv/repositories?q=sort%3Aname-asc">CRUSTDE-ContainerizedRustDevEnv</a> project.</p>
 <p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode/"><img src="https://img.shields.io/badge/Lines_in_markdown-267-green.svg" alt="Lines in md" style="max-width: 100%;"></a></p>
 <p dir="auto">Hashtags: #rustlang #tutorial #buildtool #developmenttool<br>
@@ -95,9 +74,9 @@ git config --global -l</pre></div>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">git-bash and path conversion</h2><a id="user-content-git-bash-and-path-conversion" class="anchor" aria-label="Permalink: git-bash and path conversion" href="#git-bash-and-path-conversion"></a></div>
 <p dir="auto">Very sadly, the paths in Windows are different than the paths in Linux.<br>
 Unix came first, so I blame Microsoft for not sticking to the standard. Microsoft being Microsoft, has to "EEE" Embrace, Extend, and Extinguish. Instead of a natural <code>/</code> slash they decided to use <code>\</code> backslash. Just so to be different. I am sure there was no other reason. They repeated this strategy over and over again with different standards.</p>
-<p dir="auto">Now that we have <code>bash</code> inside windows this was a tough thing to solve. The solution is "path conversion". When <code>git-bash</code> finds the <code>/</code> slash symbol it assumes it is a path and makes the conversion. So <code>/home/foobar/</code> becomes <code>C:/Users/user/AppData/Local/Git/home/foobar</code>. Horrible, but it works for Linux commands because they don't use <code>/</code> for anything else, just paths.</p>
+<p dir="auto">Now that we have <code>bash</code> inside windows this was a tough thing to solve. The solution is "path conversion". When <code>git-bash</code> finds the <code>/</code> slash symbol it assumes it is a path and makes the conversion. So <code>/home/foobar/</code> becomes <code>C:\Users\user\AppData\Local\Git\home\foobar</code>. Horrible, but it works for Linux commands because they don't use <code>/</code> for anything else, just paths.</p>
 <p dir="auto">If we want to run some Windows commands inside <code>git-bash</code> it becomes a problem because Microsoft decided that using <code>/</code> for arguments is very smart. Bad Microsoft.</p>
-<p dir="auto">The solution is to use a special environment variable to disable the path conversion: MSYS_NO_PATHCONV. If this variable exists (the content does not matter at all) then <code>git-bash</code> does not perform path conversion.</p>
+<p dir="auto">The solution is to use a special environment variable to disable the path conversion: MSYS_NO_PATHCONV=1. If this variable exists (the content does not matter at all) then <code>git-bash</code> does not perform path conversion.</p>
 <p dir="auto">Running one Windows command inside <code>git-bash</code>:</p>
 <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="# set env var just for one command
 MSYS_NO_PATHCONV=1 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart"><pre><span class="pl-c"><span class="pl-c">#</span> set env var just for one command</span>
@@ -119,6 +98,37 @@ wsl --set-default-version 2
 
 <span class="pl-c1">unset</span> MSYS_NO_PATHCONV</pre></div>
 <p dir="auto">With this knowledge, we are ready to run Linux and Windows commands from <code>git-bash</code> and avoid using Command prompt and PowerShell at all.</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install additional commands on Git Bash (Windows 10)</h2><a id="user-content-install-additional-commands-on-git-bash-windows-10" class="anchor" aria-label="Permalink: Install additional commands on Git Bash (Windows 10)" href="#install-additional-commands-on-git-bash-windows-10"></a></div>
+<p dir="auto">Git-bash is made from MSYS2, just reduced to the minimum. It does not have wget, zip, zstd, rsync,...</p>
+<p dir="auto">We can install manually these packages from MSYS2 into git-bash.<br>
+The first problem is that the packages are compressed with a very new <code>zstd</code> alghoritm from facebook. That program is not default to git-bash. We cannot use it from //packages.msys2.org because it is compressed with zstd. The classic chicken and egg problem.<br>
+We can workaround the problem in WSL Debian:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="sudo apt update
+sudo apt upgrade
+sudo apt install zstd
+
+mkdir -p ~/rustprojects
+cd ~/rustprojects
+# web page https://packages.msys2.org/packages/mingw-w64-x86_64-zstd
+curl -OL https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst 
+mkdir -p mingw-w64-x86_64-zstd
+tar --zstd -xvf mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst -C mingw-w64-x86_64-zstd
+rm mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst"><pre>sudo apt update
+sudo apt upgrade
+sudo apt install zstd
+
+mkdir -p <span class="pl-k">~</span>/rustprojects
+<span class="pl-c1">cd</span> <span class="pl-k">~</span>/rustprojects
+<span class="pl-c"><span class="pl-c">#</span> web page https://packages.msys2.org/packages/mingw-w64-x86_64-zstd</span>
+curl -OL https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst 
+mkdir -p mingw-w64-x86_64-zstd
+tar --zstd -xvf mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst -C mingw-w64-x86_64-zstd
+rm mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst</pre></div>
+<p dir="auto">Now use 'git-bash' Run as Administrator to copy files into Windows:</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="cp //wsl.localhost/debian/home/luciano/rustprojects/mingw-w64-x86_64-zstd/mingw64/bin/*.exe &quot;/c/Program Files/Git/mingw64/bin/&quot;"><pre>cp //wsl.localhost/debian/home/luciano/rustprojects/mingw-w64-x86_64-zstd/mingw64/bin/<span class="pl-k">*</span>.exe <span class="pl-s"><span class="pl-pds">"</span>/c/Program Files/Git/mingw64/bin/<span class="pl-pds">"</span></span></pre></div>
+<p dir="auto">We have now zstd inside git-bash and we can install msys2 packages<br>
+from inside git-bash Run as Administrator.</p>
+<p dir="auto">TODO: I couldn't install zip or rsync</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">SSH in Windows (Git SSH)</h2><a id="user-content-ssh-in-windows-git-ssh" class="anchor" aria-label="Permalink: SSH in Windows (Git SSH)" href="#ssh-in-windows-git-ssh"></a></div>
 <p dir="auto">SSH is great. In Linux, it works seamlessly. In Windows, it came late to the party and this brought some problems.</p>
 <div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto">Remove incompatible solutions</h3><a id="user-content-remove-incompatible-solutions" class="anchor" aria-label="Permalink: Remove incompatible solutions" href="#remove-incompatible-solutions"></a></div>
@@ -183,7 +193,7 @@ In Linux <code>~\.ssh\config</code> I used the paths like <code>~/.ssh/key</code
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">VSCode for Windows</h2><a id="user-content-vscode-for-windows" class="anchor" aria-label="Permalink: VSCode for Windows" href="#vscode-for-windows"></a></div>
 <p dir="auto"><a href="https://code.visualstudio.com/download" rel="nofollow">https://code.visualstudio.com/download</a><br>
 Backup and sync settings with my GitHub account bestia-dev.</p>
-<p dir="auto">WARNING: Don't install `WSL extension``. It is not needed for work in WSL folders from Windows and it disables the remote ssh connection for VSCode!</p>
+<p dir="auto">WARNING: Don't install <code>WSL extension</code>. It is not needed for work in WSL folders from Windows and it disables the remote ssh connection for VSCode!</p>
 <p dir="auto">I have an opinionated configuration file I use:<br>
 I want git-bash to be my default terminal inside VSCode for Windows.<br>
 In VSCode I specify the use of Git ssh-agent and config files explicitly, to avoid any confusion.<br>

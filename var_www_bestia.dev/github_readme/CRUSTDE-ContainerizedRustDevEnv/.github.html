@@ -10,44 +10,72 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/bestia01.css">
-    <script>
-        /* Toggle between adding and removing the "responsive" class to navbar when the user clicks on the hamburger */
-        function toggle_responsive_navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className.includes(" responsive")) {
-                x.className = x.className.replace(" responsive", "");
-            } else {
-                x.className += " responsive";
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="fixed_header">
-        <div id="navbar">
-            <a id="navbar_brand" href="https://bestia.dev">
-                <img src="bestia_icon.png" alt="Bestia development" title="bestia.dev" />
-                <span id="navbar_title"> Bestia dev</span>
-            </a>
-            <a id="navbar_hamburger" href="javascript:void(0);" onclick="toggle_responsive_navbar()">☰ </a>
-            <div id="navbar_topics">
-                <a href="/index.html#home" onclick="toggle_responsive_navbar()">Home </a>
-                <a href="/index.html#tutorials" onclick="toggle_responsive_navbar()">Tutorials</a>
-                <a href="/index.html#games" onclick="toggle_responsive_navbar()">Games</a>
-                <a href="/index.html#productivity" onclick="toggle_responsive_navbar()">Productivity</a>
-                <a href="/index.html#contact" onclick="toggle_responsive_navbar()">Contact</a>
-            </div>
-        </div>
-    </div>
+    <header>
+        <nav>
+            <a href="https://bestia.dev/index.html">bestia.dev</a>
+        </nav>
+    </header>
     <div>&nbsp;</div> 
-    <div class="small">This is a copy of the Github readme.<br/>
-    Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/.github">https://github.com/CRUSTDE-ContainerizedRustDevEnv/.github</a></div>
+    <div class="small"><a id="navbar_brand" href="https://bestia.dev" style="justify-content: center;">
+                <img src="https://bestia.dev/images/bestia_icon.png" alt="bestia.dev" title="bestia.dev" />
+            </a>This is a copy of the Github readme. Find the original on <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/.github">https://github.com/CRUSTDE-ContainerizedRustDevEnv/.github</a></div>
 
-<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">.github</h1><a id="user-content-github" class="anchor" aria-label="Permalink: .github" href="#github"></a></div>
-<p dir="auto"><em><strong>CRUSTDE-ContainerizedRustDevEnv/.github is a special repository</strong></em></p>
-<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a></p>
-<p dir="auto">The /profile/README.md will appear on the organization's profile.</p>
+<article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">CRUSTDE - Containerized Rust Development Environment</h1><a id="user-content-crustde---containerized-rust-development-environment" class="anchor" aria-label="Permalink: CRUSTDE - Containerized Rust Development Environment" href="#crustde---containerized-rust-development-environment"></a></div>
+<p dir="auto"><em><strong>CRUSTDE - Containerized Rust Development Environment in Linux (in WSL2 on Windows or on bare metal)</strong></em></p>
+<p dir="auto"><em><strong>version: 2024.326.1347  date: 2024-03-26 author: <a href="https://bestia.dev" rel="nofollow">bestia.dev</a> repository: <a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv">GitHub</a></strong></em></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e8100395d149fab3d02c3ee4672d2cc5d833bf4ab9044e6c57f47c54baf4d1ba/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61696e7461696e65642d677265656e"><img src="https://img.shields.io/badge/maintained-green" alt="maintained" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/3d28e085cfc1f662a567e40863593879fb9896391cde406b9ff5775277affe41/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656164795f666f725f7573652d677265656e"><img src="https://img.shields.io/badge/ready_for_use-green" alt="ready-for-use" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e5c1ffa95b7619630cfa7868deb0cc8ebc0832d889ff947612462c06873a8eed/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f727573746c616e672d6f72616e6765"><img src="https://img.shields.io/badge/rustlang-orange" alt="rustlang" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/6581c31c16c1b13ddc2efb92e2ad69a93ddc4a92fd871ff15d401c4c6c9155a4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5fca08b0cdfce8de2653c76bb2757e6e4696236ce8190bf26f74be4147f077e9/68747470733a2f2f6265737469612e6465762f776562706167655f6869745f636f756e7465722f6765745f7376675f696d6167652f3736323839303734302e737667"><img src="https://bestia.dev/webpage_hit_counter/get_svg_image/762890740.svg" alt="CRUSTDE-ContainerizedRustDevEnv" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/crustde_250x250.png" alt="logo" style="max-width: 100%;"></a><br>
+CRUSTDE-ContainerizedRustDevEnv is a "GitHub organization" that groups <a href="https://github.com/orgs/CRUSTDE-ContainerizedRustDevEnv/repositories?q=sort%3Aname-asc">multiple repositories</a> together.</p>
+<p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/.github/"><img src="https://img.shields.io/badge/Lines_in_markdown-111-green.svg" alt="Lines in md" style="max-width: 100%;"></a></p>
+<p dir="auto">Hashtags: #rustlang #tutorial<br>
+My projects on GitHub are more like a tutorial than a finished product: <a href="https://github.com/bestia-dev/tutorials_rust_wasm">bestia-dev tutorials</a>.</p>
+<p dir="auto">I even created a YouTube video for a visual description of the installation process:
+<a href="https://bestia.dev/youtube/CRUSTDE_install.html" rel="nofollow"><img src="https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/.github/main/images/CRUSTDE_install_634x356.jpg" alt="CRUSTDE_install" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Install and config Windows and programs needed for Rust development</h2><a id="user-content-install-and-config-windows-and-programs-needed-for-rust-development" class="anchor" aria-label="Permalink: Install and config Windows and programs needed for Rust development" href="#install-and-config-windows-and-programs-needed-for-rust-development"></a></div>
+<p dir="auto">Often we must reinstall windows from scratch to solve some unsolvable problems.<br>
+Thanks, Microsoft!<br>
+This is a good exercise. We must learn how to save settings for different programs.<br>
+This is a very opinionated guide to creating a development environment from scratch:<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/windows_reinstall">windows_reinstall</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Total Commander - the best file manager for Windows</h2><a id="user-content-total-commander---the-best-file-manager-for-windows" class="anchor" aria-label="Permalink: Total Commander - the best file manager for Windows" href="#total-commander---the-best-file-manager-for-windows"></a></div>
+<p dir="auto">I make acrobatics with files all day long. I could not live without TotalCommander.<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/total_commander_best_file_manager">total_commander_best_file_manager</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Windows: Git, git-bash, SSH and VSCode</h2><a id="user-content-windows-git-git-bash-ssh-and-vscode" class="anchor" aria-label="Permalink: Windows: Git, git-bash, SSH and VSCode" href="#windows-git-git-bash-ssh-and-vscode"></a></div>
+<p dir="auto">These Windows utils I use for CRUSTDE: git, git-bash, SSH, VSCode.<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode">win_git_git_bash_ssh_VSCode</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Win10 contains WSL2 that contains Debian11</h2><a id="user-content-win10-contains-wsl2-that-contains-debian11" class="anchor" aria-label="Permalink: Win10 contains WSL2 that contains Debian11" href="#win10-contains-wsl2-that-contains-debian11"></a></div>
+<p dir="auto">Tutorial to install Linux on Windows. Linux everywhere!<br>
+I chose Debian because it is stable, but probably everything works in other flavors too.<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/win10_wsl2_debian11">win10_wsl2_debian11</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">CRUSTDE - Containerized Rust Development Environment</h2><a id="user-content-crustde---containerized-rust-development-environment-1" class="anchor" aria-label="Permalink: CRUSTDE - Containerized Rust Development Environment" href="#crustde---containerized-rust-development-environment-1"></a></div>
+<p dir="auto">Tutorial for creating and using CRUSTDE - Containerized Rust Development Environment.<br>
+Rust - Hack Without Fear and Trust!<br>
+I regularly create new container images when new versions of cargo and rustc are released.<br>
+The container images are published to <a href="https://hub.docker.com/u/bestiadev" rel="nofollow">DockerHub</a>.<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod">crustde_cnt_img_pod</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Cross compile in CRUSTDE Rust Container</h2><a id="user-content-cross-compile-in-crustde-rust-container" class="anchor" aria-label="Permalink: Cross compile in CRUSTDE Rust Container" href="#cross-compile-in-crustde-rust-container"></a></div>
+<p dir="auto">Cross-compile Rust to Linux, Windows, Musl container, WASI and WASM with CRUSTDE container<br>
+<a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/cross_compile_crustde_container">cross_compile_crustde_container</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">File Workflow for backups for CRUSTDE</h2><a id="user-content-file-workflow-for-backups-for-crustde" class="anchor" aria-label="Permalink: File Workflow for backups for CRUSTDE" href="#file-workflow-for-backups-for-crustde"></a></div>
+<p dir="auto">Development files are important. We don't want to lose them because of a mishap. Some details about my workflow for backup:</p>
+<p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/github_dropbox_external_drive">https://github.com/CRUSTDE-ContainerizedRustDevEnv/github_dropbox_external_drive</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Docker hub authorization</h2><a id="user-content-docker-hub-authorization" class="anchor" aria-label="Permalink: Docker hub authorization" href="#docker-hub-authorization"></a></div>
+<p dir="auto">We need the access secret_token to push container images to docker hub. The original <code>podman login</code> stores the secret as plain text. This is a big no-no.<br>
+I encrypted the secret using the SSH private key.</p>
+<p dir="auto"><a href="https://github.com/CRUSTDE-ContainerizedRustDevEnv/ssh_auth_podman_push">https://github.com/CRUSTDE-ContainerizedRustDevEnv/ssh_auth_podman_push</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">dash vs underscore madness</h2><a id="user-content-dash-vs-underscore-madness" class="anchor" aria-label="Permalink: dash vs underscore madness" href="#dash-vs-underscore-madness"></a></div>
+<p dir="auto">GitHub does not allow underscores in the Organization name or Username.<br>
+This is because underscore cannot be used in internet domain names or subdomain names.<br>
+But it is allowed in repository names.<br>
+I prefer using underscore because of Rust naming conventions.<br>
+I will use underscore everywhere except where is not possible. There I will convert them to dashes or remove them.</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto">Open-source and free as a beer</h2><a id="user-content-open-source-and-free-as-a-beer" class="anchor" aria-label="Permalink: Open-source and free as a beer" href="#open-source-and-free-as-a-beer"></a></div>
 <p dir="auto">My open-source projects are free as a beer (MIT license).<br>
 I just love programming.<br>
